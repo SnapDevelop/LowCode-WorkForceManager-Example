@@ -1,0 +1,17 @@
+﻿{
+  "Type": "Enum",
+  "Version": 1,
+  "DisplayName": "Gender",
+  "Description": "Gender",
+  "DesignVersion": "1.0.0",
+  "Fields": {
+    "Male": {
+      "Value": "1",
+      "DisplayName": "Male"
+    },
+    "Female": {
+      "Value": "2",
+      "DisplayName": "Female"
+    }
+  }
+}

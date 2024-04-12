@@ -1,0 +1,12 @@
+[
+  {
+    "Type": "Sqlite",
+    "Name": "data.db",
+    "Value": "eyJCb2R5IjoicXhkR0w5ZHRkNUpqSm13YUJyR2huc2MxbXR6a1JZb3p2ZUJpRldoTkJYOD0iLCJIZWFkZXIiOnsiVGltZXN0YW1wIjoxNjgwMjMyOTgxLCJTaWduYXR1cmUiOiI2NzU3MEQ3RTZEMjRBNzlGMkJFMkZGNjVERTRBMjg1NSJ9fQ=="
+  },
+  {
+    "Type": "Sqlite",
+    "Name": "identity.db",
+    "Value": "eyJCb2R5IjoicXhkR0w5ZHRkNUpqSm13YUJyR2huc2MxbXR6a1JZb3p2ZUJpRldoTkJYOD0iLCJIZWFkZXIiOnsiVGltZXN0YW1wIjoxNjgwMjMyOTgxLCJTaWduYXR1cmUiOiI2NzU3MEQ3RTZEMjRBNzlGMkJFMkZGNjVERTRBMjg1NSJ9fQ=="
+  }
+]

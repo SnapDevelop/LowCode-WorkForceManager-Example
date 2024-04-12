@@ -1,0 +1,29 @@
+﻿{
+  "Type": "Enum",
+  "Version": 1,
+  "DisplayName": "CompanySize",
+  "Description": "CompanySize",
+  "DesignVersion": "1.0.0",
+  "Fields": {
+    "Tiny": {
+      "Value": "1",
+      "DisplayName": "Tiny",
+      "Description": "0-10"
+    },
+    "Small": {
+      "Value": "2",
+      "DisplayName": "Small",
+      "Description": "10-100"
+    },
+    "Big": {
+      "Value": "3",
+      "DisplayName": "Big",
+      "Description": "100-1000"
+    },
+    "Large": {
+      "Value": "4",
+      "DisplayName": "Large",
+      "Description": "> 1000"
+    }
+  }
+}

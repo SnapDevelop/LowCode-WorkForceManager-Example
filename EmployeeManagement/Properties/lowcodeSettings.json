@@ -1,0 +1,16 @@
+{
+  "Security": {
+    "EnabledAuthentication": true,
+    "AuthenticationType": "ASPNETIdentity",
+    "EnabledAuthorization": true,
+    "AuthorizationStategies": [
+      {
+        "Name": "$AspNetDefaultCategory",
+        "IsDefault": true,
+        "RequireRoles": [],
+        "RequireSchemas": [],
+        "Claims": []
+      }
+    ]
+  }
+}

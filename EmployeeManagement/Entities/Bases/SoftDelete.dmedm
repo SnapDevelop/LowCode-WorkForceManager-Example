@@ -1,0 +1,29 @@
+﻿{
+  "Type": "Entity",
+  "Version": 1,
+  "DisplayName": "SoftDelete",
+  "Description": "SoftDelete",
+  "DesignVersion": "1.0.0",
+  "BaseType": "BaseEntity",
+  "IsBase": true,
+  "Fields": {
+    "IsDeleted": {
+      "DisplayName": "IsDeleted",
+      "Description": "",
+      "Type": "Boolean",
+      "DataType": "Boolean",
+      "DefaultValue": "false",
+      "DefaultValueType": "Value"
+    }
+  },
+  "Indexs": [],
+  "Filter": {
+    "Items": {}
+  },
+  "Service": {
+    "Items": []
+  },
+  "References": {
+    "BaseEntity": "BaseEntity.dmedm"
+  }
+}

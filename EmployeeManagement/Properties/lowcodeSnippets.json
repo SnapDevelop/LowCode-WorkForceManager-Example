@@ -1,0 +1,79 @@
+[
+  {
+    "Category": "Using",
+    "Scope": "ContractEnum",
+    "Content": "using System.Text.Json.Serialization;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Using",
+    "Scope": "DalDataContext",
+    "Content": "using EmployeeManagement.Contracts;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Using",
+    "Scope": "DalDataContext",
+    "Content": "using System.Reflection;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Using",
+    "Scope": "ServiceImplementation",
+    "Content": "using Microsoft.Extensions.Logging;",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "ClassAttributes",
+    "Scope": "ContractEnum",
+    "Content": "[JsonConverter(typeof(JsonStringEnumConverter))]",
+    "Position": "",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "ConstructorInjection",
+    "Scope": "ServiceImplementation",
+    "Content": "logger",
+    "Position": "",
+    "ArgumentType": "ILogger<{TClass}>"
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)\r\n        {\r\n            var track = this.ChangeTracker;\r\n\r\n            foreach (var entry in track.Entries())\r\n            {\r\n                if (entry.State == EntityState.Deleted && entry.Entity is SoftDelete)\r\n                {\r\n                    entry.Reload();\r\n\r\n                    var entity = entry.Entity as SoftDelete;\r\n\r\n                    foreach (var p in entry.Properties)\r\n                    {\r\n                        p.IsModified = false;\r\n                    }\r\n\r\n                    entity!.IsDeleted = true;\r\n\r\n                    entry.Property(\"IsDeleted\").IsModified = true;\r\n                }\r\n            }\r\n\r\n            return base.SaveChangesAsync(cancellationToken);\r\n        }",
+    "Position": "EndOfClass",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "static readonly MethodInfo GlobalQueryMethod = typeof(DataContext).GetMethod(nameof(GlobFilter), BindingFlags.Instance | BindingFlags.NonPublic)!;",
+    "Position": "EndOfClass",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "protected void GlobFilter<TEntity>(ModelBuilder modelBuilder)\r\n            where TEntity : SoftDelete\r\n        {\r\n            modelBuilder.Entity<TEntity>().HasQueryFilter(x => !x.IsDeleted);\r\n        }",
+    "Position": "EndOfClass",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "foreach (var entityType in modelBuilder.Model.GetEntityTypes())\r\n            {\r\n                if (entityType.ClrType.BaseType != null && entityType.ClrType.BaseType == typeof(SoftDelete))\r\n                {\r\n                    GlobalQueryMethod\r\n                    .MakeGenericMethod(entityType.ClrType)\r\n                    .Invoke(this, new object[] { modelBuilder });\r\n                }\r\n            }",
+    "Position": "EndOfOnModelCreating",
+    "ArgumentType": ""
+  },
+  {
+    "Category": "Code",
+    "Scope": "DalDataContext",
+    "Content": "modelBuilder.Entity<Company>().HasData(new Company\r\n            {\r\n                Id = 1,\r\n                CompanyName = \"CompanyABC\",\r\n                CompanySize = CompanySize.Big,\r\n            });\r\n            \r\n            modelBuilder.Entity<Company>().OwnsOne(x => x.CompanyAddress).HasData(new\r\n            {\r\n                CompanyId = 1,\r\n                City = \"CityA\",\r\n                Town = \"TownB\",\r\n                Street = \"Road 58th\"\r\n\r\n            });\r\n            \r\n            modelBuilder.Entity<Department>().HasData(\r\n                new Department\r\n                {\r\n                    Id = 1,\r\n                    DepartmentName = \"Sales\"\r\n                }\r\n                );\r\n            \r\n            modelBuilder.Entity<Department>()\r\n                        .HasMany(x => x.Company)\r\n                        .WithMany(\"Departments\")\r\n                        .UsingEntity<Department.CompanyMap>(\r\n                            \"DepartmentCompanyMap\",\r\n                            x => x\r\n                                .HasOne<Company>()\r\n                                .WithMany()\r\n                                .HasForeignKey(x => x.CompanyId)\r\n                                .OnDelete(DeleteBehavior.Cascade),\r\n                            x => x\r\n                                .HasOne<Department>()\r\n                                .WithMany(x => x.CompanyMaps)\r\n                                .HasForeignKey(x => x.DepartmentId)\r\n                                .OnDelete(DeleteBehavior.Cascade))\r\n                        .HasData(\r\n                            new \r\n                            {\r\n                                DepartmentId =1,\r\n                                CompanyId = 1\r\n                            });\r\n            \r\n            modelBuilder.Entity<Employee>().HasData(\r\n                new Employee\r\n                {\r\n                    Id = 1,\r\n                    FirstName = \"Smith\",\r\n                    LastName = \"Syna\",\r\n                    Gender = Gender.Female,\r\n                    HireDate = DateTime.Now.AddMonths(-4),\r\n                    TrialMonths = 3,\r\n                    CompanyId = 1,\r\n                    DepartmentId = 1,\r\n                    PhoneNumber = \"+86 18768733828\"\r\n                }\r\n                );\r\n            \r\n            modelBuilder.Entity<Employee>().OwnsOne(x => x.HomeAddress).HasData\r\n                (new\r\n                {\r\n                    EmployeeId = 1,\r\n                    City = \"CityA\",\r\n                    Town = \"TownA\",\r\n                    Street = \"Shenyun Road 58th\"\r\n                });",
+    "Position": "StartOfOnModelCreating",
+    "ArgumentType": ""
+  }
+]

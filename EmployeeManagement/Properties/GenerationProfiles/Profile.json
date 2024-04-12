@@ -1,0 +1,150 @@
+{
+  "ORMVersion": "EFCore6",
+  "FrameworkVersion": "",
+  "IsOverride": true,
+  "Templates": [
+    "EFCore"
+  ],
+  "Projects": {
+    "EmployeeManagement": {
+      "IsSolutionFolder": true,
+      "TargetDirectory": "..\\SourceCode",
+      "Targets": {
+        "Common": {
+          "ProjectName": "EmployeeManagement.Common",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Common",
+          "RootNamespace": "EmployeeManagement.Common",
+          "Items": {
+            "CommonLinq": {
+              "RelativeDirectory": "Linq"
+            },
+            "CommonSecurity": {
+              "RelativeDirectory": "Security"
+            },
+            "CommonRepository": {
+              "RelativeDirectory": "Repository"
+            },
+            "CommonBuiltInStruct": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Contract": {
+          "ProjectName": "EmployeeManagement.Contracts",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Contracts",
+          "RootNamespace": "EmployeeManagement.Contracts",
+          "Items": {
+            "ContractEnum": {
+              "RelativeDirectory": "Enums"
+            },
+            "ContractEntity": {
+              "RelativeDirectory": "Entities"
+            },
+            "ContractFilter": {
+              "RelativeDirectory": "Filters"
+            },
+            "ContractServiceInterface": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Dal": {
+          "ProjectName": "EmployeeManagement.Dal",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Dal",
+          "RootNamespace": "EmployeeManagement.Dal",
+          "Items": {
+            "DalDataContext": {
+              "RelativeDirectory": "."
+            },
+            "DalEntityConfiguration": {
+              "RelativeDirectory": "Configurations"
+            },
+            "DalJsonConverter": {
+              "RelativeDirectory": "Converters"
+            },
+            "DalValueConverter": {
+              "RelativeDirectory": "Converters"
+            },
+            "DalValueComparer": {
+              "RelativeDirectory": "Comparers"
+            },
+            "DalRepository": {
+              "RelativeDirectory": "Repository"
+            },
+            "DalInjectionExtensions": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Service": {
+          "ProjectName": "EmployeeManagement.Services",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Services",
+          "RootNamespace": "EmployeeManagement.Services",
+          "Items": {
+            "ServiceImplementation": {
+              "RelativeDirectory": "Impl"
+            },
+            "ServiceInjectionExtensions": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Controller": {
+          "ProjectName": "EmployeeManagement.Controllers",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Controllers",
+          "RootNamespace": "EmployeeManagement.Controllers",
+          "Items": {
+            "ControllerController": {
+              "RelativeDirectory": "Controllers"
+            },
+            "ControllerValidation": {
+              "RelativeDirectory": "Validation"
+            }
+          }
+        },
+        "Authentication": {
+          "ProjectName": "EmployeeManagement.Identity",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Identity",
+          "RootNamespace": "EmployeeManagement.Identity",
+          "Items": {
+            "AuthenticationModel": {
+              "RelativeDirectory": "Models"
+            },
+            "AuthenticationController": {
+              "RelativeDirectory": "Controllers"
+            },
+            "AuthenticationMigration": {
+              "RelativeDirectory": "Migrations"
+            },
+            "AuthenticationIdentityImplementation": {
+              "RelativeDirectory": "Impl"
+            },
+            "AuthenticationInjectionExtensions": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "API": {
+          "ProjectName": "EmployeeManagement.WebApi",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.WebApi",
+          "RootNamespace": "EmployeeManagement.WebApi",
+          "Items": {
+            "APIProgram": {
+              "RelativeDirectory": "Program"
+            }
+          }
+        }
+      }
+    }
+  },
+  "DbContextConnection": {
+    "DatabaseType": "SqlServer",
+    "ConnectionName": "172.25.13.1.EmployeeManage",
+    "ConnectionString": "eyJCb2R5IjoicG1RQ1Y1Z1BQZkUzWWllWVYzSDBmNURVM0lxSVJrQkdtSWQ5TlE3VWR5ZUFwdWNqeXBhUFhBdXlMVTAwNzhHandMY3RvV3J2T2k0RGhLekowbGNuNHY0Szg5cm1jZzJJVGZnMlx1MDAyQm4zTEJxRTB6TS9UZDVkdWtvdG9sSVpPMDZBZGFjWklmZ0gvdnU1QnB4aUVWMzNQS3c9PSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODYyNzQyMDgsIlNpZ25hdHVyZSI6IjZDQjc5NDY1NTY1REQ1MTM3ODhFREE0QTFCOTEwQUUzIn19"
+  },
+  "IdentityConnection": {
+    "DatabaseType": "Sqlite",
+    "ConnectionName": "data.db",
+    "ConnectionString": "eyJCb2R5IjoibHk4QUJrcnllM2VzeWZnak80MzlTbnQ3OHlcdTAwMkIxQldTWXkzUElvbmowQUdrPSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODYyNzQyMDgsIlNpZ25hdHVyZSI6Ijg3OTk3NTBBNDE4OEU4RDhGQTg0RjhBQ0I5QjdCMzgwIn19"
+  }
+}

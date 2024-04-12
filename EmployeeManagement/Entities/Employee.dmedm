@@ -1,0 +1,658 @@
+﻿{
+  "Type": "Entity",
+  "Version": 1,
+  "DisplayName": "Employee",
+  "Description": "Employee",
+  "DesignVersion": "1.0.0",
+  "BaseType": "BaseEntity",
+  "Fields": {
+    "FirstName": {
+      "DisplayName": "First Name",
+      "Description": "",
+      "Type": "String",
+      "DataType": "String",
+      "DefaultValueType": "Value",
+      "MaxLength": 20
+    },
+    "LastName": {
+      "DisplayName": "Last Name",
+      "Description": "",
+      "Type": "String",
+      "DataType": "String",
+      "DefaultValueType": "Value",
+      "MaxLength": 20
+    },
+    "FullName": {
+      "DisplayName": "Full Name",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "String",
+      "ComputeValue": "(Employee.FirstName + ' ') + Employee.LastName",
+      "ComputeType": "Expression"
+    },
+    "Gender": {
+      "DisplayName": "Gender",
+      "Description": "",
+      "Type": "Enum",
+      "DataType": "Gender",
+      "DefaultValueType": "Value"
+    },
+    "PhoneNumber": {
+      "DisplayName": "Phone Number",
+      "Description": "",
+      "Type": "String",
+      "DataType": "String",
+      "RegularExpressionError": "The Phone format is incorrect",
+      "RegularExpression": "^(\\+|00)[0-9]{1,4}[ ,-]?[0-9]{4,14}(?:x.+)?$",
+      "DefaultValueType": "Value",
+      "MaxLength": 50
+    },
+    "HireDate": {
+      "DisplayName": "Hire Date",
+      "Description": "",
+      "Type": "DateTime",
+      "DataType": "DateTime",
+      "DefaultValue": "Now() ",
+      "DefaultValueType": "Expression"
+    },
+    "TrialMonths": {
+      "DisplayName": "Trial Months",
+      "Description": "",
+      "Type": "Int32",
+      "DataType": "Int32",
+      "DefaultValue": "3",
+      "DefaultValueType": "Value",
+      "MaxValue": 36.0
+    },
+    "IsTrial": {
+      "DisplayName": "Is Trial",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "Boolean",
+      "ComputeValue": "DateDif(Employee.HireDate, Now(), 'M') < Employee.TrialMonths",
+      "ComputeType": "Expression"
+    },
+    "HomeAddress": {
+      "DisplayName": "HomeAddress",
+      "Description": "",
+      "Type": "Entity",
+      "DataType": "Address"
+    },
+    "Department": {
+      "Relationship": "ManyToOne",
+      "AssociatedField": "Employee",
+      "AutoGenerateForeignKeyField": true,
+      "ForeignKeyFields": [
+        {
+          "DataType": "Int32",
+          "ForeignKey": "DepartmentId",
+          "PrincipalKey": "Department.Id"
+        }
+      ],
+      "DisplayName": "Department",
+      "Description": "",
+      "Type": "Entity",
+      "DataType": "Department"
+    },
+    "Company": {
+      "IsComputeExecuteOnInsert": true,
+      "IsComputeExecuteOnUpdate": true,
+      "Relationship": "ManyToOne",
+      "AssociatedField": "Company.EmployeeList",
+      "AutoGenerateForeignKeyField": true,
+      "ForeignKeyFields": [
+        {
+          "DataType": "Int32",
+          "ForeignKey": "CompanyId",
+          "PrincipalKey": "Company.Id"
+        }
+      ],
+      "DeleteBehavior": "Cascade",
+      "DisplayName": "Company",
+      "Description": "",
+      "Type": "Entity",
+      "DataType": "Company"
+    },
+    "Manager": {
+      "Relationship": "ManyToOne",
+      "AssociatedField": "Department",
+      "AutoGenerateForeignKeyField": true,
+      "ForeignKeyFields": [
+        {
+          "IsNullable": true,
+          "DataType": "Int32",
+          "ForeignKey": "ManagerId",
+          "PrincipalKey": "Employee.Id"
+        }
+      ],
+      "DeleteBehavior": "SetNull",
+      "DisplayName": "Manager",
+      "Description": "",
+      "Type": "Entity",
+      "DataType": "Employee",
+      "IsNullable": true
+    },
+    "IsManager": {
+      "IsStorage": true,
+      "IsComputeExecuteOnInsert": true,
+      "IsComputeExecuteOnUpdate": true,
+      "DisplayName": "IsManager",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "Boolean",
+      "ComputeValue": "IsNull(Employee.Manager)",
+      "ComputeType": "Expression"
+    }
+  },
+  "Indexs": [],
+  "Filter": {
+    "Items": {
+      "GenericSearch": {
+        "DisplayName": "GenericSearch",
+        "Parameters": {
+          "Keywords": {
+            "Type": "String",
+            "DataType": "String",
+            "DisplayName": "Keywords"
+          },
+          "Phone": {
+            "Type": "String",
+            "DataType": "String",
+            "DisplayName": "Phone"
+          }
+        },
+        "Sources": [
+          {
+            "Source": "Employee",
+            "Items": [
+              {
+                "Type": "Field",
+                "Field": "Employee.PhoneNumber",
+                "Operation": "CONTAIN",
+                "Parameter": "Employee.GenericSearch.Phone",
+                "Items": []
+              },
+              {
+                "Relation": "AND",
+                "Type": "Scope",
+                "Items": [
+                  {
+                    "Type": "Field",
+                    "Field": "Employee.FirstName",
+                    "Operation": "CONTAIN",
+                    "Parameter": "Employee.GenericSearch.Keywords",
+                    "Items": []
+                  },
+                  {
+                    "Relation": "OR",
+                    "Type": "Field",
+                    "Field": "Employee.LastName",
+                    "Operation": "CONTAIN",
+                    "Parameter": "Employee.GenericSearch.Keywords",
+                    "Items": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "DepartmentUser": {
+        "DisplayName": "DepartmentUser",
+        "Parameters": {
+          "DepartmentId": {
+            "Type": "Int32",
+            "DataType": "Int32",
+            "DisplayName": "DepartmentId"
+          },
+          "Gender": {
+            "Type": "Enum",
+            "DataType": "Gender",
+            "DisplayName": "Gender"
+          },
+          "IsTrial": {
+            "Type": "Boolean",
+            "DataType": "Boolean",
+            "DisplayName": "Is Trial"
+          }
+        },
+        "Sources": [
+          {
+            "Source": "Employee",
+            "Items": [
+              {
+                "Type": "Field",
+                "Field": "Employee.DepartmentId",
+                "Operation": "EQ",
+                "Parameter": "Employee.DepartmentUser.DepartmentId",
+                "Items": []
+              },
+              {
+                "Relation": "AND",
+                "Type": "Field",
+                "Field": "Employee.Gender",
+                "Operation": "EQ",
+                "Parameter": "Employee.DepartmentUser.Gender",
+                "Items": []
+              },
+              {
+                "Relation": "AND",
+                "Type": "Expression",
+                "Expression": "(DateDif(Employee.HireDate, Now(), 'M') < Employee.TrialMonths) == Employee.DepartmentUser.IsTrial",
+                "Items": []
+              }
+            ]
+          }
+        ]
+      },
+      "ManagerFilter": {
+        "DisplayName": "ManagerFilter",
+        "Parameters": {
+          "IsManager": {
+            "Type": "Boolean",
+            "DataType": "Boolean",
+            "DisplayName": "IsManager",
+            "IsReadOnly": true,
+            "DefaultValue": "true"
+          },
+          "CompanyId": {
+            "Type": "Int32",
+            "DataType": "Int32",
+            "DisplayName": "CompanyId",
+            "IsRequired": true,
+            "RequiredError": "Please input the key of the Company"
+          }
+        },
+        "Sources": [
+          {
+            "Source": "Employee",
+            "Items": [
+              {
+                "Type": "Field",
+                "Field": "Employee.IsManager",
+                "Operation": "EQ",
+                "Parameter": "Employee.ManagerFilter.IsManager",
+                "Items": []
+              },
+              {
+                "Relation": "AND",
+                "Type": "Field",
+                "Field": "Employee.CompanyId",
+                "Operation": "EQ",
+                "Parameter": "Employee.ManagerFilter.CompanyId",
+                "Items": []
+              }
+            ]
+          }
+        ]
+      },
+      "EmployFilter": {
+        "DisplayName": "EmployFilter",
+        "Parameters": {
+          "CompanyName": {
+            "Type": "String",
+            "DataType": "String",
+            "DisplayName": "Company Name"
+          },
+          "DepartmentName": {
+            "Type": "String",
+            "DataType": "String",
+            "DisplayName": "Department Name"
+          },
+          "ManagerName": {
+            "Type": "String",
+            "DataType": "String",
+            "DisplayName": "Manager Name"
+          }
+        },
+        "Sources": [
+          {
+            "Source": "Employee",
+            "Items": [
+              {
+                "Type": "Field",
+                "Field": "Employee.Company.CompanyName",
+                "Operation": "CONTAIN",
+                "Parameter": "Employee.EmployFilter.CompanyName",
+                "Items": []
+              },
+              {
+                "Relation": "AND",
+                "Type": "Field",
+                "Field": "Employee.Department.DepartmentName",
+                "Operation": "CONTAIN",
+                "Parameter": "Employee.EmployFilter.DepartmentName",
+                "Items": []
+              },
+              {
+                "Relation": "AND",
+                "Type": "Scope",
+                "Items": [
+                  {
+                    "Type": "Field",
+                    "Field": "Employee.Manager.FirstName",
+                    "Operation": "CONTAIN",
+                    "Parameter": "Employee.EmployFilter.ManagerName",
+                    "Items": []
+                  },
+                  {
+                    "Relation": "OR",
+                    "Type": "Field",
+                    "Field": "Employee.Manager.LastName",
+                    "Operation": "CONTAIN",
+                    "Parameter": "Employee.EmployFilter.ManagerName",
+                    "Items": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "Service": {
+    "AuthorizationStategy": "$AspNetDefaultCategory",
+    "Items": [
+      {
+        "Name": "GetManagers",
+        "Type": "GetList",
+        "Description": "Get list data by filter",
+        "Filter": "ManagerFilter",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "GetManagers",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get list data by filter",
+          "Parameters": [
+            {
+              "Name": "ManagerFilter"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "Get",
+        "Type": "Get",
+        "Description": "Get single data by filter",
+        "Filter": "PrimaryKeyFilter",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": [
+              {
+                "Name": "Department",
+                "Value": "Employee.Department",
+                "Children": []
+              },
+              {
+                "Name": "Company",
+                "Value": "Employee.Company",
+                "Children": []
+              }
+            ]
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "Get",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get single data by filter",
+          "Parameters": [
+            {
+              "Name": "PrimaryKeyFilter"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "GetPage",
+        "Type": "GetPage",
+        "Description": "Get paged data by filter",
+        "Filter": "GenericSearch",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": [
+              {
+                "Name": "PhoneNumber",
+                "Value": "Replace(Employee.PhoneNumber, 5, 4, Rept('*', 4))",
+                "ValueType": "Expression",
+                "Children": []
+              }
+            ]
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "GetPage",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get paged data by filter",
+          "Parameters": [
+            {
+              "Name": "GenericSearch"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "GetEmployees",
+        "Type": "GetList",
+        "Description": "Get list data by filter",
+        "Filter": "EmployFilter",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": [
+              {
+                "Name": "PhoneNumber",
+                "Value": "Replace(Employee.PhoneNumber, 5, 4, Rept('*', 4))",
+                "ValueType": "Expression",
+                "Children": []
+              }
+            ]
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "GetEmployees",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get list data by filter",
+          "Parameters": [
+            {
+              "Name": "EmployFilter"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "GetDepartmentEmployees",
+        "Type": "GetPage",
+        "Description": "Get paged data by filter",
+        "Filter": "DepartmentUser",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": [
+              {
+                "Name": "PhoneNumber",
+                "Value": "Replace(Employee.PhoneNumber, 5, 4, Rept('*', 4))",
+                "ValueType": "Expression",
+                "Children": []
+              }
+            ]
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "GetDepartmentEmployees",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get paged data by filter",
+          "Parameters": [
+            {
+              "Name": "DepartmentUser"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "Add",
+        "Type": "Add",
+        "Description": "Add single data",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "Add",
+          "Method": "POST",
+          "Description": "Add single data",
+          "Parameters": [
+            {
+              "Name": "Employee",
+              "Type": "Entity",
+              "Form": "Body"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "Update",
+        "Type": "Update",
+        "Description": "Update single data",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "Update",
+          "Method": "PUT",
+          "Description": "Update single data",
+          "Parameters": [
+            {
+              "Name": "Employee",
+              "Type": "Entity",
+              "Form": "Body"
+            }
+          ]
+        }
+      },
+      {
+        "Name": "GetList",
+        "Type": "GetList",
+        "Description": "Get list data without filter",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [
+          {
+            "DocumentSource": "Employee",
+            "Items": [
+              {
+                "Name": "PhoneNumber",
+                "Value": "Replace(Employee.PhoneNumber, 5, 4, Rept('*', 4))",
+                "ValueType": "Expression",
+                "Children": []
+              }
+            ]
+          }
+        ],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "GetList",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get list data without filter",
+          "Parameters": []
+        }
+      },
+      {
+        "Name": "Delete",
+        "Type": "Delete",
+        "Description": "Delete single data",
+        "Filter": "PrimaryKeyFilter",
+        "QuerySorts": [
+          {
+            "DocumentSource": "Employee",
+            "Items": []
+          }
+        ],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Name": "Delete",
+          "Method": "DELETE",
+          "Description": "Delete single data",
+          "Parameters": [
+            {
+              "Name": "PrimaryKeyFilter"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "References": {
+    "BaseEntity": "Bases\\BaseEntity.dmedm",
+    "Gender": "..\\Enums\\Gender.dme",
+    "Address": "Bases\\Address.dmedm",
+    "Department": "Department.dmedm",
+    "Company": "Company.dmedm"
+  }
+}

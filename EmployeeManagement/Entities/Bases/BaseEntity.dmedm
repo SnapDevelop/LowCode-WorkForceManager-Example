@@ -1,0 +1,69 @@
+﻿{
+  "Type": "Entity",
+  "Version": 1,
+  "DisplayName": "BaseEntity",
+  "Description": "BaseEntity",
+  "DesignVersion": "1.0.0",
+  "IsBase": true,
+  "Fields": {
+    "Id": {
+      "IsKey": true,
+      "DisplayName": "Id",
+      "Description": "Data unique identifier.",
+      "Type": "Int32",
+      "DataType": "Int32",
+      "IsRequired": true,
+      "DefaultValueType": "Value"
+    },
+    "Creator": {
+      "IsStorage": true,
+      "IsComputeExecuteOnInsert": true,
+      "DisplayName": "Creator",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "String",
+      "ComputeValue": "$ICurrentUser.GetUserId() ",
+      "ComputeType": "Expression"
+    },
+    "CreateTime": {
+      "IsStorage": true,
+      "IsComputeExecuteOnInsert": true,
+      "DisplayName": "CreateTime",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "DateTime",
+      "ComputeValue": "UtcNow() ",
+      "ComputeType": "Expression"
+    },
+    "Updator": {
+      "IsStorage": true,
+      "IsComputeExecuteOnInsert": true,
+      "IsComputeExecuteOnUpdate": true,
+      "DisplayName": "Updator",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "String",
+      "ComputeValue": "$ICurrentUser.GetUserId() ",
+      "ComputeType": "Expression"
+    },
+    "UpdateTime": {
+      "IsStorage": true,
+      "IsComputeExecuteOnInsert": true,
+      "IsComputeExecuteOnUpdate": true,
+      "DisplayName": "UpdateTime",
+      "Description": "",
+      "Type": "Compute",
+      "DataType": "DateTime",
+      "ComputeValue": "UtcNow() ",
+      "ComputeType": "Expression"
+    }
+  },
+  "Indexs": [],
+  "Filter": {
+    "Items": {}
+  },
+  "Service": {
+    "Items": []
+  },
+  "References": {}
+}

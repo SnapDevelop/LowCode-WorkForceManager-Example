@@ -1,0 +1,45 @@
+﻿{
+  "Type": "Entity",
+  "Version": 1,
+  "DisplayName": "Address",
+  "Description": "Address",
+  "DesignVersion": "1.0.0",
+  "IsOwned": true,
+  "Fields": {
+    "City": {
+      "DisplayName": "City",
+      "Description": "",
+      "Type": "String",
+      "DataType": "String",
+      "IsRequired": true,
+      "DefaultValueType": "Value",
+      "MaxLength": 20
+    },
+    "Town": {
+      "DisplayName": "Town",
+      "Description": "",
+      "Type": "String",
+      "DataType": "String",
+      "DefaultValueType": "Value",
+      "IsNullable": true,
+      "MaxLength": 20
+    },
+    "Street": {
+      "DisplayName": "Street",
+      "Description": "",
+      "Type": "String",
+      "DataType": "String",
+      "IsRequired": true,
+      "DefaultValueType": "Value",
+      "MaxLength": 200
+    }
+  },
+  "Indexs": [],
+  "Filter": {
+    "Items": {}
+  },
+  "Service": {
+    "Items": []
+  },
+  "References": {}
+}
