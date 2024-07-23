@@ -1,0 +1,115 @@
+{
+  "id": "2bb19ee361954f2fa5385a36830d68d1",
+  "widget": "sdq",
+  "version": 0,
+  "props": {
+    "name": "CompanyStatistics",
+    "displayname": "CompanyStatistics",
+    "description": "公司统计",
+    "controllerRoute": "api/[controller]",
+    "authorizationStategy": "$ParentCategory",
+    "sources": [
+      {
+        "alias": "Company",
+        "pointX": 0,
+        "pointY": 0,
+        "isExpanded": true
+      }
+    ],
+    "groups": [
+      {
+        "name": "CompanyCompanySize",
+        "expression": "$(Field)Company.CompanySize"
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "group_field_id_CompanyCompanySize",
+      "widget": "field",
+      "props": {
+        "name": "CompanyCompanySize",
+        "value": "$(Field)CompanyStatistics.Group.Key.CompanyCompanySize",
+        "displayName": "CompanyCompanySize",
+        "dataType": "CompanySize"
+      }
+    },
+    {
+      "id": "8dc9aa3c68b382b279",
+      "widget": "field",
+      "props": {
+        "name": "CompanySize",
+        "value": "$(Expression)Count(CompanyStatistics.Group.Company) ",
+        "displayName": "CompanySize",
+        "dataType": "Int32"
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "8dc9a851df34898385",
+      "widget": "filter",
+      "props": {
+        "name": "CityFilter",
+        "parameters": [
+          {
+            "id": "8dc9a851df348fb386",
+            "name": "City",
+            "dataType": "String",
+            "isNullable": true,
+            "displayName": "City",
+            "isCollection": true
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": "8dc9a851df34996388",
+          "expression": "$(Field)Company.City",
+          "parameter": "CompanyStatistics.CityFilter.City",
+          "relation": "None",
+          "operation": "IN",
+          "type": "Field",
+          "scopes": []
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "8dc9a85357da121397",
+      "widget": "service",
+      "props": {
+        "name": "GetListByCityFilter",
+        "isEnableApi": true,
+        "description": "通过过滤器获取列表数据。",
+        "isResultCollection": true,
+        "parameters": [
+          {
+            "name": "CompanyStatistics.CityFilter",
+            "type": "Filter",
+            "from": "Query"
+          }
+        ],
+        "resultSorts": [
+          {
+            "source": "$(Document)CompanyStatistics"
+          }
+        ],
+        "sourceSorts": [
+          {
+            "source": "CompanyStatistics"
+          }
+        ],
+        "api": {
+          "name": "GetListByCityFilter",
+          "method": "GET",
+          "authorizationStategy": "$ParentCategory"
+        }
+      }
+    }
+  ],
+  "references": {
+    "Company": "..\\Entities\\Company.sde"
+  }
+}

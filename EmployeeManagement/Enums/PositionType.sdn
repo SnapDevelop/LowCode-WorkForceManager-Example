@@ -1,0 +1,29 @@
+{
+  "Id": "65852ffd0c2d4ea88585dccf62a98836",
+  "Type": "Enum",
+  "Version": 1,
+  "DisplayName": "PositionType",
+  "Description": "PositionType",
+  "DesignVersion": "3.0.0",
+  "Fields": {
+    "HR": {
+      "Id": "ec117a4b86c543539068bae63d774f29",
+      "Value": "",
+      "DisplayName": "人事经理",
+      "Snippets": []
+    },
+    "MR": {
+      "Id": "bd7daa3e8da64065882fc139460527d4",
+      "Value": "",
+      "DisplayName": "经理",
+      "Snippets": []
+    },
+    "Header": {
+      "Id": "6ed16eeac0e5423689c90396d03e23f8",
+      "Value": "",
+      "DisplayName": "总经理",
+      "Snippets": []
+    }
+  },
+  "Snippets": []
+}

@@ -1,9 +1,12 @@
 {
-  "ORMVersion": "EFCore6",
-  "FrameworkVersion": "",
+  "ORMVersion": "EFCore8",
+  "FrameworkVersion": "Net8",
   "IsOverride": true,
+  "ChangeTrackingStrategy": "",
   "Templates": [
-    "EFCore"
+    "EFCore",
+    "CompositeQuery",
+    "Vue"
   ],
   "Projects": {
     "EmployeeManagement": {
@@ -24,6 +27,12 @@
             "CommonRepository": {
               "RelativeDirectory": "Repository"
             },
+            "CommonSerialNumber": {
+              "RelativeDirectory": "SerialNumber"
+            },
+            "CommonJsonConverter": {
+              "RelativeDirectory": "Converters"
+            },
             "CommonBuiltInStruct": {
               "RelativeDirectory": "."
             }
@@ -39,6 +48,9 @@
             },
             "ContractEntity": {
               "RelativeDirectory": "Entities"
+            },
+            "ContractModel": {
+              "RelativeDirectory": "Models"
             },
             "ContractFilter": {
               "RelativeDirectory": "Filters"
@@ -59,9 +71,6 @@
             "DalEntityConfiguration": {
               "RelativeDirectory": "Configurations"
             },
-            "DalJsonConverter": {
-              "RelativeDirectory": "Converters"
-            },
             "DalValueConverter": {
               "RelativeDirectory": "Converters"
             },
@@ -70,6 +79,9 @@
             },
             "DalRepository": {
               "RelativeDirectory": "Repository"
+            },
+            "DalSerialNumberGenerator": {
+              "RelativeDirectory": "."
             },
             "DalInjectionExtensions": {
               "RelativeDirectory": "."
@@ -102,35 +114,35 @@
             }
           }
         },
-        "Authentication": {
-          "ProjectName": "EmployeeManagement.Identity",
-          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Identity",
-          "RootNamespace": "EmployeeManagement.Identity",
-          "Items": {
-            "AuthenticationModel": {
-              "RelativeDirectory": "Models"
-            },
-            "AuthenticationController": {
-              "RelativeDirectory": "Controllers"
-            },
-            "AuthenticationMigration": {
-              "RelativeDirectory": "Migrations"
-            },
-            "AuthenticationIdentityImplementation": {
-              "RelativeDirectory": "Impl"
-            },
-            "AuthenticationInjectionExtensions": {
-              "RelativeDirectory": "."
-            }
-          }
-        },
         "API": {
           "ProjectName": "EmployeeManagement.WebApi",
           "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.WebApi",
           "RootNamespace": "EmployeeManagement.WebApi",
           "Items": {
             "APIProgram": {
-              "RelativeDirectory": "Program"
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Vue": {
+          "ProjectName": "EmployeeManagement.Vue",
+          "RelativeDirectory": "..\\SourceCode\\EmployeeManagement.Vue",
+          "RootNamespace": "EmployeeManagement.Vue",
+          "Items": {
+            "VueApi": {
+              "RelativeDirectory": "src\\service"
+            },
+            "VueEnum": {
+              "RelativeDirectory": "src\\enums"
+            },
+            "VueRouter": {
+              "RelativeDirectory": "src\\router"
+            },
+            "VueView": {
+              "RelativeDirectory": "src\\views"
+            },
+            "VueLocales": {
+              "RelativeDirectory": "src\\locales"
             }
           }
         }
@@ -138,13 +150,13 @@
     }
   },
   "DbContextConnection": {
-    "DatabaseType": "SqlServer",
-    "ConnectionName": "172.25.13.1.EmployeeManage",
-    "ConnectionString": "eyJCb2R5IjoicG1RQ1Y1Z1BQZkUzWWllWVYzSDBmNURVM0lxSVJrQkdtSWQ5TlE3VWR5ZUFwdWNqeXBhUFhBdXlMVTAwNzhHandMY3RvV3J2T2k0RGhLekowbGNuNHY0Szg5cm1jZzJJVGZnMlx1MDAyQm4zTEJxRTB6TS9UZDVkdWtvdG9sSVpPMDZBZGFjWklmZ0gvdnU1QnB4aUVWMzNQS3c9PSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODYyNzQyMDgsIlNpZ25hdHVyZSI6IjZDQjc5NDY1NTY1REQ1MTM3ODhFREE0QTFCOTEwQUUzIn19"
+    "DatabaseType": "Sqlite",
+    "ConnectionName": "data.db",
+    "ConnectionString": "eyJCb2R5IjoiNHU3V0VFNWRZNkZLMUJmY0g1Sm1KMTJUc0N0d0JUOXlpczd0ak1tTGNTWT0iLCJIZWFkZXIiOnsiVGltZXN0YW1wIjoxNzIxNzEwNTg5LCJTaWduYXR1cmUiOiIzMDM0OTg1ODQxQzMzRDAzQTg4QzhFNUMxNzUxRERCQiJ9fQ=="
   },
   "IdentityConnection": {
     "DatabaseType": "Sqlite",
-    "ConnectionName": "data.db",
-    "ConnectionString": "eyJCb2R5IjoibHk4QUJrcnllM2VzeWZnak80MzlTbnQ3OHlcdTAwMkIxQldTWXkzUElvbmowQUdrPSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE2ODYyNzQyMDgsIlNpZ25hdHVyZSI6Ijg3OTk3NTBBNDE4OEU4RDhGQTg0RjhBQ0I5QjdCMzgwIn19"
+    "ConnectionName": "identity.db",
+    "ConnectionString": "eyJCb2R5IjoiNVZEL0FsYUdzUUdjamxTaWR4QTdad2RSNk1TOHYzNEtXSUVNVDZpaENGbz0iLCJIZWFkZXIiOnsiVGltZXN0YW1wIjoxNzIxNzEwNTg5LCJTaWduYXR1cmUiOiI2NzNCQkVFNDQ1NzVDNUE2NkQ3Nzg5NzI2ODE0OTIwMCJ9fQ=="
   }
 }

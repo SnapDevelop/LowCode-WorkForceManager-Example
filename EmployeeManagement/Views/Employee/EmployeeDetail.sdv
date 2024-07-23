@@ -1,0 +1,1637 @@
+{
+  "id": "page_8dc9b6b14b30751989",
+  "widget": "page",
+  "type": "page",
+  "designVersion": "1.0.0",
+  "version": 1,
+  "props": {
+    "ref": "page_8dc9b6b14b30751989",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": [
+      {
+        "id": "8dc9b6b14b308d4990",
+        "name": "Id",
+        "dataType": "String",
+        "isCollection": false
+      },
+      {
+        "id": "6b8ad1259d30d00",
+        "name": "companyid",
+        "dataType": "String",
+        "isCollection": false,
+        "isNullable": false
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "modal_39e727e58eea620",
+      "widget": "modal",
+      "props": {
+        "ref": "modal_resign",
+        "footer": [
+          {
+            "id": "button_58e46e2f8c7ac40",
+            "widget": "button",
+            "props": {
+              "ref": "button_58e46e2f8c7ac40",
+              "label": "确认",
+              "type": "primary"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)include_6e37c6ed22527c0.page.button_2a72c0509420b80.onClick"
+              }
+            }
+          },
+          {
+            "id": "button_b7a7cf8493fce00",
+            "widget": "button",
+            "props": {
+              "ref": "button_b7a7cf8493fce00",
+              "label": "取消"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)modal_39e727e58eea620.close"
+              }
+            }
+          }
+        ],
+        "title": {
+          "type": "string",
+          "value": "办理离职"
+        }
+      },
+      "children": [
+        {
+          "id": "include_6e37c6ed22527c0",
+          "widget": "include",
+          "props": {
+            "ref": "include_deb14fe1e115f00",
+            "page": "$(Document)EmployeeResign",
+            "params": [
+              {
+                "id": "90391c32ad80d80",
+                "name": "$(VParameter)EmployeeResign.bd99a7f2fd0d180.employeeid",
+                "value": "$(Props)8dc9b6b14b308d4990"
+              }
+            ]
+          },
+          "styles": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "modal_549f38873c55d40",
+      "widget": "modal",
+      "props": {
+        "ref": "modal_edit",
+        "footer": [
+          {
+            "id": "button_399865c48997a80",
+            "widget": "button",
+            "props": {
+              "ref": "button_399865c48997a80",
+              "label": "确认",
+              "type": "primary"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)include_90843b11ead7e00.page.button_57b9baca5787680.onClick"
+              }
+            }
+          },
+          {
+            "id": "button_3519b4a77bdb480",
+            "widget": "button",
+            "props": {
+              "ref": "button_3519b4a77bdb480",
+              "label": "取消"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)modal_549f38873c55d40.close"
+              }
+            }
+          }
+        ],
+        "width": 1400,
+        "title": {
+          "type": "string",
+          "value": ""
+        },
+        "keyboard": false,
+        "destroyOnClose": false,
+        "centered": true,
+        "hide": false
+      },
+      "children": [
+        {
+          "id": "include_90843b11ead7e00",
+          "widget": "include",
+          "props": {
+            "ref": "include_9e5e3296a4b1500",
+            "page": "$(Document)EmployeeUpdate",
+            "params": [
+              {
+                "id": "d09178cf8308f80",
+                "name": "$(VParameter)EmployeeUpdate.56657f5ab11e9c0.employeeid",
+                "value": "$(Props)8dc9b6b14b308d4990"
+              },
+              {
+                "id": "c123fba5747ec80",
+                "name": "$(VParameter)EmployeeUpdate.d1ced0a2d8da48.companyid",
+                "value": "$(Props)6b8ad1259d30d00"
+              }
+            ]
+          },
+          "styles": {
+            "marginTop": "30px"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "modal_31e3373fa9f85a0",
+      "widget": "modal",
+      "props": {
+        "ref": "modal_educationadd",
+        "footer": [
+          {
+            "id": "button_d52dec9dfdcc700",
+            "widget": "button",
+            "props": {
+              "ref": "button_d52dec9dfdcc700",
+              "label": "确认",
+              "type": "primary"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)include_bb192b19ec30a00.page.button_8dca1bdf02e6ffe490.onClick"
+              }
+            }
+          },
+          {
+            "id": "button_f821f327b52d200",
+            "widget": "button",
+            "props": {
+              "ref": "button_f821f327b52d200",
+              "label": "取消"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)modal_31e3373fa9f85a0.close"
+              }
+            }
+          }
+        ],
+        "title": {
+          "type": "string",
+          "value": ""
+        }
+      },
+      "children": [
+        {
+          "id": "include_bb192b19ec30a00",
+          "widget": "include",
+          "props": {
+            "ref": "include_c7a436ab2758080",
+            "page": "$(Document)EducationAdd",
+            "params": [
+              {
+                "id": "57e06f915282880",
+                "name": "$(VParameter)EducationAdd.b13a163ddf1c700.employeeid",
+                "value": "$(Props)8dc9b6b14b308d4990"
+              }
+            ]
+          },
+          "styles": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "modal_45a85fa8f314240",
+      "widget": "modal",
+      "props": {
+        "ref": "modal_jobadd",
+        "footer": [
+          {
+            "id": "button_4c507d8ed2f8380",
+            "widget": "button",
+            "props": {
+              "ref": "button_4c507d8ed2f8380",
+              "label": "确认",
+              "type": "primary"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)include_3fe92949fdbf9c0.page.button_8dca1c554476e10936.onClick"
+              }
+            }
+          },
+          {
+            "id": "button_744178200427f80",
+            "widget": "button",
+            "props": {
+              "ref": "button_744178200427f80",
+              "label": "取消"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)modal_45a85fa8f314240.close"
+              }
+            }
+          }
+        ],
+        "title": {
+          "type": "string",
+          "value": ""
+        }
+      },
+      "children": [
+        {
+          "id": "include_3fe92949fdbf9c0",
+          "widget": "include",
+          "props": {
+            "ref": "include_bf7a824341c6100",
+            "page": "$(Document)JobAdd",
+            "params": [
+              {
+                "id": "106889fc1e9c110",
+                "name": "$(VParameter)JobAdd.5a4e06a5e721cc.employeeid",
+                "value": "$(Props)8dc9b6b14b308d4990"
+              }
+            ]
+          },
+          "styles": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "card_27528ef36298860",
+      "widget": "card",
+      "props": {
+        "ref": "card_789d60a5140f580",
+        "title": {
+          "type": "string",
+          "value": ""
+        },
+        "extra": [],
+        "hideActions": true,
+        "size": "default"
+      },
+      "styles": {},
+      "children": [
+        {
+          "id": "row_50dbcd5262b4f4",
+          "widget": "row",
+          "props": {
+            "ref": "row_50dbcd5262b4f4"
+          },
+          "children": [
+            {
+              "id": "col_60a50015e690200",
+              "widget": "col",
+              "props": {
+                "ref": "col_60a50015e690200",
+                "width": "${span}4"
+              },
+              "children": [
+                {
+                  "id": "grid_63e39bf6b299f00",
+                  "widget": "grid",
+                  "props": {
+                    "ref": "grid_f0ebc6a96437c00",
+                    "colNum": 1,
+                    "rowNum": 3
+                  },
+                  "styles": {},
+                  "children": [
+                    {
+                      "id": "row_2314ec902197cc0",
+                      "widget": "row",
+                      "props": {
+                        "ref": "row_2314ec902197cc0",
+                        "grid": true,
+                        "gutter": {
+                          "enabled": true,
+                          "value": [
+                            0,
+                            0
+                          ]
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": "col_83353b9383e9280",
+                          "widget": "col",
+                          "props": {
+                            "ref": "col_83353b9383e9280"
+                          },
+                          "children": [
+                            {
+                              "id": "row_5606cc7683f8e00",
+                              "widget": "row",
+                              "props": {
+                                "ref": "row_5606cc7683f8e00"
+                              },
+                              "children": [
+                                {
+                                  "id": "col_82e388398270d00",
+                                  "widget": "col",
+                                  "props": {
+                                    "ref": "col_82e388398270d00"
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "image_8af31f765f1ac00",
+                                      "widget": "image",
+                                      "props": {
+                                        "ref": "image_54105ce7eeaefc0",
+                                        "value": "$(onLoad)Employee.Get.Avatar"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "col_2d592c600303640",
+                                  "widget": "col",
+                                  "props": {
+                                    "ref": "col_2d592c600303640"
+                                  },
+                                  "children": [
+                                    {
+                                      "id": "grid_e3aacf799b98100",
+                                      "widget": "grid",
+                                      "props": {
+                                        "ref": "grid_302d1bdb793a220",
+                                        "colNum": 1,
+                                        "rowNum": 3
+                                      },
+                                      "styles": {
+                                        "marginTop": "10px",
+                                        "marginBottom": "10px"
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "row_217b6f5bb940b40",
+                                          "widget": "row",
+                                          "props": {
+                                            "ref": "row_217b6f5bb940b40",
+                                            "grid": true,
+                                            "gutter": {
+                                              "enabled": true,
+                                              "value": [
+                                                0,
+                                                0
+                                              ]
+                                            }
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "col_e49a52e5e68c980",
+                                              "widget": "col",
+                                              "props": {
+                                                "ref": "col_e49a52e5e68c980"
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "title_d131ce99e231f0",
+                                                  "widget": "title",
+                                                  "props": {
+                                                    "ref": "title_40733d740827680",
+                                                    "level": 4,
+                                                    "value": "$(onLoad)Employee.Get.FullName"
+                                                  },
+                                                  "styles": {},
+                                                  "children": []
+                                                },
+                                                {
+                                                  "id": "tag_d161a251af67880",
+                                                  "widget": "tag",
+                                                  "props": {
+                                                    "ref": "tag_status",
+                                                    "color": "#0000FFFF",
+                                                    "value": "$(onLoad)Employee.Get.Status"
+                                                  },
+                                                  "styles": {
+                                                    "marginLeft": "5px"
+                                                  },
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "row_a8808e0b27c7280",
+                                          "widget": "row",
+                                          "props": {
+                                            "ref": "row_a8808e0b27c7280",
+                                            "grid": true,
+                                            "gutter": {
+                                              "enabled": true,
+                                              "value": [
+                                                0,
+                                                0
+                                              ]
+                                            }
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "col_b7cb95eb1c8f100",
+                                              "widget": "col",
+                                              "props": {
+                                                "ref": "col_b7cb95eb1c8f100"
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "divider_39f0e1d3827aa60",
+                                                  "widget": "divider",
+                                                  "props": {
+                                                    "ref": "divider_e4dd8e421a30980",
+                                                    "title": {
+                                                      "type": "string",
+                                                      "value": ""
+                                                    },
+                                                    "dashed": true
+                                                  },
+                                                  "styles": {},
+                                                  "children": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "row_86ea67212581880",
+                                          "widget": "row",
+                                          "props": {
+                                            "ref": "row_86ea67212581880",
+                                            "grid": true,
+                                            "gutter": {
+                                              "enabled": true,
+                                              "value": [
+                                                0,
+                                                0
+                                              ]
+                                            }
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "col_b16a26f1813ed80",
+                                              "widget": "col",
+                                              "props": {
+                                                "ref": "col_b16a26f1813ed80"
+                                              },
+                                              "children": [
+                                                {
+                                                  "id": "text_2ccf81f174c6a60",
+                                                  "widget": "text",
+                                                  "props": {
+                                                    "ref": "text_1a31e60aa206d50",
+                                                    "textType": {
+                                                      "custom": false,
+                                                      "type": "default"
+                                                    },
+                                                    "value": "上司：",
+                                                    "prefix": ""
+                                                  },
+                                                  "styles": {},
+                                                  "children": []
+                                                },
+                                                {
+                                                  "id": "text_55b231de3ae9740",
+                                                  "widget": "text",
+                                                  "props": {
+                                                    "ref": "text_6fa493234fe8c40",
+                                                    "textType": {
+                                                      "custom": false,
+                                                      "type": "default"
+                                                    },
+                                                    "value": "$(onLoad)Employee.Get.Manager.FullName"
+                                                  },
+                                                  "styles": {},
+                                                  "children": [],
+                                                  "events": {
+                                                    "onClick": {
+                                                      "params": []
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "row_f0203e97cb3ab00",
+                      "widget": "row",
+                      "props": {
+                        "ref": "row_f0203e97cb3ab00",
+                        "grid": true,
+                        "gutter": {
+                          "enabled": true,
+                          "value": [
+                            0,
+                            0
+                          ]
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": "col_40e8576b307d2c0",
+                          "widget": "col",
+                          "props": {
+                            "ref": "col_40e8576b307d2c0"
+                          },
+                          "children": [
+                            {
+                              "id": "divider_e245d500fd4c180",
+                              "widget": "divider",
+                              "props": {
+                                "ref": "divider_e78a3325e427180",
+                                "title": {
+                                  "type": "string",
+                                  "value": ""
+                                },
+                                "dashed": true
+                              },
+                              "styles": {},
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "row_9615fca0f179380",
+                      "widget": "row",
+                      "props": {
+                        "ref": "row_9615fca0f179380",
+                        "grid": true,
+                        "gutter": {
+                          "enabled": true,
+                          "value": [
+                            0,
+                            0
+                          ]
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": "col_903c938061af000",
+                          "widget": "col",
+                          "props": {
+                            "ref": "col_903c938061af000"
+                          },
+                          "children": [
+                            {
+                              "id": "descriptionList_e16aa0ad649d080",
+                              "widget": "descriptionList",
+                              "props": {
+                                "ref": "descriptionList_55e426db9e8f5c0",
+                                "descriptionsItems": [
+                                  {
+                                    "label": "学校",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_4b901156d777880",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_4b901156d777880",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.EducateSchool",
+                                          "prefix": "antdv://HomeOutlined"
+                                        },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "职位",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_f8d11a0c4cf7080",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_ba5255d67ea0d80",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.Postion",
+                                          "prefix": "antdv://TeamOutlined"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "邮箱",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_890e08ad0c27700",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_2b6ce3d1c486360",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.Email",
+                                          "prefix": "antdv://MailOutlined"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "手机号码",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_d60ef18ada1838",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_d0f9640a5432a80",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.PhoneNumber",
+                                          "prefix": "antdv://PhoneOutlined"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "入职时间",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_bd7d89fd4f18880",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_5a84ebe43aa0e80",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.HireDate",
+                                          "prefix": "antdv://FieldTimeOutlined"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "layout": "horizontal",
+                                "column": 1,
+                                "colon": true,
+                                "bordered": false,
+                                "size": "small"
+                              },
+                              "styles": {
+                                "marginBottom": "15px"
+                              },
+                              "children": []
+                            },
+                            {
+                              "id": "button_345516984877900",
+                              "widget": "button",
+                              "props": {
+                                "ref": "button_e88a9f1a847bd80",
+                                "htmlType": "button",
+                                "icon": "antdv://EditFilled",
+                                "label": "编辑",
+                                "size": "small",
+                                "type": "primary",
+                                "shape": "round"
+                              },
+                              "styles": {},
+                              "children": [],
+                              "events": {
+                                "onClick": {
+                                  "type": "openModalWindow",
+                                  "component": "modal_549f38873c55d40"
+                                }
+                              }
+                            },
+                            {
+                              "id": "button_9c11b819e1d0000",
+                              "widget": "button",
+                              "props": {
+                                "ref": "button_ea45534970e7d80",
+                                "htmlType": "button",
+                                "shape": "round",
+                                "icon": "antdv://AlertFilled",
+                                "label": "办理离职",
+                                "danger": true,
+                                "type": "primary",
+                                "size": "small"
+                              },
+                              "styles": {
+                                "flexBasis": "nullpx",
+                                "marginLeft": "5px"
+                              },
+                              "children": [],
+                              "events": {
+                                "onClick": {
+                                  "type": "openModalWindow",
+                                  "component": "modal_39e727e58eea620"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "styles": {}
+            },
+            {
+              "id": "col_11a7eccf98d69b0",
+              "widget": "col",
+              "props": {
+                "ref": "col_2b885eaa6e81d40",
+                "width": "${span}1"
+              },
+              "styles": {
+                "height": "100%"
+              },
+              "children": [
+                {
+                  "id": "divider_fda8f6c05c69480",
+                  "widget": "divider",
+                  "props": {
+                    "ref": "divider_47e79d792372480",
+                    "title": {
+                      "type": "string",
+                      "value": ""
+                    },
+                    "type": "vertical"
+                  },
+                  "styles": {
+                    "height": "900px"
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "col_9846429b197200",
+              "widget": "col",
+              "props": {
+                "ref": "col_9846429b197200"
+              },
+              "children": [
+                {
+                  "id": "grid_8b34a9be6fbd500",
+                  "widget": "grid",
+                  "props": {
+                    "ref": "grid_b28891bef0abc00",
+                    "rowNum": 2,
+                    "colNum": 1
+                  },
+                  "styles": {},
+                  "children": [
+                    {
+                      "id": "row_ef04649d01b5500",
+                      "widget": "row",
+                      "props": {
+                        "ref": "row_ef04649d01b5500",
+                        "grid": true,
+                        "gutter": {
+                          "enabled": true,
+                          "value": [
+                            0,
+                            0
+                          ]
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": "col_7e2399d9761d700",
+                          "widget": "col",
+                          "props": {
+                            "ref": "col_7e2399d9761d700"
+                          },
+                          "children": [
+                            {
+                              "id": "title_5d050eb6f748cc0",
+                              "widget": "title",
+                              "props": {
+                                "ref": "title_a1e1b61f491c980",
+                                "level": 4,
+                                "value": "基本信息"
+                              },
+                              "styles": {},
+                              "children": []
+                            },
+                            {
+                              "id": "descriptionList_924e695f8405480",
+                              "widget": "descriptionList",
+                              "props": {
+                                "ref": "descriptionList_198ebdf5909af60",
+                                "descriptionsItems": [
+                                  {
+                                    "label": "性别",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "tag_6e4cb69b435d5c0",
+                                        "widget": "tag",
+                                        "props": {
+                                          "ref": "tag_gender",
+                                          "value": "$(onLoad)Employee.Get.Gender"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "身份证号码",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_45f77222714bf40",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_1ea329f0d877d10",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.IdCard",
+                                          "prefix": "antdv://IdcardOutlined",
+                                          "copyable": true
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "出生日期",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_9525483ec23b680",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_38225cfd95f63e0",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.BirthDay"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "最高学历",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "badge_99f60635d9c6400",
+                                        "widget": "badge",
+                                        "styles": {
+                                          "width": "100%"
+                                        },
+                                        "props": {
+                                          "ref": "badge_99f60635d9c6400",
+                                          "value": "$(onLoad)Employee.Get.Degree"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "毕业时间",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_81c398d36743a80",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_5d4570fae3b5bc0",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.EducateDate"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "所属部门",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_d45a8a8f64b0300",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_56a2acc5cd55800",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.Department.DepartmentName"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "创建时间",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_d044c272b7b9780",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_aa8067f8e8b8f00",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.CreateTime"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "label": "更新时间",
+                                    "span": 1,
+                                    "hide": false,
+                                    "renders": [
+                                      {
+                                        "id": "text_8430928f89fc180",
+                                        "widget": "text",
+                                        "props": {
+                                          "ref": "text_73cc2e2082ece00",
+                                          "binding": {
+                                            "value": "text"
+                                          },
+                                          "value": "$(onLoad)Employee.Get.UpdateTime"
+                                        },
+                                        "styles": {},
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "column": 3,
+                                "layout": "horizontal",
+                                "size": "small",
+                                "colon": true
+                              },
+                              "styles": {
+                                "marginTop": "20px"
+                              },
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "row_d5043add7f10600",
+                      "widget": "row",
+                      "props": {
+                        "ref": "row_d5043add7f10600",
+                        "grid": true,
+                        "gutter": {
+                          "enabled": true,
+                          "value": [
+                            0,
+                            0
+                          ]
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": "col_156625225506310",
+                          "widget": "col",
+                          "props": {
+                            "ref": "col_156625225506310"
+                          },
+                          "children": [
+                            {
+                              "id": "tableContainer_d5fe91aff097500",
+                              "widget": "tableContainer",
+                              "props": {
+                                "ref": "tableContainer_bd02e65e7848b80",
+                                "title": {
+                                  "type": "string",
+                                  "value": "教育经历"
+                                },
+                                "request": {
+                                  "name": "$(Api)Education.GetPageByEmployeeFilter",
+                                  "params": {
+                                    "EmployeeId": "$(Props)8dc9b6b14b308d4990"
+                                  }
+                                },
+                                "search": {
+                                  "col": {
+                                    "width": "${span}8",
+                                    "offset": 0
+                                  },
+                                  "showExpand": false,
+                                  "displayRow": 1,
+                                  "filter": [],
+                                  "hideForm": true,
+                                  "hideSearchActions": false
+                                },
+                                "columns": [
+                                  {
+                                    "hide": true,
+                                    "title": "Id",
+                                    "dataIndex": "$(Field)Education.Id",
+                                    "render": {
+                                      "id": "text_f986786b573dd80",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)Education.Id",
+                                        "ref": "text_fce348250cc5100"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "学校",
+                                    "dataIndex": "$(Field)Education.School",
+                                    "render": {
+                                      "id": "text_ba9e80f21d69a00",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)Education.School",
+                                        "ref": "text_d14d2d4f8e0e680"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "起始日期",
+                                    "dataIndex": "$(Field)Education.StartDate",
+                                    "render": {
+                                      "id": "text_827e034c7e4a400",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)Education.StartDate",
+                                        "ref": "text_8d46466bbc08580"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "结束日期",
+                                    "dataIndex": "$(Field)Education.EndDate",
+                                    "render": {
+                                      "id": "text_774e0b29a34ce40",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)Education.EndDate",
+                                        "ref": "text_74a2c5847497140"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "专业",
+                                    "dataIndex": "$(Field)Education.Major",
+                                    "render": {
+                                      "id": "text_915db9a95995180",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)Education.Major",
+                                        "ref": "text_96c985cbf043780"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "学历",
+                                    "dataIndex": "$(Field)Education.Degree",
+                                    "render": {
+                                      "id": "tag_26a599ab343bc00",
+                                      "widget": "tag",
+                                      "props": {
+                                        "value": "$(Field)Education.Degree",
+                                        "ref": "tag_bbd6d1575c49880"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": true,
+                                    "title": "员工",
+                                    "dataIndex": "$(Field)Education.BelongEmployeeId",
+                                    "render": {
+                                      "id": "text_4bfe39b669f6000",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)Education.BelongEmployeeId",
+                                        "ref": "text_c2c59979d241900"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "dataIndex": "operation",
+                                    "fixed": "right",
+                                    "title": "操作列",
+                                    "width": 180,
+                                    "render": {
+                                      "id": "space_e8412a7cc393400",
+                                      "widget": "space",
+                                      "props": {
+                                        "ref": "space_e8412a7cc393400",
+                                        "size": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "popConfirm_e8fbbf0196f5500",
+                                          "widget": "popConfirm",
+                                          "props": {
+                                            "ref": "popConfirm_e8fbbf0196f5500",
+                                            "open": false
+                                          },
+                                          "events": {
+                                            "confirm": {
+                                              "type": "request",
+                                              "request": {
+                                                "name": "$(Api)Education.Delete",
+                                                "params": {
+                                                  "Id": "$(Members)[watch]tableContainer_d5fe91aff097500.currentRow.Id"
+                                                }
+                                              },
+                                              "callback": "$(Event)tableContainer_d5fe91aff097500.onSearch"
+                                            }
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "button_50777c7cbda6dc0",
+                                              "widget": "button",
+                                              "props": {
+                                                "ref": "button_50777c7cbda6dc0",
+                                                "htmlType": "button",
+                                                "label": "删除",
+                                                "type": "link",
+                                                "size": "small",
+                                                "danger": true
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "extra": [
+                                  {
+                                    "id": "button_311f7ae947ea5c0",
+                                    "widget": "button",
+                                    "props": {
+                                      "ref": "button_67541770a8d1080",
+                                      "htmlType": "button",
+                                      "type": "link",
+                                      "label": "新增",
+                                      "icon": "antdv://PlusCircleFilled"
+                                    },
+                                    "styles": {},
+                                    "children": [],
+                                    "events": {
+                                      "onClick": {
+                                        "type": "openModalWindow",
+                                        "component": "modal_31e3373fa9f85a0"
+                                      }
+                                    }
+                                  }
+                                ],
+                                "hideActions": false,
+                                "hasPagination": true
+                              },
+                              "styles": {
+                                "marginTop": "20px"
+                              },
+                              "children": []
+                            },
+                            {
+                              "id": "tableContainer_f2a965dcda34c80",
+                              "widget": "tableContainer",
+                              "props": {
+                                "ref": "tableContainer_147a94a141547b0",
+                                "title": {
+                                  "type": "string",
+                                  "value": "工作经历"
+                                },
+                                "request": {
+                                  "name": "$(Api)EmployeeJob.GetPageByEmployeeFilter",
+                                  "params": {
+                                    "EmployeeId": "$(Props)8dc9b6b14b308d4990"
+                                  }
+                                },
+                                "search": {
+                                  "col": {
+                                    "width": "${span}8",
+                                    "offset": 0
+                                  },
+                                  "showExpand": false,
+                                  "displayRow": 1,
+                                  "filter": [],
+                                  "hideForm": true,
+                                  "hideSearchActions": false
+                                },
+                                "columns": [
+                                  {
+                                    "hide": true,
+                                    "title": "Id",
+                                    "dataIndex": "$(Field)EmployeeJob.Id",
+                                    "render": {
+                                      "id": "text_1077689fbc4a790",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.Id",
+                                        "ref": "text_890fbd9c84e0d00"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "企业",
+                                    "dataIndex": "$(Field)EmployeeJob.Company",
+                                    "render": {
+                                      "id": "text_76449d5a0216e00",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.Company",
+                                        "ref": "text_1a89b893ee50220"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "职位",
+                                    "dataIndex": "$(Field)EmployeeJob.Title",
+                                    "render": {
+                                      "id": "text_663a84dffcd6340",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.Title",
+                                        "ref": "text_f9d864e44d24800"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "开始日期",
+                                    "dataIndex": "$(Field)EmployeeJob.StartDate",
+                                    "render": {
+                                      "id": "text_a8c5c1ed8e1e180",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.StartDate",
+                                        "ref": "text_9cdb3ebe08fbb80"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "结束日期",
+                                    "dataIndex": "$(Field)EmployeeJob.EndDate",
+                                    "render": {
+                                      "id": "text_a22461c755f5a80",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.EndDate",
+                                        "ref": "text_bd0581973ce6d00"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "离职原因",
+                                    "dataIndex": "$(Field)EmployeeJob.ResignReason",
+                                    "render": {
+                                      "id": "text_26511327f7f87c",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.ResignReason",
+                                        "ref": "text_9e4ccdf0116e200"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "联系人",
+                                    "dataIndex": "$(Field)EmployeeJob.Contact",
+                                    "render": {
+                                      "id": "text_2c5748cc787a4e0",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.Contact",
+                                        "ref": "text_f886ffc6f0d3300"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "hide": false,
+                                    "title": "联系电话",
+                                    "dataIndex": "$(Field)EmployeeJob.ContactPhone",
+                                    "render": {
+                                      "id": "text_211f4f847498460",
+                                      "widget": "text",
+                                      "props": {
+                                        "value": "$(Field)EmployeeJob.ContactPhone",
+                                        "ref": "text_f8d1ca64fe2688"
+                                      },
+                                      "styles": {},
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "dataIndex": "operation",
+                                    "fixed": "right",
+                                    "title": "操作列",
+                                    "width": 180,
+                                    "render": {
+                                      "id": "space_2ad0ef42c7e1060",
+                                      "widget": "space",
+                                      "props": {
+                                        "ref": "space_f4ea18628c96b00",
+                                        "size": 0
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "popConfirm_778d204c1333c00",
+                                          "widget": "popConfirm",
+                                          "props": {
+                                            "ref": "popConfirm_778d204c1333c00"
+                                          },
+                                          "events": {
+                                            "confirm": {
+                                              "type": "request",
+                                              "request": {
+                                                "name": "$(Api)EmployeeJob.Delete",
+                                                "params": {
+                                                  "Id": "$(Members)[watch]tableContainer_f2a965dcda34c80.currentRow.Id"
+                                                }
+                                              },
+                                              "callback": "$(Event)tableContainer_f2a965dcda34c80.onSearch"
+                                            }
+                                          },
+                                          "children": [
+                                            {
+                                              "id": "button_459af608ec63c80",
+                                              "widget": "button",
+                                              "props": {
+                                                "ref": "button_459af608ec63c80",
+                                                "htmlType": "button",
+                                                "label": "删除",
+                                                "type": "link",
+                                                "size": "small",
+                                                "danger": true
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "extra": [
+                                  {
+                                    "id": "button_6c55853107334c0",
+                                    "widget": "button",
+                                    "props": {
+                                      "ref": "button_b40e47b05bf8180",
+                                      "htmlType": "button",
+                                      "icon": "antdv://PlusCircleFilled",
+                                      "type": "link",
+                                      "label": "新增"
+                                    },
+                                    "styles": {},
+                                    "children": [],
+                                    "events": {
+                                      "onClick": {
+                                        "type": "openModalWindow",
+                                        "component": "modal_45a85fa8f314240"
+                                      }
+                                    }
+                                  }
+                                ],
+                                "hideActions": false,
+                                "hasPagination": true
+                              },
+                              "styles": {},
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "styles": {
+                "marginRight": "10px"
+              }
+            }
+          ],
+          "styles": {
+            "marginLeft": "10px",
+            "marginRight": "10px",
+            "marginTop": "5px",
+            "marginBottom": "5px"
+          }
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "d46d5f4fb51b500",
+      "type": "control",
+      "name": "显示控制 - 性别",
+      "props": {
+        "valueType": "$(Document)Gender",
+        "values": {
+          "Male": {
+            "color": "#66AAEBFF",
+            "displayInfo": "男"
+          },
+          "Female": {
+            "color": "#EB5566FF",
+            "displayInfo": "女"
+          }
+        }
+      },
+      "rule": "colorConfig",
+      "targets": [
+        "tag_6e4cb69b435d5c0"
+      ]
+    },
+    {
+      "id": "72f721203b78000",
+      "type": "control",
+      "name": "显示控制 - 状态",
+      "props": {
+        "valueType": "$(Document)EmployeeStatus",
+        "values": {
+          "IS": {
+            "color": "#F3D9D9FF",
+            "displayInfo": "实习"
+          },
+          "TR": {
+            "color": "#D8CC9EFF",
+            "displayInfo": "试用"
+          },
+          "FL": {
+            "color": "#4EB9E7FF",
+            "displayInfo": "正式"
+          },
+          "RN": {
+            "color": "#E72727FF",
+            "displayInfo": "离职"
+          }
+        }
+      },
+      "rule": "colorConfig",
+      "targets": [
+        "tag_d161a251af67880"
+      ]
+    },
+    {
+      "id": "713f491cef35ac0",
+      "type": "control",
+      "name": "显示控制 - 学历",
+      "props": {
+        "valueType": "$(Document)DegreeType",
+        "values": {
+          "HS": {
+            "color": "#FFD700FF",
+            "displayInfo": "高中"
+          },
+          "JC": {
+            "color": "#00CED1FF",
+            "displayInfo": "大专"
+          },
+          "UG": {
+            "color": "#1E90FFFF",
+            "displayInfo": "本科"
+          },
+          "MT": {
+            "color": "#C71585FF",
+            "displayInfo": "硕士"
+          }
+        }
+      },
+      "rule": "colorConfig",
+      "targets": [
+        "badge_99f60635d9c6400",
+        "tag_26a599ab343bc00"
+      ]
+    }
+  ],
+  "references": {
+    "Employee": "..\\..\\Entities\\Employee.sde",
+    "Gender": "..\\..\\Enums\\Gender.sdn",
+    "EmployeeStatus": "..\\..\\Enums\\EmployeeStatus.sdn",
+    "DegreeType": "..\\..\\Enums\\DegreeType.sdn",
+    "EmployeeUpdate": "EmployeeUpdate.sdv",
+    "EmployeeResign": "EmployeeResign.sdv",
+    "EducationAdd": "..\\Education\\EducationAdd.sdv",
+    "JobAdd": "..\\EmployeeJob\\JobAdd.sdv",
+    "EmployeeJob": "..\\..\\Entities\\EmployeeJob.sde",
+    "Education": "..\\..\\Entities\\Education.sde"
+  },
+  "events": {
+    "onLoad": [
+      {
+        "name": "$(Api)Employee.Get",
+        "params": {
+          "Id": "$(Props)8dc9b6b14b308d4990"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "Id": "9a2ab7517a744c7bbef0973a20188eb9",
+  "Type": "Enum",
+  "Version": 1,
+  "DisplayName": "EmployeeStatus",
+  "Description": "EmployeeStatus",
+  "DesignVersion": "3.0.0",
+  "Fields": {
+    "IS": {
+      "Id": "958ee2646e274784a37a98439193c5f3",
+      "Value": "",
+      "DisplayName": "实习",
+      "Snippets": []
+    },
+    "TR": {
+      "Id": "d30f47f9536847acae1e5a6db45edd32",
+      "Value": "",
+      "DisplayName": "试用",
+      "Snippets": []
+    },
+    "FL": {
+      "Id": "65241d9440aa4a358f84f92d881bf0c2",
+      "Value": "",
+      "DisplayName": "正式",
+      "Snippets": []
+    },
+    "RN": {
+      "Id": "1b071c2abfc646388b729eabf424628a",
+      "Value": "",
+      "DisplayName": "离职",
+      "Snippets": []
+    }
+  },
+  "Snippets": []
+}

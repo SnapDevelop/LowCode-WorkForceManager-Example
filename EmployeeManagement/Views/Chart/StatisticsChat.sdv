@@ -1,0 +1,774 @@
+{
+  "id": "page_8dc9aa1e9cf5380",
+  "type": "page",
+  "widget": "page",
+  "props": {
+    "ref": "page_8dc9aa1e9cf5380",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": []
+  },
+  "rules": [],
+  "children": [
+    {
+      "id": "row_d5a633805b6b100",
+      "widget": "row",
+      "props": {
+        "ref": "row_d5a633805b6b100"
+      },
+      "children": [
+        {
+          "id": "col_d873cbc89cc9680",
+          "widget": "col",
+          "props": {
+            "ref": "col_d873cbc89cc9680",
+            "offset": 0,
+            "width": "${span}8"
+          },
+          "children": [
+            {
+              "id": "title_7add60b46637ec0",
+              "widget": "title",
+              "props": {
+                "ref": "title_983fd59f5ca7000",
+                "level": 5,
+                "value": "城市："
+              },
+              "styles": {},
+              "children": []
+            },
+            {
+              "id": "select_97f346e22390380",
+              "widget": "select",
+              "props": {
+                "ref": "select_97f346e22390380",
+                "request": {
+                  "name": "$(Api)CompanyCities.GetListByNoFilter",
+                  "params": {}
+                },
+                "value": "$(Parameter)",
+                "fieldName": "$(Field)CompanyCities.City",
+                "fieldValue": "$(Field)CompanyCities.City",
+                "mode": "multiple"
+              },
+              "styles": {
+                "width": "50%"
+              }
+            }
+          ],
+          "styles": {}
+        },
+        {
+          "id": "col_e48ceeee338c500",
+          "widget": "col",
+          "props": {
+            "ref": "col_e48ceeee338c500",
+            "width": "${span}16"
+          },
+          "children": []
+        }
+      ],
+      "styles": {
+        "marginLeft": "15px"
+      }
+    },
+    {
+      "id": "grid_6edcbeddc465f00",
+      "widget": "grid",
+      "props": {
+        "ref": "grid_ab4038b5206d40",
+        "rowNum": 1,
+        "colNum": 3,
+        "hide": false
+      },
+      "styles": {
+        "marginTop": "10px"
+      },
+      "children": [
+        {
+          "id": "row_5ebbe5075904d40",
+          "widget": "row",
+          "props": {
+            "ref": "row_5ebbe5075904d40",
+            "grid": true,
+            "gutter": {
+              "enabled": true,
+              "value": [
+                0,
+                0
+              ]
+            },
+            "align": "bottom",
+            "justify": "start"
+          },
+          "children": [
+            {
+              "id": "col_deb423ae5447580",
+              "widget": "col",
+              "props": {
+                "ref": "col_deb423ae5447580",
+                "width": "${span}8"
+              },
+              "children": [
+                {
+                  "id": "card_9c80b50e3912d80",
+                  "widget": "card",
+                  "props": {
+                    "ref": "card_6243be3baa7a280",
+                    "title": {
+                      "type": "slot",
+                      "slot": {
+                        "hide": false,
+                        "render": [
+                          {
+                            "id": "title_2283223424cc460",
+                            "widget": "title",
+                            "props": {
+                              "ref": "title_a936b27536a1480",
+                              "level": 5,
+                              "value": "公司规模统计"
+                            },
+                            "styles": {},
+                            "children": []
+                          }
+                        ]
+                      }
+                    },
+                    "extra": []
+                  },
+                  "styles": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "children": [
+                    {
+                      "id": "pie_7b0c12935941f40",
+                      "widget": "pie",
+                      "props": {
+                        "ref": "pie_d6008cbbfc6d180",
+                        "title": {
+                          "text": "公司规模统计",
+                          "subtext": ""
+                        },
+                        "request": {
+                          "name": "$(Api)CompanyStatistics.GetListByCityFilter",
+                          "params": {
+                            "City": "$(Members)[watch]select_97f346e22390380.value"
+                          }
+                        },
+                        "names": "$(Field)CompanyStatistics.CompanyCompanySize",
+                        "values": "$(Field)CompanyStatistics.CompanySize",
+                        "legend": {
+                          "show": true,
+                          "position": "top/right/vertical"
+                        },
+                        "seriesLabel": {
+                          "show": true,
+                          "position": "outside",
+                          "fontSize": 12,
+                          "formatter": "{b}: {c}({d}%)"
+                        },
+                        "startAngle": 90,
+                        "endAngle": 450,
+                        "padAngle": 0,
+                        "borderRadius": 0,
+                        "color": "#5470c6, #91cc75, #fac858, #ee6666, #73c0de, #3ba272, #fc8452, #9a60b4, #ea7ccc",
+                        "titlePosition": "top/left",
+                        "radiusExternal": 60,
+                        "donutChar": true,
+                        "width": "${percent}100",
+                        "radiusInternal": 40,
+                        "height": "${width}300"
+                      },
+                      "styles": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ],
+              "styles": {}
+            },
+            {
+              "id": "col_f7f362ba041da80",
+              "widget": "col",
+              "props": {
+                "ref": "col_44a5eca1df97c00",
+                "width": "${span}8"
+              },
+              "styles": {
+                "marginRight": "0px"
+              },
+              "children": [
+                {
+                  "id": "card_ad74f71b7894680",
+                  "widget": "card",
+                  "props": {
+                    "ref": "card_354bd2c65340e60",
+                    "title": {
+                      "type": "slot",
+                      "slot": {
+                        "hide": false,
+                        "render": [
+                          {
+                            "id": "title_c5b764ff39c0200",
+                            "widget": "title",
+                            "props": {
+                              "ref": "title_a2623dcd441eb00",
+                              "level": 5,
+                              "value": "员工学历统计"
+                            },
+                            "styles": {},
+                            "children": []
+                          }
+                        ]
+                      }
+                    },
+                    "extra": [
+                      {
+                        "id": "title_ee30236be7ccf80",
+                        "widget": "title",
+                        "props": {
+                          "ref": "title_d67deedf2ab3f80",
+                          "level": 5,
+                          "value": "离职人员："
+                        },
+                        "styles": {},
+                        "children": []
+                      },
+                      {
+                        "id": "switch_3ac4e892e9b7f4",
+                        "widget": "switch",
+                        "props": {
+                          "ref": "switch_3ac4e892e9b7f4",
+                          "checkedChildren": "包含",
+                          "unCheckedChildren": "不包含",
+                          "default": false
+                        }
+                      }
+                    ]
+                  },
+                  "styles": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "children": [
+                    {
+                      "id": "bar_8135a5cf3399200",
+                      "widget": "bar",
+                      "props": {
+                        "ref": "bar_27ca36ed7378000",
+                        "title": {
+                          "text": "员工学历统计",
+                          "subtext": ""
+                        },
+                        "request": {
+                          "name": "$(Api)CompanyDegreeStatic.GetListByCitiesFilter",
+                          "params": {
+                            "Cities": "$(Members)[watch]select_97f346e22390380.value",
+                            "IncludeResign": "$(Members)[watch]switch_3ac4e892e9b7f4.value"
+                          }
+                        },
+                        "xAxis": {
+                          "data": "$(Field)CompanyDegreeStatic.EmployeeDegree",
+                          "name": "学历",
+                          "axisLine": true,
+                          "axisTick": true,
+                          "splitLine": false,
+                          "boundaryGap": true
+                        },
+                        "yAxis": [
+                          {
+                            "data": "$(Field)CompanyDegreeStatic.EmployeeCount",
+                            "name": "数量",
+                            "color": "#1677ff"
+                          }
+                        ],
+                        "legend": {
+                          "show": true,
+                          "position": "top/right/vertical"
+                        },
+                        "seriesLabel": {
+                          "show": true,
+                          "position": "inside",
+                          "fontSize": 12
+                        },
+                        "yName": "数量",
+                        "titlePosition": "top/left",
+                        "yMax": "",
+                        "height": "${width}300"
+                      },
+                      "styles": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "col_84291c2c3be3e80",
+              "widget": "col",
+              "props": {
+                "ref": "col_84291c2c3be3e80",
+                "width": "${span}8"
+              },
+              "children": [
+                {
+                  "id": "card_aefa97b72915f00",
+                  "widget": "card",
+                  "props": {
+                    "ref": "card_f1aa14db035d200",
+                    "title": {
+                      "type": "slot",
+                      "slot": {
+                        "hide": false,
+                        "render": [
+                          {
+                            "id": "title_b5174f79fe5d880",
+                            "widget": "title",
+                            "props": {
+                              "ref": "title_4b74d6c2d971300",
+                              "level": 5,
+                              "value": "员工性别统计"
+                            },
+                            "styles": {},
+                            "children": []
+                          }
+                        ]
+                      }
+                    },
+                    "extra": []
+                  },
+                  "styles": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "children": [
+                    {
+                      "id": "pie_92461d40be3bf8",
+                      "widget": "pie",
+                      "props": {
+                        "ref": "pie_38538833e9a0460",
+                        "title": {
+                          "text": "",
+                          "subtext": ""
+                        },
+                        "request": {
+                          "name": "$(Api)CompanyGenderStatic.GetListByCityFilter",
+                          "params": {
+                            "Cities": "$(Members)[watch]select_97f346e22390380.value"
+                          }
+                        },
+                        "names": "$(Field)CompanyGenderStatic.EmployeeGender",
+                        "values": "$(Field)CompanyGenderStatic.EmployeeCount",
+                        "legend": {
+                          "show": true,
+                          "position": "top/right/vertical"
+                        },
+                        "seriesLabel": {
+                          "show": true,
+                          "position": "outside",
+                          "fontSize": 12,
+                          "formatter": "{b}: {d}%"
+                        },
+                        "startAngle": 90,
+                        "endAngle": 450,
+                        "padAngle": 0,
+                        "borderRadius": 0,
+                        "color": "#66AAEB, #EB5566, #fac858, #ee6666, #73c0de, #3ba272, #fc8452, #9a60b4, #ea7ccc",
+                        "donutChar": false,
+                        "roseType": false,
+                        "titlePosition": "top/left",
+                        "height": "${width}300"
+                      },
+                      "styles": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "divider_781268e49152ac0",
+      "widget": "divider",
+      "props": {
+        "ref": "divider_9a20b3e848bd480",
+        "title": {
+          "type": "string",
+          "value": ""
+        }
+      },
+      "styles": {},
+      "children": []
+    },
+    {
+      "id": "row_b68cfe988e46600",
+      "widget": "row",
+      "props": {
+        "ref": "row_b68cfe988e46600"
+      },
+      "children": [
+        {
+          "id": "col_59494b187f69f40",
+          "widget": "col",
+          "props": {
+            "ref": "col_59494b187f69f40",
+            "width": "${span}8"
+          },
+          "children": [
+            {
+              "id": "title_ddbdf4a9802bd00",
+              "widget": "title",
+              "props": {
+                "ref": "title_732a3654b79ea80",
+                "level": 5,
+                "value": "公司："
+              },
+              "styles": {},
+              "children": []
+            },
+            {
+              "id": "select_44f808509c47580",
+              "widget": "select",
+              "props": {
+                "ref": "select_59fe5eca8fbfe80",
+                "request": {
+                  "name": "$(Api)Company.GetPageByAddressSizeName",
+                  "params": {
+                    "Cities": "$(Members)[watch]select_97f346e22390380.value",
+                    "CompanySize": ""
+                  }
+                },
+                "fieldName": "$(Field)Company.CompanyName",
+                "fieldValue": "$(Field)Company.Id"
+              },
+              "styles": {
+                "width": "70%"
+              }
+            }
+          ]
+        },
+        {
+          "id": "col_1c8c387febfeea0",
+          "widget": "col",
+          "props": {
+            "ref": "col_1c8c387febfeea0",
+            "width": "${span}16"
+          },
+          "children": []
+        }
+      ],
+      "styles": {
+        "marginLeft": "15px"
+      }
+    },
+    {
+      "id": "grid_c31fc40ab2c7680",
+      "widget": "grid",
+      "props": {
+        "ref": "grid_71a31eb4ae58280",
+        "colNum": 3,
+        "rowNum": 1,
+        "hide": false
+      },
+      "styles": {
+        "marginTop": "10px"
+      },
+      "children": [
+        {
+          "id": "row_573d67206116080",
+          "widget": "row",
+          "props": {
+            "ref": "row_573d67206116080",
+            "grid": true,
+            "gutter": {
+              "enabled": true,
+              "value": [
+                0,
+                0
+              ]
+            }
+          },
+          "children": [
+            {
+              "id": "col_ea07398f67b2680",
+              "widget": "col",
+              "props": {
+                "ref": "col_ea07398f67b2680",
+                "width": "${span}8"
+              },
+              "children": [
+                {
+                  "id": "card_4d735af5bd84bc0",
+                  "widget": "card",
+                  "props": {
+                    "ref": "card_2d2c941b65231e0",
+                    "title": {
+                      "type": "slot",
+                      "slot": {
+                        "hide": false,
+                        "render": [
+                          {
+                            "id": "title_4eaa51f63de4600",
+                            "widget": "title",
+                            "props": {
+                              "ref": "title_816652f39f78a00",
+                              "level": 5,
+                              "value": "员工学历统计"
+                            },
+                            "styles": {},
+                            "children": []
+                          }
+                        ]
+                      }
+                    },
+                    "extra": []
+                  },
+                  "styles": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "children": [
+                    {
+                      "id": "bar_9b3b4446b593200",
+                      "widget": "bar",
+                      "props": {
+                        "ref": "bar_1d4d66a20bbbcd0",
+                        "title": {
+                          "text": "",
+                          "subtext": ""
+                        },
+                        "request": {
+                          "name": "$(Api)EmployeeDegreeStatic.GetListByCompanyFilter",
+                          "params": {
+                            "Company": "$(Members)[watch]select_44f808509c47580.value"
+                          }
+                        },
+                        "xAxis": {
+                          "data": "$(Field)EmployeeDegreeStatic.EmployeeDegree",
+                          "name": "学历",
+                          "axisLine": true,
+                          "axisTick": true,
+                          "splitLine": false,
+                          "boundaryGap": true
+                        },
+                        "yAxis": [
+                          {
+                            "data": "$(Field)EmployeeDegreeStatic.EmployCount",
+                            "name": "数量",
+                            "color": "#1677ff"
+                          }
+                        ],
+                        "legend": {
+                          "show": true,
+                          "position": "top/right/vertical"
+                        },
+                        "seriesLabel": {
+                          "show": true,
+                          "position": "inside",
+                          "fontSize": 12
+                        },
+                        "yName": "数量",
+                        "titlePosition": "top/left",
+                        "yMax": "",
+                        "height": "${width}300"
+                      },
+                      "styles": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "col_b004eb9b5ee7900",
+              "widget": "col",
+              "props": {
+                "ref": "col_405157a2154c880",
+                "width": "${span}8"
+              },
+              "styles": {},
+              "children": [
+                {
+                  "id": "card_66e7b872871dc00",
+                  "widget": "card",
+                  "props": {
+                    "ref": "card_64954637fda1600",
+                    "title": {
+                      "type": "string",
+                      "value": "员工状态统计"
+                    },
+                    "extra": [
+                      {
+                        "id": "title_84d41dcc9ec3500",
+                        "widget": "title",
+                        "props": {
+                          "ref": "title_95496ddc86dcf00",
+                          "value": "部门：",
+                          "level": 5
+                        }
+                      },
+                      {
+                        "id": "select_2c9bd3ed5bea100",
+                        "widget": "select",
+                        "props": {
+                          "ref": "select_217a3a74cf89940",
+                          "placeholder": "请选择部门",
+                          "request": {
+                            "name": "$(Api)Department.GetListByCompanyFilter",
+                            "params": {
+                              "Company": "$(Members)[watch]select_44f808509c47580.value"
+                            }
+                          },
+                          "fieldName": "$(Field)Department.DepartmentName",
+                          "fieldValue": "$(Field)Department.Id"
+                        },
+                        "styles": {
+                          "width": "auto"
+                        }
+                      }
+                    ]
+                  },
+                  "styles": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "children": [
+                    {
+                      "id": "pie_f84cb47f63b0900",
+                      "widget": "pie",
+                      "props": {
+                        "ref": "pie_a12d437cbeec580",
+                        "title": {
+                          "text": "",
+                          "subtext": ""
+                        },
+                        "request": {
+                          "name": "$(Api)EmployeeStatic.GetListByCompanyFilter",
+                          "params": {
+                            "Company": "$(Members)[watch]select_44f808509c47580.value",
+                            "Department": "$(Members)[watch]select_2c9bd3ed5bea100.value"
+                          }
+                        },
+                        "names": "$(Field)EmployeeStatic.Status",
+                        "values": "$(Field)EmployeeStatic.EmployeeCount",
+                        "legend": {
+                          "show": true,
+                          "position": "top/right/vertical"
+                        },
+                        "seriesLabel": {
+                          "show": true,
+                          "position": "outside",
+                          "fontSize": 12,
+                          "formatter": "{b}: {d}%"
+                        },
+                        "startAngle": 90,
+                        "endAngle": 450,
+                        "padAngle": 0,
+                        "borderRadius": 0,
+                        "color": "#5470c6, #91cc75, #fac858, #ee6666, #73c0de, #3ba272, #fc8452, #9a60b4, #ea7ccc",
+                        "donutChar": true,
+                        "roseType": true,
+                        "titlePosition": "top/left",
+                        "height": "${width}300"
+                      },
+                      "styles": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "col_5c21ecf7c92a6c",
+              "widget": "col",
+              "props": {
+                "ref": "col_5c21ecf7c92a6c",
+                "width": "${span}8"
+              },
+              "children": [
+                {
+                  "id": "card_4d469ef12fdd280",
+                  "widget": "card",
+                  "props": {
+                    "ref": "card_b6c0e254c851d00",
+                    "title": {
+                      "type": "string",
+                      "value": "工作年限统计"
+                    },
+                    "extra": [],
+                    "size": "default",
+                    "loading": false,
+                    "hideActions": false
+                  },
+                  "styles": {
+                    "marginLeft": "10px",
+                    "marginRight": "10px"
+                  },
+                  "children": [
+                    {
+                      "id": "pie_a8ba41d6508b680",
+                      "widget": "pie",
+                      "props": {
+                        "ref": "pie_5bd62e528e2b840",
+                        "title": {
+                          "text": "",
+                          "subtext": ""
+                        },
+                        "request": {
+                          "name": "$(Api)EmployeeWorkExperienceStatics.GetListByCompanyFilter",
+                          "params": {
+                            "Company": "$(Members)[watch]select_44f808509c47580.value"
+                          }
+                        },
+                        "names": "$(Field)EmployeeWorkExperienceStatics.Workexp",
+                        "values": "$(Field)EmployeeWorkExperienceStatics.EmployeeCount",
+                        "legend": {
+                          "show": true,
+                          "position": "top/right/vertical"
+                        },
+                        "seriesLabel": {
+                          "show": true,
+                          "position": "outside",
+                          "fontSize": 12,
+                          "formatter": "{b}: {d}%"
+                        },
+                        "startAngle": 90,
+                        "endAngle": 450,
+                        "padAngle": 0,
+                        "borderRadius": 0,
+                        "color": "#5470c6, #91cc75, #fac858, #ee6666, #73c0de, #3ba272, #fc8452, #9a60b4, #ea7ccc",
+                        "height": "${width}300"
+                      },
+                      "styles": {},
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": {
+    "CompanyCities": "..\\..\\Query\\CompanyCities.sdq",
+    "CompanyStatistics": "..\\..\\Query\\CompanyStatistics.sdq",
+    "EmployeeDegreeStatic": "..\\..\\Query\\EmployeeDegreeStatic.sdq",
+    "Company": "..\\..\\Entities\\Company.sde",
+    "EmployeeStatic": "..\\..\\Query\\EmployeeStatic.sdq",
+    "Department": "..\\..\\Entities\\Department.sde",
+    "CompanyDegreeStatic": "..\\..\\Query\\CompanyDegreeStatic.sdq",
+    "CompanyGenderStatic": "..\\..\\Query\\CompanyGenderStatic.sdq",
+    "EmployeeWorkExperienceStatics": "..\\..\\Query\\EmployeeWorkExperienceStatics.sdq"
+  },
+  "events": {
+    "onLoad": []
+  }
+}
