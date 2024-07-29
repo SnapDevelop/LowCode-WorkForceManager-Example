@@ -1,0 +1,263 @@
+{
+  "id": "page_8dc9f4e1e6251052026",
+  "widget": "page",
+  "type": "page",
+  "designVersion": "1.0.0",
+  "version": 1,
+  "props": {
+    "ref": "page_8dc9f4e1e6251052026",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": [
+      {
+        "id": "8b9bc123f864280",
+        "name": "companyid",
+        "dataType": "String",
+        "isCollection": false,
+        "isNullable": false
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "card_8dc9f4e1e629a102027",
+      "widget": "card",
+      "props": {
+        "ref": "card_8dc9f4e1e629a102027",
+        "title": {
+          "type": "slot",
+          "slot": {
+            "hide": false,
+            "render": [
+              {
+                "id": "title96c8dd759321400",
+                "widget": "title",
+                "props": {
+                  "ref": "title96c8dd759321400",
+                  "value": "新建联系人",
+                  "level": 4
+                }
+              }
+            ]
+          }
+        },
+        "extra": []
+      },
+      "children": [
+        {
+          "id": "formContainer_8dc9f4e1e62bd4e2030",
+          "widget": "formContainer",
+          "props": {
+            "ref": "formContainer_8dc9f4e1e62bd4e2030",
+            "submit": "$(Api)CompanyContact.Add",
+            "layout": "horizontal",
+            "labelAlign": "right",
+            "labelCol": {
+              "width": "${span}4"
+            }
+          },
+          "children": [
+            {
+              "id": "formItem_8dc9f4e1e63151d2031",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dc9f4e1e63151d2031",
+                "label": "Id",
+                "hide": true,
+                "name": "$(Field)CompanyContact.Id"
+              },
+              "children": [
+                {
+                  "id": "input_8dc9f4e1e63302c2032",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_8dc9f4e1e63302c2032",
+                    "value": "$(Field)CompanyContact.Id"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dc9f4e1e633b612033",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dc9f4e1e633b612033",
+                "label": "公    司",
+                "name": "$(Field)CompanyContact.CompanyId",
+                "labelCol": {
+                  "width": "${span}4"
+                },
+                "labelAlign": "right"
+              },
+              "children": [
+                {
+                  "id": "select_8dc9f4e1e633b8e2034",
+                  "widget": "select",
+                  "props": {
+                    "ref": "select_8dc9f4e1e633b8e2034",
+                    "value": "$(Field)CompanyContact.CompanyId",
+                    "request": {
+                      "name": "$(Api)Company.GetList",
+                      "params": {}
+                    },
+                    "fieldName": "$(Field)Company.CompanyName",
+                    "fieldValue": "$(Field)Company.Id",
+                    "default": "$(Props)8b9bc123f864280",
+                    "disabled": true
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dad9794b663100",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_240fa917bf50800",
+                "label": "联系人",
+                "name": "$(Field)CompanyContact.ContactId"
+              },
+              "styles": {},
+              "children": [
+                {
+                  "id": "select_cf2b66b8d59b280",
+                  "widget": "select",
+                  "props": {
+                    "ref": "select_8b283197001fb80",
+                    "value": "$(Field)CompanyContact.ContactId",
+                    "request": {
+                      "name": "$(Api)CompanyEmployees.GetListByCompanyFilter",
+                      "params": {
+                        "Company": "$(Props)8b9bc123f864280"
+                      }
+                    },
+                    "fieldName": "$(Field)CompanyEmployees.FullName",
+                    "fieldValue": "$(Field)CompanyEmployees.EmployeeId"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_dd4c2c46e985500",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_49a2d9315085440",
+                "label": "职    务",
+                "name": "$(Field)CompanyContact.ContactPostion"
+              },
+              "styles": {},
+              "children": [
+                {
+                  "id": "select_8798d8d8b341700",
+                  "widget": "select",
+                  "props": {
+                    "ref": "select_c5cffa01a647180",
+                    "value": "$(Field)CompanyContact.ContactPostion",
+                    "request": {
+                      "name": "$(Json-Enum){\r\n  \"enum\": \"PositionType\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"人事经理\",\r\n      \"value\": \"PositionType.HR\"\r\n    },\r\n    {\r\n      \"label\": \"经理\",\r\n      \"value\": \"PositionType.MR\"\r\n    },\r\n    {\r\n      \"label\": \"总经理\",\r\n      \"value\": \"PositionType.Header\"\r\n    }\r\n  ]\r\n}"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dc9f4e1e633f5e2035",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dc9f4e1e633f5e2035",
+                "label": "创建时间",
+                "name": "$(Field)CompanyContact.CreateTime",
+                "hide": true
+              },
+              "children": [
+                {
+                  "id": "datePicker_8dc9f4e1e633f742036",
+                  "widget": "datePicker",
+                  "props": {
+                    "ref": "datePicker_8dc9f4e1e633f742036",
+                    "value": "$(Field)CompanyContact.CreateTime",
+                    "format": "YYYY-MM-DD HH:mm:ss",
+                    "valueFormat": "YYYY-MM-DDTHH:mm:ss"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dc9f4e1e6343492037",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dc9f4e1e6343492037",
+                "label": "更新时间",
+                "name": "$(Field)CompanyContact.UpdateTime",
+                "hide": true
+              },
+              "children": [
+                {
+                  "id": "datePicker_8dc9f4e1e63435c2038",
+                  "widget": "datePicker",
+                  "props": {
+                    "ref": "datePicker_8dc9f4e1e63435c2038",
+                    "value": "$(Field)CompanyContact.UpdateTime",
+                    "format": "YYYY-MM-DD HH:mm:ss",
+                    "valueFormat": "YYYY-MM-DDTHH:mm:ss"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "flex_8dc9f4e1e6350fa2039",
+              "widget": "flex",
+              "props": {
+                "ref": "flex_8dc9f4e1e6350fa2039",
+                "justify": "end"
+              },
+              "children": [
+                {
+                  "id": "button_8dc9f4e1e6351172040",
+                  "widget": "button",
+                  "events": {
+                    "onClick": {
+                      "type": "request",
+                      "member": "$(Event)formContainer_8dc9f4e1e62bd4e2030.submit"
+                    }
+                  },
+                  "props": {
+                    "ref": "button_8dc9f4e1e6351172040",
+                    "label": "提交",
+                    "htmlType": "submit",
+                    "type": "primary",
+                    "applyComponent": [
+                      "formContainer_8dc9f4e1e62bd4e2030"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "5ebffd33d12e500",
+      "type": "validate",
+      "name": "必填",
+      "props": {
+        "whitespace": false,
+        "message": "必填项"
+      },
+      "rule": "required",
+      "targets": [
+        "formItem_8dad9794b663100"
+      ]
+    }
+  ],
+  "references": {
+    "CompanyContact": "..\\..\\Entities\\CompanyContact.sde",
+    "PositionType": "..\\..\\Enums\\PositionType.sdn",
+    "Company": "..\\..\\Entities\\Company.sde",
+    "CompanyEmployees": "..\\..\\Query\\CompanyEmployees.sdq"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "id": "5753744f0eb544b7867d6cf15b7ac5be",
+  "widget": "sdq",
+  "version": 0,
+  "props": {
+    "name": "EmployeeWorkExperienceStatics",
+    "displayname": "EmployeeWorkExperienceStatics",
+    "description": "EmployeeWorkExperienceStatics",
+    "controllerRoute": "api/[controller]",
+    "authorizationStategy": "$ParentCategory",
+    "sources": [
+      {
+        "alias": "Company",
+        "pointX": 611.2,
+        "pointY": 180,
+        "isExpanded": true
+      },
+      {
+        "alias": "Department",
+        "pointX": 200,
+        "pointY": 180,
+        "isExpanded": true
+      },
+      {
+        "alias": "Employee",
+        "pointX": 200,
+        "pointY": 454,
+        "isExpanded": true
+      }
+    ],
+    "relationships": [
+      {
+        "left": "Department",
+        "right": "Company",
+        "joinType": "InnerJoin",
+        "conditions": [
+          {
+            "left": "$(Field)Department.CompanyId",
+            "right": "$(Field)Company.Id"
+          }
+        ]
+      },
+      {
+        "left": "Employee",
+        "right": "Department",
+        "joinType": "InnerJoin",
+        "conditions": [
+          {
+            "left": "$(Field)Employee.DepartmentId",
+            "right": "$(Field)Department.Id"
+          }
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "name": "Workexps",
+        "expression": "$(Expression)If(DateDif(Employee.EducateDate, Now(),\"Y\") < 3,\"3年以下\",If(DateDif(Employee.EducateDate, Now(),\"Y\") >=3 && DateDif(Employee.EducateDate, Now(),\"Y\")<5,\"3-5年\",If(DateDif(Employee.EducateDate, Now(),\"Y\")>=5 && DateDif(Employee.EducateDate, Now(),\"Y\")<10,\"5-10年\",\"10年以上\")))"
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "group_field_id_Workexps",
+      "widget": "field",
+      "props": {
+        "name": "Workexp",
+        "value": "$(Expression)EmployeeWorkExperienceStatics.Group.Key.Workexps",
+        "displayName": "Workexp",
+        "dataType": "String"
+      }
+    },
+    {
+      "id": "8dca4ee97a9f7d11202",
+      "widget": "field",
+      "props": {
+        "name": "EmployeeCount",
+        "value": "$(Expression)Count(EmployeeWorkExperienceStatics.Group.Employee) ",
+        "displayName": "EmployeeCount",
+        "dataType": "Int32"
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "8dca4d6385acfe9802",
+      "widget": "filter",
+      "props": {
+        "name": "CompanyFilter",
+        "parameters": [
+          {
+            "id": "8dca4d6385ad03d803",
+            "name": "Company",
+            "dataType": "Guid",
+            "isNullable": true,
+            "displayName": "Company"
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": "8dca4d6385ad09d805",
+          "expression": "$(Field)Company.Id",
+          "parameter": "EmployeeWorkExperienceStatics.CompanyFilter.Company",
+          "relation": "None",
+          "operation": "EQ",
+          "type": "Field",
+          "scopes": []
+        },
+        {
+          "id": "8dca4ef1c0dc4cc1229",
+          "expression": "$(Expression)Employee.Status != EmployeeStatus.RN ",
+          "relation": "And",
+          "operation": "None",
+          "type": "Expression",
+          "scopes": []
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "8dca4d66000ea80817",
+      "widget": "service",
+      "props": {
+        "name": "GetListByCompanyFilter",
+        "isEnableApi": true,
+        "description": "通过过滤器获取列表数据。",
+        "isResultCollection": true,
+        "parameters": [
+          {
+            "name": "EmployeeWorkExperienceStatics.CompanyFilter",
+            "type": "Filter",
+            "from": "Query"
+          }
+        ],
+        "resultSorts": [
+          {
+            "source": "$(Document)EmployeeWorkExperienceStatics"
+          }
+        ],
+        "sourceSorts": [
+          {
+            "source": "EmployeeWorkExperienceStatics"
+          }
+        ],
+        "api": {
+          "name": "GetListByCompanyFilter",
+          "method": "GET",
+          "authorizationStategy": "$ParentCategory"
+        }
+      }
+    }
+  ],
+  "references": {
+    "Company": "..\\Entities\\Company.sde",
+    "Department": "..\\Entities\\Department.sde",
+    "Employee": "..\\Entities\\Employee.sde",
+    "EmployeeStatus": "..\\Enums\\EmployeeStatus.sdn"
+  }
+}

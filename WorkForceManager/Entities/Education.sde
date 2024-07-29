@@ -1,0 +1,281 @@
+{
+  "Id": "c84873d66aa04e1c9e00c260fa3c758f",
+  "Type": "Entity",
+  "Version": 1,
+  "DisplayName": "Education",
+  "Description": "Education",
+  "DesignVersion": "3.0.0",
+  "Fields": {
+    "Id": {
+      "Id": "cf0ac60161444e478e9a2217e8c3a2d2",
+      "DisplayName": "Id",
+      "Description": "数据唯一标识符。",
+      "Type": "Guid",
+      "DataType": "Guid",
+      "IsKey": true,
+      "IsAutoGenerateValue": true,
+      "Snippets": []
+    },
+    "School": {
+      "Id": "f7b22f6d461140729a5f1895fcf74d97",
+      "DisplayName": "学校",
+      "Type": "String",
+      "DataType": "String",
+      "DefaultValueType": "Value",
+      "IsNullable": true,
+      "MaxLength": 100,
+      "Snippets": []
+    },
+    "StartDate": {
+      "Id": "4b8d14b3285a420e8ac81a08306dbd6f",
+      "DisplayName": "起始日期",
+      "Type": "DateOnly",
+      "DataType": "DateOnly",
+      "DefaultValueType": "Value",
+      "IsNullable": true,
+      "Snippets": []
+    },
+    "EndDate": {
+      "Id": "a53122e8f81244fab3efa61bb5d57b3d",
+      "DisplayName": "结束日期",
+      "Type": "DateOnly",
+      "DataType": "DateOnly",
+      "DefaultValueType": "Value",
+      "IsNullable": true,
+      "Snippets": []
+    },
+    "Major": {
+      "Id": "b32ec637159f45159c1f36ed3f7af7d4",
+      "DisplayName": "专业",
+      "Type": "String",
+      "DataType": "String",
+      "DefaultValueType": "Value",
+      "IsNullable": true,
+      "MaxLength": 200,
+      "Snippets": []
+    },
+    "Degree": {
+      "Id": "a2fbd104172b4c7eb1785c94dc059251",
+      "DisplayName": "学历",
+      "Type": "Enum",
+      "DataType": "DegreeType",
+      "DefaultValueType": "Value",
+      "IsNullable": true,
+      "Snippets": []
+    },
+    "BelongEmployee": {
+      "Id": "180451c9493a410aba10f4abd226f19a",
+      "DisplayName": "员工",
+      "Type": "Entity",
+      "DataType": "Employee",
+      "IsNullable": true,
+      "Relationship": "ManyToOne",
+      "AssociatedField": "Employee.Educations",
+      "AutoGenerateForeignKeyField": true,
+      "ForeignKeyFields": [
+        {
+          "Id": "08e12a2a2c03414c82bd91cf6880d496",
+          "DataType": "Guid",
+          "IsNullable": true,
+          "ForeignKey": "BelongEmployeeId",
+          "PrincipalKey": "Employee.Id"
+        }
+      ],
+      "DeleteBehavior": "Cascade",
+      "Snippets": []
+    }
+  },
+  "Indexs": [],
+  "Snippets": [],
+  "Filter": {
+    "Items": {
+      "EmployeeFilter": {
+        "Id": "919b5fdb398e47edb6f991086eeb3d17",
+        "DisplayName": "EmployeeFilter",
+        "Parameters": {
+          "EmployeeId": {
+            "Id": "00b0d0a2ba824c66acf879ec762e6453",
+            "Type": "Guid",
+            "DataType": "Guid",
+            "DisplayName": "EmployeeId",
+            "DefaultValueType": "Value",
+            "Snippets": []
+          }
+        },
+        "Sources": [
+          {
+            "Source": "Education",
+            "Items": [
+              {
+                "Type": "Field",
+                "Field": "Education.BelongEmployeeId",
+                "Operation": "EQ",
+                "Parameter": "Education.EmployeeFilter.EmployeeId",
+                "Items": []
+              }
+            ]
+          }
+        ],
+        "Snippets": []
+      }
+    }
+  },
+  "Service": {
+    "IsGenerateBasic": true,
+    "Items": [
+      {
+        "Id": "7ebf6b89e90042d695896ce10579155c",
+        "Name": "Get",
+        "Type": "Get",
+        "Description": "获取单条数据",
+        "Category": "Base",
+        "Filter": "PrimaryKeyFilter",
+        "QuerySorts": [],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Id": "b397733355b84ab3accaaccbe2771f7c",
+          "Name": "Get",
+          "Description": "获取单条数据",
+          "Parameters": [
+            {
+              "Name": "PrimaryKeyFilter",
+              "Form": "Route"
+            }
+          ],
+          "Snippets": []
+        },
+        "Snippets": []
+      },
+      {
+        "Id": "7971b4bc8a5f4062ac31d162d6220d1c",
+        "Name": "Add",
+        "Type": "Add",
+        "Description": "添加单条数据",
+        "IsReturnMulti": false,
+        "Category": "Base",
+        "QuerySorts": [],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Id": "6f15cd6cdab742a2a82be002569578f5",
+          "Name": "Add",
+          "Method": "POST",
+          "Description": "添加单条数据",
+          "Parameters": [
+            {
+              "Name": "Education",
+              "Type": "Entity",
+              "Form": "Body"
+            }
+          ],
+          "Snippets": []
+        },
+        "Snippets": []
+      },
+      {
+        "Id": "9344fa5cff244c2cb9d039f449d0044a",
+        "Name": "AddRange",
+        "Type": "AddRange",
+        "Description": "添加多条数据",
+        "IsReturnMulti": true,
+        "Category": "Base",
+        "QuerySorts": [],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Id": "8e0c00733638499baf67218c6c0ca43a",
+          "Name": "AddRange",
+          "Method": "POST",
+          "RouteTemplate": "AddRange",
+          "Description": "添加多条数据",
+          "Parameters": [
+            {
+              "Name": "Education",
+              "Type": "Entity",
+              "Form": "Body"
+            }
+          ],
+          "Snippets": []
+        },
+        "Snippets": []
+      },
+      {
+        "Id": "24c7b1fb9696455e80becaa606fe07f4",
+        "Name": "Update",
+        "Type": "Update",
+        "Description": "更新单条数据",
+        "Category": "Base",
+        "QuerySorts": [],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Id": "0ee0d1c616ef43dd9ed8847893e1f8a6",
+          "Name": "Update",
+          "Method": "PUT",
+          "Description": "更新单条数据",
+          "Parameters": [
+            {
+              "Name": "Education",
+              "Type": "Entity",
+              "Form": "Body"
+            }
+          ],
+          "Snippets": []
+        },
+        "Snippets": []
+      },
+      {
+        "Id": "489c06d01a374f7880da4f31378c3382",
+        "Name": "Delete",
+        "Type": "Delete",
+        "Description": "删除单条数据",
+        "Category": "Base",
+        "Filter": "PrimaryKeyFilter",
+        "QuerySorts": [],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Id": "1bd0b958d68a4fa8862b4c47eed19c77",
+          "Name": "Delete",
+          "Method": "DELETE",
+          "Description": "删除单条数据",
+          "Parameters": [
+            {
+              "Name": "PrimaryKeyFilter",
+              "Form": "Route"
+            }
+          ],
+          "Snippets": []
+        },
+        "Snippets": []
+      },
+      {
+        "Id": "c46512fb86484c0f8bfc149dc8d38a46",
+        "Name": "GetPageByEmployeeFilter",
+        "Type": "GetPage",
+        "Description": "通过过滤器获取分页数据。",
+        "Filter": "EmployeeFilter",
+        "QuerySorts": [],
+        "Assigns": [],
+        "ResultSorts": [],
+        "Api": {
+          "Id": "dbca3366e0d541159e2c539e8a51d16e",
+          "Name": "GetPageByEmployeeFilter",
+          "Description": "通过过滤器获取分页数据。",
+          "Parameters": [
+            {
+              "Name": "EmployeeFilter"
+            }
+          ],
+          "Snippets": []
+        },
+        "Snippets": []
+      }
+    ]
+  },
+  "References": {
+    "DegreeType": "..\\Enums\\DegreeType.sdn",
+    "Employee": "Employee.sde"
+  }
+}

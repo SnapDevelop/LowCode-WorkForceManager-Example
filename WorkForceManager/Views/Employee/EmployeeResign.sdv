@@ -1,0 +1,677 @@
+{
+  "id": "page_8dca0c006a99e5e",
+  "type": "page",
+  "widget": "page",
+  "props": {
+    "ref": "page_8dca0c006a99e5e",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": [
+      {
+        "id": "bd99a7f2fd0d180",
+        "name": "employeeid",
+        "dataType": "String",
+        "isCollection": false,
+        "isNullable": false
+      }
+    ]
+  },
+  "rules": [
+    {
+      "id": "5bd6e75ab69304",
+      "type": "validate",
+      "name": "表单校验 - 离职时间必填",
+      "props": {
+        "whitespace": true,
+        "custom": {
+          "formItem_c90057de41dcb80": {
+            "message": "离职时间必填"
+          }
+        },
+        "message": "必填项"
+      },
+      "rule": "required",
+      "targets": [
+        "formItem_59ff22c1d459900",
+        "formItem_1ae4a901312e510"
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": "formContainer_3c7a24b579cf520",
+      "widget": "formContainer",
+      "props": {
+        "ref": "formContainer_3c7a24b579cf520",
+        "submit": "$(Api)Employee.UpdateResign",
+        "request": {
+          "name": "$(Api)Employee.Get",
+          "params": {
+            "Id": "$(Props)bd99a7f2fd0d180"
+          }
+        },
+        "labelCol": {
+          "width": "${span}6"
+        }
+      },
+      "children": [
+        {
+          "id": "formItem_4b53a928ce53dc0",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_4462864e0914780",
+            "label": "Id",
+            "name": "$(Field)Employee.Id",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_b4bb3ac5a2d848",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Id",
+                "ref": "input_4dbdc419671f5c0"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_a67dbfb33bc1980",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_c1a2dac40007880",
+            "label": "姓",
+            "name": "$(Field)Employee.FirstName",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_26cf5ebcdf44220",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.FirstName",
+                "ref": "input_75b6426c40c5b80"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_29fb213399f5280",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_b26361dcd36b100",
+            "label": "名",
+            "name": "$(Field)Employee.LastName",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_c4de3d334a2f780",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.LastName",
+                "ref": "input_b9e6fd9ac1e1500"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_57ada4b9904ea80",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_4315bb5cdaf1f40",
+            "label": "全名",
+            "name": "$(Field)Employee.FullName",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_de1b34c6ab01300",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.FullName",
+                "ref": "input_6736a292a70d4c0"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_d0b12ba8e9afe80",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_64441b91eb94040",
+            "label": "性别",
+            "name": "$(Field)Employee.Gender",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_ffcfe6351bba600",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Gender",
+                "ref": "input_3c8e27f1d8fc120"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_c9a025161eff000",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_f8f8d095189bc80",
+            "label": "电话号码",
+            "name": "$(Field)Employee.PhoneNumber",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_c2122a56e8fcf00",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.PhoneNumber",
+                "ref": "input_cfeebff4153a100"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_f4ff1a060462c80",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_f1e4fe816734700",
+            "label": "邮箱",
+            "name": "$(Field)Employee.Email",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_79ef70ff1d54b80",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Email",
+                "ref": "input_e73435e1ca37380"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_3b1e0ebb607cc60",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_98b3ac9e62f3500",
+            "label": "头像",
+            "name": "$(Field)Employee.Avatar",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "upload_dda4f6619dbaa00",
+              "widget": "upload",
+              "props": {
+                "ref": "upload_dda4f6619dbaa00",
+                "value": "$(Field)Employee.Avatar"
+              }
+            }
+          ]
+        },
+        {
+          "id": "formItem_9c04b59209ec980",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_cfb2a9ca724b000",
+            "label": "入职日期",
+            "name": "$(Field)Employee.HireDate",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_903d6f5eecda880",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.HireDate",
+                "ref": "input_aa578262be6d680"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_fa437b7cd160380",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_ec468c24dbc3480",
+            "label": "学历",
+            "name": "$(Field)Employee.Degree",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_bcb27cd0611b980",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Degree",
+                "ref": "input_3385dc3c0c633c0"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_3622b3c289844a0",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_53c395298c50f80",
+            "label": "毕业学校",
+            "name": "$(Field)Employee.EducateSchool",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_aed44612f047e80",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.EducateSchool",
+                "ref": "input_d910a09e5c72480"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_6edfb16a9d9c580",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_4d74531de98a900",
+            "label": "毕业时间",
+            "name": "$(Field)Employee.EducateDate",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_fce7ebd284c7d80",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.EducateDate",
+                "ref": "input_a825ff4e494cf00"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_ec2564ea5174e00",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_57b9dd9d8235a00",
+            "label": "部门",
+            "name": "$(Field)Employee.Department",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_76dcb401126da40",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Department",
+                "ref": "input_d5e42602c6a8100"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_5699010de6d4dc0",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_7cd776c260fb040",
+            "label": "上司",
+            "name": "$(Field)Employee.Manager",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_4140a6c0b75dd8",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Manager",
+                "ref": "input_a97a7f02973a600"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_a21a3a535f71780",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_205452353c69740",
+            "label": "员工状态",
+            "name": "$(Field)Employee.Status",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "select_f6a6c0990b30e00",
+              "widget": "select",
+              "props": {
+                "ref": "select_f6a6c0990b30e00",
+                "value": "$(Field)Employee.Status",
+                "request": {
+                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"实习\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"试用\",\r\n      \"value\": \"EmployeeStatus.TR\"\r\n    },\r\n    {\r\n      \"label\": \"正式\",\r\n      \"value\": \"EmployeeStatus.FL\"\r\n    },\r\n    {\r\n      \"label\": \"离职\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
+                  "params": {}
+                },
+                "disabled": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "formItem_1ae4a901312e510",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_f5e897a29e48480",
+            "label": "离职日期",
+            "name": "$(Field)Employee.ResignDate",
+            "hide": false,
+            "labelCol": {
+              "width": "${span}6"
+            }
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "datePicker_2b6b7b96e921ac0",
+              "widget": "datePicker",
+              "styles": {
+                "width": "100%"
+              },
+              "props": {
+                "ref": "datePicker_2b6b7b96e921ac0",
+                "value": "$(Field)Employee.ResignDate"
+              }
+            }
+          ]
+        },
+        {
+          "id": "formItem_59ff22c1d459900",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_9125569acacb880",
+            "label": "离职原因",
+            "name": "$(Field)Employee.ResignReason",
+            "hide": false,
+            "labelCol": {
+              "width": "${span}6"
+            }
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "select_74b55dc48954bc0",
+              "widget": "select",
+              "props": {
+                "ref": "select_74b55dc48954bc0",
+                "value": "$(Field)Employee.ResignReason",
+                "request": {
+                  "name": "$(Json)[\n  {\n    \"label\": \"合同到期\",\n    \"value\": \"合同到期\"\n  },\n  {\n    \"label\": \"能力不匹配\",\n    \"value\": \"能力不匹配\"\n  },\n  {\n    \"label\": \"个人原因\",\n    \"value\": \"个人原因\"\n  },\n  {\n    \"label\": \"家庭原因\",\n    \"value\": \"家庭原因\"\n  },\n  {\n    \"label\": \"工作地址原因\",\n    \"value\": \"工作地址原因\"\n  }\n\n]",
+                  "params": {}
+                }
+              },
+              "styles": {
+                "width": "100%"
+              }
+            }
+          ]
+        },
+        {
+          "id": "formItem_89e1ad4ee2be400",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_28d5d9fe1cddf80",
+            "label": "出生日期",
+            "name": "$(Field)Employee.BirthDay",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_1ab2caa5ca761c0",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.BirthDay",
+                "ref": "input_4e68bf19ca805c0"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_7240d1706628b40",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_843521bbbcb5980",
+            "label": "身份证",
+            "name": "$(Field)Employee.IdCard",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_dd84c18f7220d00",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.IdCard",
+                "ref": "input_f089c2548d85900"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_365a5ccd64e8f60",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_e7fb598b88ab480",
+            "label": "职位",
+            "name": "$(Field)Employee.Postion",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_8964375aff1c380",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.Postion",
+                "ref": "input_f703f63372e70"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_ade5b4610b05300",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_1e5e59db91caa00",
+            "label": "部门",
+            "name": "$(Field)Employee.DepartmentId",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_4feca90b458c2c0",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.DepartmentId",
+                "ref": "input_256081f74cc4de0"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_9b945a3e2093b00",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_97e660345d08600",
+            "label": "上司",
+            "name": "$(Field)Employee.ManagerId",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_c5b31c061c4a7",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.ManagerId",
+                "ref": "input_726a90190f5da0"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_fd96ccb98344f80",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_b488d26bdd25f80",
+            "label": "创建时间",
+            "name": "$(Field)Employee.CreateTime",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_9094b09a4016300",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.CreateTime",
+                "ref": "input_b5f17a92a28bc80"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_521a1906e986d0",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_91d7871a29dfe80",
+            "label": "更新时间",
+            "name": "$(Field)Employee.UpdateTime",
+            "hide": true
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "input_24085d4dab74220",
+              "widget": "input",
+              "props": {
+                "value": "$(Field)Employee.UpdateTime",
+                "ref": "input_4991402c0a41000"
+              },
+              "styles": {},
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "formItem_2d31659c7d3e6a0",
+          "widget": "formItem",
+          "props": {
+            "ref": "formItem_37447c31d89eec0",
+            "label": "",
+            "style": {
+              "textAlign": "right"
+            }
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "flex_20e7a351f75de60",
+              "widget": "flex",
+              "props": {
+                "justify": "end",
+                "ref": "flex_6789570f68e0080"
+              },
+              "children": [
+                {
+                  "id": "button_2a72c0509420b80",
+                  "widget": "button",
+                  "events": {
+                    "onClick": {
+                      "type": "request"
+                    }
+                  },
+                  "props": {
+                    "label": "提交",
+                    "type": "primary",
+                    "htmlType": "submit",
+                    "applyComponent": [
+                      "formContainer_3c7a24b579cf520"
+                    ],
+                    "ref": "button_6c5e8d93d8bbf80"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "styles": {
+        "marginTop": "20px"
+      }
+    }
+  ],
+  "references": {
+    "Employee": "..\\..\\Entities\\Employee.sde",
+    "EmployeeStatus": "..\\..\\Enums\\EmployeeStatus.sdn"
+  }
+}

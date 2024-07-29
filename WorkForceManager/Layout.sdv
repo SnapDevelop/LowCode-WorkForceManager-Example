@@ -1,0 +1,70 @@
+{
+  "id": "page_layout_8dc8564dbad7e9a",
+  "type": "page",
+  "widget": "page_layout",
+  "designVersion": "1.0.0",
+  "version": 1,
+  "props": {
+    "ref": "page_layout",
+    "title": "企业员工统计系统",
+    "footer": [
+      {
+        "id": "row_8dc8564dbad7eb2",
+        "widget": "row",
+        "props": {
+          "ref": "row_8dc8564dbad7eb2"
+        },
+        "children": [
+          {
+            "id": "col_8dc8564dbad7eb4",
+            "widget": "col",
+            "props": {
+              "ref": "col_8dc8564dbad7eb4"
+            },
+            "children": [
+              {
+                "id": "text_8dc8564dbad7eb5",
+                "widget": "text",
+                "props": {
+                  "ref": "text_8dc8564dbad7eb5",
+                  "value": "Copyright © 2024 艾普阳（深圳）有限公司"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "menu": {
+      "type": "sub",
+      "items": [
+        {
+          "key": "4cf1d5d8ea9118",
+          "label": "统计",
+          "page": "$(Document)Home",
+          "icon": "",
+          "hide": false
+        },
+        {
+          "key": "9e752224fe2c580",
+          "label": "公司",
+          "page": "$(Document)CompanyList",
+          "icon": "",
+          "hide": false
+        },
+        {
+          "key": "b69aad1927b6680",
+          "label": "员工",
+          "page": "$(Document)Department_Employee_TreeList",
+          "icon": "",
+          "hide": false
+        }
+      ]
+    }
+  },
+  "references": {
+    "CompanyList": "Views\\Company\\CompanyList.sdv",
+    "Department_Employee_TreeList": "Views\\Department\\Department_Employee_TreeList.sdv",
+    "Home": "Home.sdv"
+  }
+}

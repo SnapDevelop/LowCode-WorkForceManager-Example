@@ -1,0 +1,64 @@
+{
+  "id": "8f303a2d94d941c996e7116e510f64cd",
+  "widget": "sdq",
+  "version": 0,
+  "props": {
+    "name": "CompanyCities",
+    "displayname": "CompanyCities",
+    "description": "CompanyCities",
+    "controllerRoute": "api/[controller]",
+    "authorizationStategy": "$ParentCategory",
+    "sources": [
+      {
+        "alias": "Company",
+        "pointX": 0,
+        "pointY": 0,
+        "isExpanded": true
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "8dc9a84c52e7b67350",
+      "widget": "field",
+      "props": {
+        "name": "City",
+        "value": "$(Field)Company.City",
+        "displayName": "城市",
+        "isNullable": true,
+        "dataType": "String"
+      }
+    }
+  ],
+  "services": [
+    {
+      "id": "8dc9a84d4d885e1356",
+      "widget": "service",
+      "props": {
+        "name": "GetListByNoFilter",
+        "isEnableApi": true,
+        "description": "获取列表数据",
+        "isResultDistinct": true,
+        "isResultCollection": true,
+        "resultSorts": [
+          {
+            "source": "$(Document)CompanyCities"
+          }
+        ],
+        "sourceSorts": [
+          {
+            "source": "CompanyCities"
+          }
+        ],
+        "api": {
+          "name": "GetListByNoFilter",
+          "method": "GET",
+          "authorizationStategy": "$ParentCategory"
+        }
+      }
+    }
+  ],
+  "references": {
+    "Company": "..\\Entities\\Company.sde"
+  }
+}

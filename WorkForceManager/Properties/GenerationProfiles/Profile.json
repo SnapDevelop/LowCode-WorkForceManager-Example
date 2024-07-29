@@ -1,0 +1,162 @@
+{
+  "ORMVersion": "EFCore8",
+  "FrameworkVersion": "Net8",
+  "IsOverride": true,
+  "ChangeTrackingStrategy": "",
+  "Templates": [
+    "EFCore",
+    "CompositeQuery",
+    "Vue"
+  ],
+  "Projects": {
+    "WorkForceManager": {
+      "IsSolutionFolder": true,
+      "TargetDirectory": "..\\SourceCode",
+      "Targets": {
+        "Common": {
+          "ProjectName": "WorkForceManager.Common",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.Common",
+          "RootNamespace": "WorkForceManager.Common",
+          "Items": {
+            "CommonLinq": {
+              "RelativeDirectory": "Linq"
+            },
+            "CommonSecurity": {
+              "RelativeDirectory": "Security"
+            },
+            "CommonRepository": {
+              "RelativeDirectory": "Repository"
+            },
+            "CommonSerialNumber": {
+              "RelativeDirectory": "SerialNumber"
+            },
+            "CommonJsonConverter": {
+              "RelativeDirectory": "Converters"
+            },
+            "CommonBuiltInStruct": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Contract": {
+          "ProjectName": "WorkForceManager.Contracts",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.Contracts",
+          "RootNamespace": "WorkForceManager.Contracts",
+          "Items": {
+            "ContractEnum": {
+              "RelativeDirectory": "Enums"
+            },
+            "ContractEntity": {
+              "RelativeDirectory": "Entities"
+            },
+            "ContractModel": {
+              "RelativeDirectory": "Models"
+            },
+            "ContractFilter": {
+              "RelativeDirectory": "Filters"
+            },
+            "ContractServiceInterface": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Dal": {
+          "ProjectName": "WorkForceManager.Dal",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.Dal",
+          "RootNamespace": "WorkForceManager.Dal",
+          "Items": {
+            "DalDataContext": {
+              "RelativeDirectory": "."
+            },
+            "DalEntityConfiguration": {
+              "RelativeDirectory": "Configurations"
+            },
+            "DalValueConverter": {
+              "RelativeDirectory": "Converters"
+            },
+            "DalValueComparer": {
+              "RelativeDirectory": "Comparers"
+            },
+            "DalRepository": {
+              "RelativeDirectory": "Repository"
+            },
+            "DalSerialNumberGenerator": {
+              "RelativeDirectory": "."
+            },
+            "DalInjectionExtensions": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Service": {
+          "ProjectName": "WorkForceManager.Services",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.Services",
+          "RootNamespace": "WorkForceManager.Services",
+          "Items": {
+            "ServiceImplementation": {
+              "RelativeDirectory": "Impl"
+            },
+            "ServiceInjectionExtensions": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Controller": {
+          "ProjectName": "WorkForceManager.Controllers",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.Controllers",
+          "RootNamespace": "WorkForceManager.Controllers",
+          "Items": {
+            "ControllerController": {
+              "RelativeDirectory": "Controllers"
+            },
+            "ControllerValidation": {
+              "RelativeDirectory": "Validation"
+            }
+          }
+        },
+        "API": {
+          "ProjectName": "WorkForceManager.WebApi",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.WebApi",
+          "RootNamespace": "WorkForceManager.WebApi",
+          "Items": {
+            "APIProgram": {
+              "RelativeDirectory": "."
+            }
+          }
+        },
+        "Vue": {
+          "ProjectName": "WorkForceManager.Vue",
+          "RelativeDirectory": "..\\SourceCode\\WorkForceManager.Vue",
+          "RootNamespace": "WorkForceManager.Vue",
+          "Items": {
+            "VueApi": {
+              "RelativeDirectory": "src\\service"
+            },
+            "VueEnum": {
+              "RelativeDirectory": "src\\enums"
+            },
+            "VueRouter": {
+              "RelativeDirectory": "src\\router"
+            },
+            "VueView": {
+              "RelativeDirectory": "src\\views"
+            },
+            "VueLocales": {
+              "RelativeDirectory": "src\\locales"
+            }
+          }
+        }
+      }
+    }
+  },
+  "DbContextConnection": {
+    "DatabaseType": "Sqlite",
+    "ConnectionName": "data.db",
+    "ConnectionString": "eyJCb2R5IjoiM1kvc2Y5MjRhZUhkdWFCOS9NNWRGVXluTXl3bVx1MDAyQmVINzZkZzFUTlp2VzBzPSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE3MjE4NzQ5MTUsIlNpZ25hdHVyZSI6IkExQUFGNTYwMUE4QUI2N0Y2MENEREMyNjJBQjg4ODY0In19"
+  },
+  "IdentityConnection": {
+    "DatabaseType": "Sqlite",
+    "ConnectionName": "identity.db",
+    "ConnectionString": "eyJCb2R5IjoiR0wzbk5OdEloSVdTaWtRQ0xnenZqekVBT1hqZHBjZERJZVliSUtwV3dhZz0iLCJIZWFkZXIiOnsiVGltZXN0YW1wIjoxNzIxODc0OTE1LCJTaWduYXR1cmUiOiI0NTU3OThEODZFMzhEM0QyNDlGREYxRjc1MzY3Njg0QyJ9fQ=="
+  }
+}

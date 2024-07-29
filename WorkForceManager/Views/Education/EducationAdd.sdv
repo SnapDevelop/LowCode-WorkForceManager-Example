@@ -1,0 +1,322 @@
+{
+  "id": "page_2",
+  "widget": "page",
+  "type": "page",
+  "designVersion": "1.0.0",
+  "version": 1,
+  "props": {
+    "ref": "page_2",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": [
+      {
+        "id": "b13a163ddf1c700",
+        "name": "employeeid",
+        "dataType": "String",
+        "isCollection": false,
+        "isNullable": false
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "card_8dca1bdf02db9ce471",
+      "widget": "card",
+      "props": {
+        "ref": "card_8dca1bdf02db9ce471",
+        "title": {
+          "type": "slot",
+          "slot": {
+            "hide": false,
+            "render": [
+              {
+                "id": "title_8dca1bdf02dc326472",
+                "widget": "title",
+                "props": {
+                  "ref": "title_8dca1bdf02dc326472",
+                  "value": "教育经历",
+                  "level": 4
+                }
+              },
+              {
+                "id": "text_8dca1bdf02dc342473",
+                "widget": "text",
+                "props": {
+                  "ref": "text_8dca1bdf02dc342473",
+                  "value": "Education",
+                  "textType": {
+                    "type": "secondary",
+                    "custom": false
+                  }
+                },
+                "styles": {
+                  "marginLeft": "8px"
+                }
+              }
+            ]
+          }
+        },
+        "extra": []
+      },
+      "children": [
+        {
+          "id": "formContainer_8dca1bdf02dd5dc474",
+          "widget": "formContainer",
+          "props": {
+            "ref": "formContainer_8dca1bdf02dd5dc474",
+            "submit": "$(Api)Education.Add",
+            "layout": "horizontal",
+            "labelAlign": "right",
+            "labelCol": {
+              "width": "${span}6"
+            }
+          },
+          "children": [
+            {
+              "id": "formItem_8dca1bdf02e27e1475",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca1bdf02e27e1475",
+                "label": "Id",
+                "hide": true,
+                "name": "$(Field)Education.Id"
+              },
+              "children": [
+                {
+                  "id": "input_8dca1bdf02e3e17476",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_8dca1bdf02e3e17476",
+                    "value": "$(Field)Education.Id"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca1bdf02e3e86477",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca1bdf02e3e86477",
+                "label": "学校",
+                "name": "$(Field)Education.School"
+              },
+              "children": [
+                {
+                  "id": "input_8dca1bdf02e46be478",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_8dca1bdf02e46be478",
+                    "value": "$(Field)Education.School"
+                  },
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca1bdf02e46ee479",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca1bdf02e46ee479",
+                "label": "起始日期",
+                "name": "$(Field)Education.StartDate"
+              },
+              "children": [
+                {
+                  "id": "datePicker_8dca1bdf02e46fd480",
+                  "widget": "datePicker",
+                  "styles ": {
+                    "width": "100%"
+                  },
+                  "props": {
+                    "ref": "datePicker_8dca1bdf02e46fd480",
+                    "value": "$(Field)Education.StartDate",
+                    "format": "YYYY-MM-DD",
+                    "valueFormat": "YYYY-MM-DD"
+                  },
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca1bdf02e4acd481",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca1bdf02e4acd481",
+                "label": "结束日期",
+                "name": "$(Field)Education.EndDate"
+              },
+              "children": [
+                {
+                  "id": "datePicker_8dca1bdf02e4ae2482",
+                  "widget": "datePicker",
+                  "styles ": {
+                    "width": "100%"
+                  },
+                  "props": {
+                    "ref": "datePicker_8dca1bdf02e4ae2482",
+                    "value": "$(Field)Education.EndDate",
+                    "format": "YYYY-MM-DD",
+                    "valueFormat": "YYYY-MM-DD"
+                  },
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca1bdf02e4afa483",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca1bdf02e4afa483",
+                "label": "专业",
+                "name": "$(Field)Education.Major"
+              },
+              "children": [
+                {
+                  "id": "input_8dca1bdf02e56ee484",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_8dca1bdf02e56ee484",
+                    "value": "$(Field)Education.Major"
+                  },
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca1bdf02e571a485",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca1bdf02e571a485",
+                "label": "学历",
+                "name": "$(Field)Education.Degree"
+              },
+              "children": [
+                {
+                  "id": "select_8dca1bdf02e5727486",
+                  "widget": "select",
+                  "styles ": {
+                    "width": "100%"
+                  },
+                  "props": {
+                    "ref": "select_8dca1bdf02e5727486",
+                    "value": "$(Field)Education.Degree",
+                    "request": {
+                      "name": "$(Json-Enum){\r\n  \"enum\": \"DegreeType\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"高中\",\r\n      \"value\": \"DegreeType.HS\"\r\n    },\r\n    {\r\n      \"label\": \"大专\",\r\n      \"value\": \"DegreeType.JC\"\r\n    },\r\n    {\r\n      \"label\": \"本科\",\r\n      \"value\": \"DegreeType.UG\"\r\n    },\r\n    {\r\n      \"label\": \"硕士\",\r\n      \"value\": \"DegreeType.MT\"\r\n    },\r\n    {\r\n      \"label\": \"博士\",\r\n      \"value\": \"DegreeType.DR\"\r\n    },\r\n    {\r\n      \"label\": \"其它\",\r\n      \"value\": \"DegreeType.OT\"\r\n    }\r\n  ]\r\n}",
+                      "params": {}
+                    }
+                  },
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_41c60368b78f4c0",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_4ef9ca93de89d80",
+                "label": "员工",
+                "name": "$(Field)Education.BelongEmployeeId",
+                "hide": true
+              },
+              "styles": {},
+              "children": [
+                {
+                  "id": "input_cc1136b757c9600",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_e494ac3a9fb0280",
+                    "value": "$(Field)Education.BelongEmployeeId",
+                    "default": "$(Props)b13a163ddf1c700"
+                  },
+                  "styles": {},
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "flex_8dca1bdf02e6fd6489",
+              "widget": "flex",
+              "props": {
+                "ref": "flex_8dca1bdf02e6fd6489",
+                "justify": "end"
+              },
+              "children": [
+                {
+                  "id": "button_8dca1bdf02e6ffe490",
+                  "widget": "button",
+                  "events": {
+                    "onClick": {
+                      "type": "request",
+                      "member": "$(Event)formContainer_8dca1bdf02dd5dc474.submit"
+                    }
+                  },
+                  "props": {
+                    "ref": "button_8dca1bdf02e6ffe490",
+                    "label": "提交",
+                    "htmlType": "submit",
+                    "type": "primary",
+                    "applyComponent": [
+                      "formContainer_8dca1bdf02dd5dc474"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "area_8dca1bdf02e65d7487",
+      "name": "表单校验1",
+      "rule": "area",
+      "type": "validate",
+      "props": {
+        "max": 100
+      },
+      "targets": [
+        "formItem_8dca1bdf02e3e86477"
+      ]
+    },
+    {
+      "id": "area_8dca1bdf02e6840488",
+      "name": "表单校验2",
+      "rule": "area",
+      "type": "validate",
+      "props": {
+        "max": 200
+      },
+      "targets": [
+        "formItem_8dca1bdf02e4afa483"
+      ]
+    },
+    {
+      "id": "8aff58c286b5b80",
+      "type": "validate",
+      "name": "不能为空",
+      "props": {},
+      "rule": "required",
+      "targets": [
+        "formItem_8dca1bdf02e3e86477"
+      ]
+    }
+  ],
+  "references": {
+    "Education": "..\\..\\Entities\\Education.sde",
+    "DegreeType": "..\\..\\Enums\\DegreeType.sdn"
+  }
+}

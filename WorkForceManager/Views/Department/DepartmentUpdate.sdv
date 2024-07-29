@@ -1,0 +1,272 @@
+{
+  "id": "page_1",
+  "widget": "page",
+  "type": "page",
+  "designVersion": "1.0.0",
+  "version": 1,
+  "props": {
+    "ref": "page_1",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": [
+      {
+        "id": "4c78d578b791400",
+        "name": "departmentid",
+        "dataType": "String",
+        "isCollection": false,
+        "isNullable": false
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "card_8dca188a70d5b661091",
+      "widget": "card",
+      "props": {
+        "ref": "card_8dca188a70d5b661091",
+        "title": {
+          "type": "slot",
+          "slot": {
+            "hide": false,
+            "render": [
+              {
+                "id": "title_8dca188a70d5e441092",
+                "widget": "title",
+                "props": {
+                  "ref": "title_8dca188a70d5e441092",
+                  "value": "编辑",
+                  "level": 4
+                }
+              },
+              {
+                "id": "text_8dca188a70d5e6f1093",
+                "widget": "text",
+                "props": {
+                  "ref": "text_8dca188a70d5e6f1093",
+                  "value": "Department",
+                  "textType": {
+                    "type": "secondary",
+                    "custom": false
+                  }
+                },
+                "styles": {
+                  "marginLeft": "8px"
+                }
+              }
+            ]
+          }
+        },
+        "extra": []
+      },
+      "children": [
+        {
+          "id": "formContainer_8dca188a70d76d71094",
+          "widget": "formContainer",
+          "props": {
+            "ref": "formContainer_8dca188a70d76d71094",
+            "submit": "$(Api)Department.Update",
+            "layout": "horizontal",
+            "labelAlign": "right",
+            "request": {
+              "name": "$(Api)Department.Get",
+              "params": {
+                "Id": "$(Props)4c78d578b791400"
+              }
+            },
+            "labelCol": {
+              "width": "${span}6"
+            }
+          },
+          "children": [
+            {
+              "id": "formItem_8dca188a70dd7b41095",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca188a70dd7b41095",
+                "label": "Id",
+                "hide": true,
+                "name": "$(Field)Department.Id"
+              },
+              "children": [
+                {
+                  "id": "input_8dca188a70df1371096",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_8dca188a70df1371096",
+                    "value": "$(Field)Department.Id"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca188a70df1991097",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_8dca188a70df1991097",
+                "label": "部门名称",
+                "name": "$(Field)Department.DepartmentName",
+                "labelCol": {
+                  "width": "${span}5"
+                }
+              },
+              "children": [
+                {
+                  "id": "input_8dca188a70e10a41098",
+                  "widget": "input",
+                  "props": {
+                    "ref": "input_8dca188a70e10a41098",
+                    "value": "$(Field)Department.DepartmentName"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca188a70e11c01099",
+              "widget": "formItem",
+              "styles ": {
+                "width": "100%"
+              },
+              "props": {
+                "ref": "formItem_8dca188a70e11c01099",
+                "label": "所属公司",
+                "name": "$(Field)Department.CompanyId",
+                "labelCol": {
+                  "width": "${span}5"
+                }
+              },
+              "children": [
+                {
+                  "id": "select_2791d87234702e0",
+                  "widget": "select",
+                  "props": {
+                    "ref": "select_2791d87234702e0",
+                    "request": {
+                      "name": "$(Api)Company.GetList",
+                      "params": {}
+                    },
+                    "value": "$(Field)Department.CompanyId",
+                    "fieldName": "$(Field)Company.CompanyName",
+                    "fieldValue": "$(Field)Company.Id"
+                  },
+                  "styles": {
+                    "width": "100%"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_1f345e4e3d81b10",
+              "widget": "formItem",
+              "props": {
+                "ref": "formItem_642721e758c9340",
+                "label": "创建时间",
+                "name": "$(Field)Department.CreateTime",
+                "hide": true
+              },
+              "styles": {},
+              "children": [
+                {
+                  "id": "datePicker_5d8088bbaeb8740",
+                  "widget": "datePicker",
+                  "props": {
+                    "ref": "datePicker_9bd22d17242cf8",
+                    "value": "$(Field)Department.CreateTime",
+                    "format": "YYYY-MM-DD HH:mm:ss",
+                    "valueFormat": "YYYY-MM-DDTHH:mm:ss"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "formItem_8dca188a70e12101101",
+              "widget": "formItem",
+              "styles ": {
+                "width": "100%"
+              },
+              "props": {
+                "ref": "formItem_8dca188a70e12101101",
+                "label": "更新时间",
+                "name": "$(Field)Department.UpdateTime",
+                "hide": true
+              },
+              "children": [
+                {
+                  "id": "datePicker_8dca188a70e12171102",
+                  "widget": "datePicker",
+                  "props": {
+                    "ref": "datePicker_8dca188a70e12171102",
+                    "value": "$(Field)Department.UpdateTime",
+                    "format": "YYYY-MM-DD HH:mm:ss",
+                    "valueFormat": "YYYY-MM-DDTHH:mm:ss"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "flex_8dca188a70e28311105",
+              "widget": "flex",
+              "props": {
+                "ref": "flex_8dca188a70e28311105",
+                "justify": "end"
+              },
+              "children": [
+                {
+                  "id": "button_8dca188a70e28561106",
+                  "widget": "button",
+                  "events": {
+                    "onClick": {
+                      "type": "request",
+                      "member": "$(Event)formContainer_8dca188a70d76d71094.submit"
+                    }
+                  },
+                  "props": {
+                    "ref": "button_8dca188a70e28561106",
+                    "label": "提交",
+                    "htmlType": "submit",
+                    "type": "primary",
+                    "applyComponent": [
+                      "formContainer_8dca188a70d76d71094"
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "required_8dca188a70e18751103",
+      "name": "表单校验1",
+      "rule": "required",
+      "type": "validate",
+      "props": {
+        "whitespace": true
+      },
+      "targets": [
+        "formItem_8dca188a70df1991097"
+      ]
+    },
+    {
+      "id": "area_8dca188a70e1def1104",
+      "name": "表单校验2",
+      "rule": "area",
+      "type": "validate",
+      "props": {
+        "max": 20,
+        "min": 2
+      },
+      "targets": [
+        "formItem_8dca188a70df1991097"
+      ]
+    }
+  ],
+  "references": {
+    "Department": "..\\..\\Entities\\Department.sde",
+    "Company": "..\\..\\Entities\\Company.sde"
+  }
+}

@@ -1,0 +1,712 @@
+{
+  "id": "page_8dc9a9f6d23de25376",
+  "widget": "page",
+  "type": "page",
+  "designVersion": "1.0.0",
+  "version": 1,
+  "props": {
+    "ref": "page_companylist",
+    "title": {
+      "type": "string",
+      "value": ""
+    },
+    "params": [],
+    "search": {
+      "filter": [
+        null,
+        {
+          "props": {
+            "application": []
+          }
+        }
+      ]
+    }
+  },
+  "children": [
+    {
+      "id": "card_2ef308afffa6760",
+      "widget": "card",
+      "props": {
+        "ref": "card_ba62988b24ad300",
+        "title": {
+          "type": "string",
+          "value": ""
+        },
+        "extra": [],
+        "hideActions": true
+      },
+      "styles": {
+        "marginBottom": "10px"
+      },
+      "children": [
+        {
+          "id": "flex_c806ce133fcfb0",
+          "widget": "flex",
+          "props": {
+            "ref": "flex_7f4258d9a5e9000",
+            "gap": {
+              "number": 10,
+              "custom": true
+            },
+            "wrap": "nowrap"
+          },
+          "styles": {},
+          "children": [
+            {
+              "id": "space_a99618fd536bc80",
+              "widget": "space",
+              "props": {
+                "ref": "space_38a2b7aabcadb00",
+                "size": "${width}40",
+                "direction": "horizontal"
+              },
+              "styles": {},
+              "children": [
+                {
+                  "id": "row_d34b94e4388ad00",
+                  "widget": "row",
+                  "props": {
+                    "ref": "row_d34b94e4388ad00"
+                  },
+                  "children": [
+                    {
+                      "id": "col_c946800dd270c00",
+                      "widget": "col",
+                      "props": {
+                        "ref": "col_c946800dd270c00"
+                      },
+                      "children": [
+                        {
+                          "id": "statistic_d84d9df068f7b00",
+                          "widget": "statistic",
+                          "props": {
+                            "ref": "statistic_af086fb66e65a00",
+                            "title": {
+                              "type": "string",
+                              "value": "公司总数"
+                            },
+                            "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.TotalCount",
+                            "suffix": "",
+                            "tipText": "各类公司总和"
+                          },
+                          "styles": {
+                            "width": "100px",
+                            "marginRight": "10px"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "col_5ddc4778118ba00",
+                      "widget": "col",
+                      "props": {
+                        "ref": "col_5ddc4778118ba00"
+                      },
+                      "children": [
+                        {
+                          "id": "statistic_1d0070c58dde0f0",
+                          "widget": "statistic",
+                          "props": {
+                            "ref": "statistic_e6b0ae5067cf580",
+                            "title": {
+                              "type": "string",
+                              "value": "微型公司"
+                            },
+                            "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.TinyCount",
+                            "tipText": "1-10人"
+                          },
+                          "styles": {
+                            "width": "100px",
+                            "marginRight": "10px"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "col_3ae305374a48c80",
+                      "widget": "col",
+                      "props": {
+                        "ref": "col_27d9c272164fac0"
+                      },
+                      "styles": {},
+                      "children": [
+                        {
+                          "id": "statistic_9cc4708e6f17c80",
+                          "widget": "statistic",
+                          "props": {
+                            "ref": "statistic_64f8e876b914c80",
+                            "title": {
+                              "type": "string",
+                              "value": "小型公司"
+                            },
+                            "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.SmallCount",
+                            "tipText": "10-100人"
+                          },
+                          "styles": {
+                            "marginRight": "10px",
+                            "width": "100px"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "col_d3432cde5b8cd00",
+                      "widget": "col",
+                      "props": {
+                        "ref": "col_ba0240c9ff9740"
+                      },
+                      "styles": {},
+                      "children": [
+                        {
+                          "id": "statistic_6d98ad2bcd034c0",
+                          "widget": "statistic",
+                          "props": {
+                            "ref": "statistic_81fd87560dee380",
+                            "title": {
+                              "type": "string",
+                              "value": "中型公司"
+                            },
+                            "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.BigCount",
+                            "tipText": "100-1000人"
+                          },
+                          "styles": {
+                            "marginRight": "10px",
+                            "width": "100px"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "col_67c5c9269b01ec0",
+                      "widget": "col",
+                      "props": {
+                        "ref": "col_adc5af4e13bcb80"
+                      },
+                      "styles": {},
+                      "children": [
+                        {
+                          "id": "statistic_f08e6e148215100",
+                          "widget": "statistic",
+                          "props": {
+                            "ref": "statistic_9255433680b3e80",
+                            "title": {
+                              "type": "string",
+                              "value": "大型公司"
+                            },
+                            "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.LargeCount",
+                            "tipText": "1000人以上"
+                          },
+                          "styles": {
+                            "width": "100px"
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tableContainer_8dc9a9f6d23e243377",
+      "widget": "tableContainer",
+      "props": {
+        "ref": "tableContainer_8dc9a9f6d23e243377",
+        "request": {
+          "name": "$(Api)Company.GetPageByAddressSizeName",
+          "params": {
+            "Cities": "$(Members)[watch]select_b144705e8620e80.value",
+            "CompanySize": "$(Members)[watch]checkboxGroup_5206bf7df47e84.value"
+          }
+        },
+        "title": {
+          "type": "slot",
+          "slot": {
+            "hide": false,
+            "render": [
+              {
+                "id": "title_9f8efbf64dac680",
+                "widget": "title",
+                "props": {
+                  "ref": "title_19d142e255fb480",
+                  "level": 4,
+                  "value": "公司列表"
+                },
+                "styles": {},
+                "children": []
+              }
+            ]
+          }
+        },
+        "search": {
+          "col": {
+            "width": "${span}11"
+          },
+          "filter": [],
+          "hideForm": true,
+          "hideSearchActions": true
+        },
+        "columns": [
+          {
+            "hide": true,
+            "title": "Id",
+            "dataIndex": "$(Field)Company.Id",
+            "render": {
+              "id": "text_dc5e9613b14b48",
+              "widget": "text",
+              "props": {
+                "value": "$(Field)Company.Id",
+                "ref": "text_ea9da0df9296b80"
+              },
+              "styles": {},
+              "children": []
+            }
+          },
+          {
+            "hide": false,
+            "title": "公司名称",
+            "dataIndex": "$(Field)Company.CompanyName",
+            "render": {
+              "id": "text_da8e9bda036d380",
+              "widget": "text",
+              "props": {
+                "value": "$(Field)Company.CompanyName",
+                "ref": "text_d276e29cd307100",
+                "fontSize": 16,
+                "mark": false,
+                "strong": true
+              },
+              "styles": {},
+              "children": []
+            }
+          },
+          {
+            "hide": true,
+            "title": "联系人",
+            "dataIndex": "$(Field)Company.Contactor",
+            "render": {
+              "id": "text_8681614f5bbfa00",
+              "widget": "text",
+              "props": {
+                "value": "$(Field)Company.Contactor",
+                "ref": "text_902f8351997840"
+              },
+              "styles": {},
+              "children": []
+            }
+          },
+          {
+            "hide": false,
+            "title": "公司规模",
+            "dataIndex": "$(Field)Company.CompanySize",
+            "render": {
+              "id": "tag_64726bb8b0c85c0",
+              "widget": "tag",
+              "props": {
+                "ref": "tag_75940b7cfef9240",
+                "value": "$(Field)Company.CompanySize"
+              },
+              "styles": {},
+              "children": []
+            }
+          },
+          {
+            "hide": false,
+            "title": "省份",
+            "dataIndex": "$(Field)Company.Province",
+            "render": {
+              "id": "text_8a7e28f30373900",
+              "widget": "text",
+              "props": {
+                "value": "$(Field)Company.Province",
+                "ref": "text_d4e6003fdc47f80"
+              },
+              "styles": {},
+              "children": []
+            }
+          },
+          {
+            "hide": false,
+            "title": "城市",
+            "dataIndex": "$(Field)Company.City",
+            "render": {
+              "id": "text_8d8dd566f6ad700",
+              "widget": "text",
+              "props": {
+                "value": "$(Field)Company.City",
+                "ref": "text_a4b85e5164de100",
+                "copyable": false,
+                "code": false
+              },
+              "styles": {},
+              "children": []
+            }
+          },
+          {
+            "dataIndex": "operation",
+            "fixed": "right",
+            "title": "操作列",
+            "width": 180,
+            "render": {
+              "id": "space_de8b329c2105c80",
+              "widget": "space",
+              "props": {
+                "ref": "space_de8b329c2105c80",
+                "size": 0,
+                "application": []
+              },
+              "children": [
+                {
+                  "id": "button_2bb507128a272",
+                  "widget": "button",
+                  "props": {
+                    "ref": "button_detail",
+                    "label": "详情",
+                    "type": "link",
+                    "size": "small",
+                    "icon": "antdv://IdcardFilled"
+                  },
+                  "events": {
+                    "onClick": {
+                      "type": "openModalWindow",
+                      "component": "drawer_45223d74842c700"
+                    }
+                  }
+                },
+                {
+                  "id": "button_b53a42ae897d900",
+                  "widget": "button",
+                  "props": {
+                    "ref": "button_edit",
+                    "label": "编辑",
+                    "type": "link",
+                    "size": "small",
+                    "icon": "antdv://EditFilled"
+                  },
+                  "events": {
+                    "onClick": {
+                      "type": "openModalWindow",
+                      "component": "modal_70ecff0a44c3840"
+                    }
+                  }
+                },
+                {
+                  "id": "popConfirm_52196a84f258e80",
+                  "widget": "popConfirm",
+                  "props": {
+                    "ref": "popConfirm_52196a84f258e80",
+                    "open": false
+                  },
+                  "events": {
+                    "confirm": {
+                      "type": "request",
+                      "member": "$(Event)button_cca8f8753360700.onClick",
+                      "request": {
+                        "name": "$(Api)Company.Delete",
+                        "params": {
+                          "Id": "$(Members)tableContainer_8dc9a9f6d23e243377.currentRow.Id"
+                        }
+                      },
+                      "callback": "$(Event)tableContainer_8dc9a9f6d23e243377.onSearch"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": "button_cca8f8753360700",
+                      "widget": "button",
+                      "props": {
+                        "ref": "button_cca8f8753360700",
+                        "htmlType": "button",
+                        "label": "删除",
+                        "type": "link",
+                        "size": "small",
+                        "danger": true,
+                        "icon": "antdv://WarningFilled"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "extra": [
+          {
+            "id": "checkboxGroup_5206bf7df47e84",
+            "widget": "checkboxGroup",
+            "styles": {
+              "width": "100%"
+            },
+            "props": {
+              "ref": "checkboxGroup_5206bf7df47e84",
+              "default": [
+                "$(Field)CompanySize.Tiny",
+                "$(Field)CompanySize.Small",
+                "$(Field)CompanySize.Big",
+                "$(Field)CompanySize.Large"
+              ],
+              "request": {
+                "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"微型企业\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"小型企业\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"中型企业\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"大型企业\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
+                "params": {}
+              }
+            }
+          },
+          {
+            "id": "select_b144705e8620e80",
+            "widget": "select",
+            "props": {
+              "ref": "select_b144705e8620e80",
+              "mode": "multiple",
+              "placeholder": "请选择城市",
+              "request": {
+                "name": "$(Api)CompanyCities.GetListByNoFilter",
+                "params": {}
+              },
+              "fieldName": "$(Field)CompanyCities.City",
+              "fieldValue": "$(Field)CompanyCities.City"
+            },
+            "styles": {
+              "width": "350px"
+            }
+          },
+          {
+            "id": "button_8dc9a9f6d23eec9395",
+            "widget": "button",
+            "events": {
+              "onClick": {
+                "type": "openModalWindow",
+                "component": "modal_fac120a73291e00"
+              }
+            },
+            "props": {
+              "ref": "button_add",
+              "htmlType": "button",
+              "label": "添加公司",
+              "type": "link",
+              "application": [],
+              "icon": "antdv://PlusCircleFilled"
+            }
+          }
+        ],
+        "hasPagination": true,
+        "application": []
+      }
+    },
+    {
+      "id": "modal_fac120a73291e00",
+      "widget": "modal",
+      "props": {
+        "ref": "modal_companyadd",
+        "footer": [
+          {
+            "id": "button_84e327f67b50180",
+            "widget": "button",
+            "props": {
+              "ref": "button_84e327f67b50180",
+              "label": "确认",
+              "type": "primary"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)include_683e060faa81700.page.button_8dc9aace717426a1085.onClick"
+              }
+            }
+          },
+          {
+            "id": "button_d4d99bde2365500",
+            "widget": "button",
+            "props": {
+              "ref": "button_d4d99bde2365500",
+              "label": "取消"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)modal_fac120a73291e00.close"
+              }
+            }
+          }
+        ],
+        "hide": true,
+        "title": {
+          "type": "string",
+          "value": ""
+        },
+        "width": 820
+      },
+      "children": [
+        {
+          "id": "include_683e060faa81700",
+          "widget": "include",
+          "props": {
+            "ref": "include_c481641be5e4080",
+            "page": "$(Document)CompanyAdd"
+          },
+          "styles": {
+            "paddingTop": "30px"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "drawer_45223d74842c700",
+      "widget": "drawer",
+      "props": {
+        "ref": "drawer_detail",
+        "extra": [],
+        "footer": [],
+        "title": {
+          "type": "string",
+          "value": ""
+        },
+        "hide": true,
+        "size": "large"
+      },
+      "children": [
+        {
+          "id": "include_f1a562f8ca47b80",
+          "widget": "include",
+          "props": {
+            "ref": "include_ef05d9737e37780",
+            "page": "$(Document)CompanyDetail",
+            "params": [
+              {
+                "id": "65ea6849149c540",
+                "name": "$(VParameter)CompanyDetail.8dc9ab35b7eb92d1121.Id",
+                "value": "$(Members)tableContainer_8dc9a9f6d23e243377.currentRow.Id"
+              }
+            ]
+          },
+          "styles": {},
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "modal_70ecff0a44c3840",
+      "widget": "modal",
+      "props": {
+        "ref": "modal_companyupdate",
+        "footer": [
+          {
+            "id": "button_abf750895dd1f80",
+            "widget": "button",
+            "props": {
+              "ref": "button_abf750895dd1f80",
+              "label": "确认",
+              "type": "primary"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)include_d51dce5cdf3f880.page.button_8dc9ab44f6600c61205.onClick"
+              }
+            }
+          },
+          {
+            "id": "button_1d849a897769a50",
+            "widget": "button",
+            "props": {
+              "ref": "button_1d849a897769a50",
+              "label": "取消"
+            },
+            "events": {
+              "onClick": {
+                "type": "call",
+                "member": "$(Event)modal_70ecff0a44c3840.close"
+              }
+            }
+          }
+        ],
+        "hide": true,
+        "title": {
+          "type": "string",
+          "value": ""
+        },
+        "width": 820,
+        "application": []
+      },
+      "children": [
+        {
+          "id": "include_d51dce5cdf3f880",
+          "widget": "include",
+          "props": {
+            "ref": "include_1f38d691e6fcb90",
+            "page": "$(Document)CompanyUpdate",
+            "params": [
+              {
+                "id": "f733d7d7509f900",
+                "name": "$(VParameter)CompanyUpdate.736db48e67d8780.Id",
+                "value": "$(Members)tableContainer_8dc9a9f6d23e243377.currentRow.Id"
+              }
+            ]
+          },
+          "styles": {},
+          "children": []
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "86419f23b888800",
+      "type": "control",
+      "name": "显示控制-公司规模",
+      "props": {
+        "valueType": "$(Document)CompanySize",
+        "values": {
+          "Tiny": {
+            "color": "#C71585FF",
+            "displayInfo": "微型企业"
+          },
+          "Small": {
+            "color": "#FFD700FF",
+            "displayInfo": "小型企业"
+          },
+          "Big": {
+            "color": "#1E90FFFF",
+            "displayInfo": "中型企业"
+          },
+          "Large": {
+            "color": "#FF4500FF",
+            "displayInfo": "大型企业"
+          }
+        }
+      },
+      "rule": "colorConfig",
+      "targets": [
+        "tag_64726bb8b0c85c0",
+        "formItem_72025babf9a1bc0"
+      ]
+    }
+  ],
+  "references": {
+    "Company": "..\\..\\Entities\\Company.sde",
+    "CompanyAdd": "CompanyAdd.sdv",
+    "CompanyDetail": "CompanyDetail.sdv",
+    "CompanyUpdate": "CompanyUpdate.sdv",
+    "CompanySize": "..\\..\\Enums\\CompanySize.sdn",
+    "CompanyCities": "..\\..\\Query\\CompanyCities.sdq",
+    "CompanySizeStatic": "..\\..\\Query\\CompanySizeStatic.sdq"
+  },
+  "events": {
+    "onLoad": [
+      {
+        "name": "$(Api)CompanySizeStatic.GetByCityFilter",
+        "params": {
+          "Cities": "$(Members)[watch]select_b144705e8620e80.value"
+        }
+      }
+    ]
+  }
+}

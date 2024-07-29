@@ -1,0 +1,183 @@
+{
+  "id": "19eff0188fe54b8da3f930ceb0e4068c",
+  "widget": "sdq",
+  "version": 0,
+  "props": {
+    "name": "CompanyDegreeStatic",
+    "displayname": "CompanyDegreeStatic",
+    "description": "CompanyDegreeStatic",
+    "controllerRoute": "api/[controller]",
+    "authorizationStategy": "$ParentCategory",
+    "sources": [
+      {
+        "alias": "Employee",
+        "pointX": 200,
+        "pointY": 180,
+        "isExpanded": true
+      },
+      {
+        "alias": "Department",
+        "pointX": 606,
+        "pointY": 180,
+        "isExpanded": true
+      },
+      {
+        "alias": "Company",
+        "pointX": 1016,
+        "pointY": 180,
+        "isExpanded": true
+      }
+    ],
+    "relationships": [
+      {
+        "left": "Department",
+        "right": "Company",
+        "joinType": "InnerJoin",
+        "conditions": [
+          {
+            "left": "$(Field)Department.CompanyId",
+            "right": "$(Field)Company.Id"
+          }
+        ]
+      },
+      {
+        "left": "Employee",
+        "right": "Department",
+        "joinType": "InnerJoin",
+        "conditions": [
+          {
+            "left": "$(Field)Employee.DepartmentId",
+            "right": "$(Field)Department.Id"
+          }
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "name": "EmployeeDegree",
+        "expression": "$(Field)Employee.Degree"
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "group_field_id_EmployeeDegree",
+      "widget": "field",
+      "props": {
+        "name": "EmployeeDegree",
+        "value": "$(Field)CompanyDegreeStatic.Group.Key.EmployeeDegree",
+        "displayName": "学历",
+        "isNullable": true,
+        "dataType": "DegreeType"
+      }
+    },
+    {
+      "id": "8dca4d4448d88e2709",
+      "widget": "field",
+      "props": {
+        "name": "Employees",
+        "value": "$(Expression)Select(CompanyDegreeStatic.Group.Employee)",
+        "displayName": "Employees",
+        "dataType": "Employee",
+        "isCollection": true
+      }
+    },
+    {
+      "id": "8dca4d4289fda3c706",
+      "widget": "field",
+      "props": {
+        "name": "EmployeeCount",
+        "value": "$(Expression)Count(DistinctBy(CompanyDegreeStatic.Employees.PhoneNumber)) ",
+        "displayName": "员工数",
+        "isCompute": true,
+        "dataType": "Int32"
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "8dca4d23b70d2c5679",
+      "widget": "filter",
+      "props": {
+        "name": "CitiesFilter",
+        "parameters": [
+          {
+            "id": "8dca4d23b70d312680",
+            "name": "Cities",
+            "dataType": "String",
+            "isNullable": true,
+            "displayName": "Cities",
+            "isCollection": true
+          },
+          {
+            "id": "8dca4d2620cad25683",
+            "name": "IncludeResign",
+            "dataType": "Boolean",
+            "isNullable": true,
+            "displayName": "包含离职",
+            "defaultValue": "$(Value)false"
+          }
+        ]
+      },
+      "children": [
+        {
+          "id": "8dca4d23b70d384682",
+          "expression": "$(Expression)CompanyDegreeStatic.CitiesFilter.IncludeResign || Employee.Status != EmployeeStatus.RN ",
+          "relation": "None",
+          "operation": "None",
+          "type": "Expression",
+          "scopes": []
+        },
+        {
+          "id": "8dca4d31bc35e14684",
+          "expression": "$(Field)Company.City",
+          "parameter": "CompanyDegreeStatic.CitiesFilter.Cities",
+          "relation": "And",
+          "operation": "IN",
+          "type": "Field",
+          "scopes": []
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "8dca4d326c5b98d693",
+      "widget": "service",
+      "props": {
+        "name": "GetListByCitiesFilter",
+        "isEnableApi": true,
+        "description": "通过过滤器获取列表数据。",
+        "isResultCollection": true,
+        "parameters": [
+          {
+            "name": "CompanyDegreeStatic.CitiesFilter",
+            "type": "Filter",
+            "from": "Query"
+          }
+        ],
+        "resultSorts": [
+          {
+            "source": "$(Document)CompanyDegreeStatic"
+          }
+        ],
+        "sourceSorts": [
+          {
+            "source": "CompanyDegreeStatic"
+          }
+        ],
+        "api": {
+          "name": "GetListByCitiesFilter",
+          "method": "GET",
+          "authorizationStategy": "$ParentCategory"
+        }
+      }
+    }
+  ],
+  "references": {
+    "Company": "..\\Entities\\Company.sde",
+    "Department": "..\\Entities\\Department.sde",
+    "Employee": "..\\Entities\\Employee.sde",
+    "EmployeeStatus": "..\\Enums\\EmployeeStatus.sdn"
+  }
+}
