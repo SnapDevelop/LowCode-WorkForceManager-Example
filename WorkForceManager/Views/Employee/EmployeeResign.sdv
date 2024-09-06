@@ -22,7 +22,7 @@
     {
       "id": "5bd6e75ab69304",
       "type": "validate",
-      "name": "表单校验 - 离职时间必填",
+      "name": "Value required",
       "props": {
         "whitespace": true,
         "custom": {
@@ -30,7 +30,7 @@
             "message": "离职时间必填"
           }
         },
-        "message": "必填项"
+        "message": "Value required"
       },
       "rule": "required",
       "targets": [
@@ -166,29 +166,6 @@
               "props": {
                 "value": "$(Field)Employee.Gender",
                 "ref": "input_3c8e27f1d8fc120"
-              },
-              "styles": {},
-              "children": []
-            }
-          ]
-        },
-        {
-          "id": "formItem_c9a025161eff000",
-          "widget": "formItem",
-          "props": {
-            "ref": "formItem_f8f8d095189bc80",
-            "label": "电话号码",
-            "name": "$(Field)Employee.PhoneNumber",
-            "hide": true
-          },
-          "styles": {},
-          "children": [
-            {
-              "id": "input_c2122a56e8fcf00",
-              "widget": "input",
-              "props": {
-                "value": "$(Field)Employee.PhoneNumber",
-                "ref": "input_cfeebff4153a100"
               },
               "styles": {},
               "children": []
@@ -395,7 +372,7 @@
                 "ref": "select_f6a6c0990b30e00",
                 "value": "$(Field)Employee.Status",
                 "request": {
-                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"实习\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"试用\",\r\n      \"value\": \"EmployeeStatus.TR\"\r\n    },\r\n    {\r\n      \"label\": \"正式\",\r\n      \"value\": \"EmployeeStatus.FL\"\r\n    },\r\n    {\r\n      \"label\": \"离职\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
+                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Internship\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"Probation\",\r\n      \"value\": \"EmployeeStatus.PB\"\r\n    },\r\n    {\r\n      \"label\": \"FullTime\",\r\n      \"value\": \"EmployeeStatus.FT\"\r\n    },\r\n    {\r\n      \"label\": \"Resignation\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
                   "params": {}
                 },
                 "disabled": false
@@ -408,7 +385,7 @@
           "widget": "formItem",
           "props": {
             "ref": "formItem_f5e897a29e48480",
-            "label": "离职日期",
+            "label": "Resign date",
             "name": "$(Field)Employee.ResignDate",
             "hide": false,
             "labelCol": {
@@ -435,7 +412,7 @@
           "widget": "formItem",
           "props": {
             "ref": "formItem_9125569acacb880",
-            "label": "离职原因",
+            "label": "Resign reason",
             "name": "$(Field)Employee.ResignReason",
             "hide": false,
             "labelCol": {
@@ -451,7 +428,7 @@
                 "ref": "select_74b55dc48954bc0",
                 "value": "$(Field)Employee.ResignReason",
                 "request": {
-                  "name": "$(Json)[\n  {\n    \"label\": \"合同到期\",\n    \"value\": \"合同到期\"\n  },\n  {\n    \"label\": \"能力不匹配\",\n    \"value\": \"能力不匹配\"\n  },\n  {\n    \"label\": \"个人原因\",\n    \"value\": \"个人原因\"\n  },\n  {\n    \"label\": \"家庭原因\",\n    \"value\": \"家庭原因\"\n  },\n  {\n    \"label\": \"工作地址原因\",\n    \"value\": \"工作地址原因\"\n  }\n\n]",
+                  "name": "$(Json)[\n  {\n    \"label\": \"Contract expiration\",\n    \"value\": \"Contract expiration\"\n  },\n  {\n    \"label\": \"Capacity mismatch\",\n    \"value\": \"Capacity mismatch\"\n  },\n  {\n    \"label\": \"Personal reasons\",\n    \"value\": \"Personal reasons\"\n  },\n  {\n    \"label\": \"Family reasons\",\n    \"value\": \"Family reasons\"\n  },\n  {\n    \"label\": \"Work address reasons\",\n    \"value\": \"Work address reasons\"\n  }\n\n]",
                   "params": {}
                 }
               },
@@ -651,7 +628,7 @@
                     }
                   },
                   "props": {
-                    "label": "提交",
+                    "label": "Submit",
                     "type": "primary",
                     "htmlType": "submit",
                     "applyComponent": [

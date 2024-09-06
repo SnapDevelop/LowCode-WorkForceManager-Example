@@ -1,1 +1,21 @@
-﻿<svg id="Sample_Logo" data-name="Sample_Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 244 160"><defs><style>.cls-1{fill:url(#gradient_8);}.cls-2{fill:#ffc119;}.cls-3{fill:#eac338;}.cls-4{fill:#a8da8a;}.cls-5{fill:#00fff8;}</style><linearGradient id="gradient_8" x1="107.67" y1="131.04" x2="225.85" y2="68.47" gradientUnits="userSpaceOnUse"><stop offset="0.1" stop-color="#ffc119"/><stop offset="0.92" stop-color="#f4a00b"/></linearGradient></defs><title>Sample logo</title><path class="cls-1" d="M168,32h-4a48,48,0,0,1,0,96H140.6L123,160h41a79.61,79.61,0,0,0,36-8.61A63.93,63.93,0,0,0,232,96h0A64,64,0,0,0,168,32Z"/><path class="cls-2" d="M164,0H123l17.6,32H168a64,64,0,0,1,64,64h0a63.93,63.93,0,0,1-32,55.39A80,80,0,0,0,244,80h0A80,80,0,0,0,164,0Z"/><polygon class="cls-3" points="109 0 82 0 129 80 82 160 109 160 156 80 109 0"/><polygon class="cls-4" points="68 0 41 0 88 80 41 160 68 160 115 80 68 0"/><polygon class="cls-5" points="27 0 0 0 47 80 0 160 27 160 74 80 27 0"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #2d65ff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" x="0" y=".03" width="128" height="128" rx="24.62" ry="24.62"/>
+  <path class="cls-1" d="M94.02,68h-50.11c-2.15,0-4.11.87-5.52,2.26-1.41,1.4-2.29,3.33-2.29,5.45s.88,4.05,2.29,5.45c1.42,1.4,3.37,2.26,5.52,2.26h50.6v18.94h15.64v-50.66h0c0-7.17-2.97-13.67-7.75-18.38-4.78-4.71-11.37-7.63-18.63-7.63h-13.02s-.49,0-.49,0c-14.62,0-27.87,4.65-37.39,12.95-9.04,7.88-14.72,19.07-15.02,32.7v.47h-.01v.56h0v.02h0v.02h0v29.95h15.63v-29.91h0v-.48h0c.13-9.42,3.94-16.89,10.1-22.11,6.72-5.71,16.21-8.74,26.69-8.74h13.51s0,.01,0,.01c2.94.02,5.63,1.22,7.58,3.14,1.94,1.91,3.15,4.53,3.15,7.42v16.3h-.49M17.84,72.43h0M17.84,72.42h0s0,0,0,0h0M17.84,72.39h0v.02h0s0,.01,0,.01h0v-.02h0s0-.01,0-.01M17.84,72.39h0v.02h0v.02h0s0,0,0,0h0v-.02h0v-.02h0s0,0,0,0"/>
+</svg>

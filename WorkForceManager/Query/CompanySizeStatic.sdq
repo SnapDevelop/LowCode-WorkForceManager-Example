@@ -24,7 +24,7 @@
       "props": {
         "name": "TinyCount",
         "value": "$(Expression)CountIf(Company, Company.CompanySize == CompanySize.Tiny) ",
-        "displayName": "微型企业(1-10)",
+        "displayName": "Tiny company(1-10)",
         "dataType": "Int32"
       }
     },
@@ -34,7 +34,7 @@
       "props": {
         "name": "SmallCount",
         "value": "$(Expression)CountIf(Company, Company.CompanySize == CompanySize.Small) ",
-        "displayName": "小型企业(10-100)",
+        "displayName": "Small company(10-100)",
         "dataType": "Int32"
       }
     },
@@ -44,7 +44,7 @@
       "props": {
         "name": "BigCount",
         "value": "$(Expression)CountIf(Company, Company.CompanySize == CompanySize.Big) ",
-        "displayName": "中型企业(100-1000)",
+        "displayName": "Big company(100-1000)",
         "dataType": "Int32"
       }
     },
@@ -54,7 +54,7 @@
       "props": {
         "name": "LargeCount",
         "value": "$(Expression)CountIf(Company, Company.CompanySize == CompanySize.Large) ",
-        "displayName": "大型企业( > 1000)",
+        "displayName": "Large company( > 1000)",
         "dataType": "Int32"
       }
     },
@@ -64,7 +64,7 @@
       "props": {
         "name": "TotalCount",
         "value": "$(Expression)Count(Company.Id) ",
-        "displayName": "总企业数",
+        "displayName": "Total",
         "dataType": "Int32"
       }
     }
@@ -106,7 +106,7 @@
       "props": {
         "name": "GetByCityFilter",
         "isEnableApi": true,
-        "description": "通过过滤器获取单条数据。",
+        "description": "Get list data with cityfilter",
         "parameters": [
           {
             "name": "CompanySizeStatic.CityFilter",
@@ -126,7 +126,8 @@
         ],
         "api": {
           "name": "GetByCityFilter",
-          "method": "GET"
+          "method": "GET",
+          "authorizationStategy": "$ParentCategory"
         }
       }
     }

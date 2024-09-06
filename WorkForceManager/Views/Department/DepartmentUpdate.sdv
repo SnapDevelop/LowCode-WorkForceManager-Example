@@ -36,7 +36,7 @@
                 "widget": "title",
                 "props": {
                   "ref": "title_8dca188a70d5e441092",
-                  "value": "编辑",
+                  "value": "Edit",
                   "level": 4
                 }
               },
@@ -105,7 +105,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dca188a70df1991097",
-                "label": "部门名称",
+                "label": "Name",
                 "name": "$(Field)Department.DepartmentName",
                 "labelCol": {
                   "width": "${span}5"
@@ -130,7 +130,7 @@
               },
               "props": {
                 "ref": "formItem_8dca188a70e11c01099",
-                "label": "所属公司",
+                "label": "Company",
                 "name": "$(Field)Department.CompanyId",
                 "labelCol": {
                   "width": "${span}5"
@@ -223,7 +223,7 @@
                   },
                   "props": {
                     "ref": "button_8dca188a70e28561106",
-                    "label": "提交",
+                    "label": "Submit",
                     "htmlType": "submit",
                     "type": "primary",
                     "applyComponent": [
@@ -241,11 +241,12 @@
   "rules": [
     {
       "id": "required_8dca188a70e18751103",
-      "name": "表单校验1",
+      "name": "Name required",
       "rule": "required",
       "type": "validate",
       "props": {
-        "whitespace": true
+        "whitespace": true,
+        "message": "Name required"
       },
       "targets": [
         "formItem_8dca188a70df1991097"
@@ -253,12 +254,13 @@
     },
     {
       "id": "area_8dca188a70e1def1104",
-      "name": "表单校验2",
+      "name": "Value range 1-20",
       "rule": "area",
       "type": "validate",
       "props": {
         "max": 20,
-        "min": 2
+        "min": 1,
+        "message": "Value range 1-20"
       },
       "targets": [
         "formItem_8dca188a70df1991097"

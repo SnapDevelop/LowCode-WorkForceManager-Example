@@ -24,7 +24,7 @@
       "props": {
         "name": "City",
         "value": "$(Field)Company.City",
-        "displayName": "城市",
+        "displayName": "City",
         "isNullable": true,
         "dataType": "String"
       }
@@ -37,7 +37,7 @@
       "props": {
         "name": "GetListByNoFilter",
         "isEnableApi": true,
-        "description": "获取列表数据",
+        "description": "Get list data without filter",
         "isResultDistinct": true,
         "isResultCollection": true,
         "resultSorts": [

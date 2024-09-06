@@ -36,7 +36,7 @@
                 "widget": "title",
                 "props": {
                   "ref": "title_8dc9b7fa56de2442527",
-                  "value": "新增",
+                  "value": "Add",
                   "level": 4
                 }
               },
@@ -99,7 +99,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dc9b7fa56de7da2532",
-                "label": "部门名称",
+                "label": "Name",
                 "name": "$(Field)Department.DepartmentName",
                 "labelCol": {
                   "width": "${span}5"
@@ -121,7 +121,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dc9b7fa56dec542534",
-                "label": "创建时间",
+                "label": "Create time",
                 "name": "$(Field)Department.CreateTime",
                 "hide": true
               },
@@ -143,7 +143,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dc9b7fa56deca12536",
-                "label": "更新时间",
+                "label": "Update time",
                 "name": "$(Field)Department.UpdateTime",
                 "hide": true
               },
@@ -167,7 +167,7 @@
                 "ref": "formItem_c16cd0d2f5fbf00",
                 "application": [],
                 "rules": [],
-                "label": "所属公司",
+                "label": "Company",
                 "name": "$(Field)Department.CompanyId",
                 "labelCol": {
                   "width": "${span}5"
@@ -199,8 +199,8 @@
                 "ref": "formItem_c78b2c92f53b200",
                 "application": [],
                 "rules": [],
-                "label": "上级部门",
-                "name": "$(Field)Department.SuperiorDepartmentId",
+                "label": "Superior Department",
+                "name": "$(Field)Department.SupDepartmentId",
                 "labelCol": {
                   "width": "${span}5"
                 }
@@ -212,11 +212,11 @@
                   "widget": "select",
                   "props": {
                     "ref": "select_d7b6c8bc730ce80",
-                    "value": "$(Field)Department.SuperiorDepartmentId",
+                    "value": "$(Field)Department.SupDepartmentId",
                     "request": {
                       "name": "$(Api)Department.GetListByCompanyFilter",
                       "params": {
-                        "Company": "$(Props)437269ede6ef9c0"
+                        "Company": "$(Members)[watch]select_36a60c3c19bca20.value"
                       }
                     },
                     "fieldName": "$(Field)Department.DepartmentName",
@@ -244,7 +244,7 @@
                   },
                   "props": {
                     "ref": "button_8dc9b7fa56ded102541",
-                    "label": "提交",
+                    "label": "Submit",
                     "htmlType": "submit",
                     "type": "primary",
                     "applyComponent": [
@@ -262,7 +262,7 @@
   "rules": [
     {
       "id": "required_8dc9b7fa56decba2538",
-      "name": "表单校验1",
+      "name": "Name required",
       "rule": "required",
       "type": "validate",
       "props": {
@@ -271,7 +271,8 @@
           "formItem_8dc9b7fa56de7da2532": {
             "message": "请输入"
           }
-        }
+        },
+        "message": "Company name required"
       },
       "targets": [
         "formItem_8dc9b7fa56de7da2532"
@@ -279,12 +280,13 @@
     },
     {
       "id": "area_8dc9b7fa56dece32539",
-      "name": "表单校验2",
+      "name": "Value range 1-20",
       "rule": "area",
       "type": "validate",
       "props": {
         "max": 20,
-        "min": 2
+        "min": 1,
+        "message": "Value range 1-20"
       },
       "targets": [
         "formItem_8dc9b7fa56de7da2532"

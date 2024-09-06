@@ -11,14 +11,14 @@
     "sources": [
       {
         "alias": "Employee",
-        "pointX": 424,
-        "pointY": 152,
+        "pointX": 455.20000000000005,
+        "pointY": 77.59999999999997,
         "isExpanded": true
       },
       {
         "alias": "Department",
-        "pointX": 761,
-        "pointY": 122,
+        "pointX": 779.9999999999999,
+        "pointY": 89.6,
         "isExpanded": true
       },
       {
@@ -70,17 +70,7 @@
       "props": {
         "name": "FullName",
         "value": "$(Expression)Employee.FirstName + ' ' + Employee.LastName ",
-        "displayName": "姓名",
-        "dataType": "String"
-      }
-    },
-    {
-      "id": "8dc9a7a5f9a9f4450",
-      "widget": "field",
-      "props": {
-        "name": "Phone",
-        "value": "$(Expression)Employee.PhoneNumber ",
-        "displayName": "联系电话",
+        "displayName": "Full name",
         "dataType": "String"
       }
     },
@@ -90,7 +80,7 @@
       "props": {
         "name": "Email",
         "value": "$(Expression)Employee.Email ",
-        "displayName": "邮箱",
+        "displayName": "Email",
         "isNullable": true,
         "dataType": "String"
       }
@@ -101,7 +91,7 @@
       "props": {
         "name": "Degree",
         "value": "$(Expression)Employee.Degree ",
-        "displayName": "学历",
+        "displayName": "Degree",
         "isNullable": true,
         "dataType": "DegreeType"
       }
@@ -111,8 +101,8 @@
       "widget": "field",
       "props": {
         "name": "Status",
-        "value": "$(Expression)If(Employee.Status == EmployeeStatus.IS,\"实习\", If(Employee.Status == EmployeeStatus.TR,\"试用\", If(Employee.Status == EmployeeStatus.FL,\"正式\",\"其它\")))",
-        "displayName": "状态",
+        "value": "$(Expression)If(Employee.Status == EmployeeStatus.IS,\"Intership\", If(Employee.Status == EmployeeStatus.PB,\"Probation\", If(Employee.Status == EmployeeStatus.FT,\"FullTime\",\"Other\")))",
+        "displayName": "Status",
         "dataType": "String"
       }
     }
@@ -203,7 +193,7 @@
       "props": {
         "name": "GetListByCompanyFilter",
         "isEnableApi": true,
-        "description": "通过过滤器获取列表数据。",
+        "description": "Get list data with companyfilter",
         "isResultCollection": true,
         "parameters": [
           {
@@ -235,7 +225,7 @@
       "props": {
         "name": "GetComanyManager",
         "isEnableApi": true,
-        "description": "通过过滤器获取列表数据。",
+        "description": "Get list data with rootfilter",
         "isResultCollection": true,
         "parameters": [
           {

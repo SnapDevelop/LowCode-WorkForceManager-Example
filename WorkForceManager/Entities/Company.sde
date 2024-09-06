@@ -9,7 +9,7 @@
   "Fields": {
     "CompanyName": {
       "Id": "1a5fc3ae7aed4c95a7d46dc07ce5affc",
-      "DisplayName": "公司名称",
+      "DisplayName": "Company Name",
       "Type": "String",
       "DataType": "String",
       "IsRequired": true,
@@ -19,7 +19,7 @@
     },
     "Logo": {
       "Id": "b8000dcb32764f52b2808fe656756f68",
-      "DisplayName": "公司Logo",
+      "DisplayName": "Company Logo",
       "Type": "Byte",
       "DataType": "Byte",
       "IsCollection": true,
@@ -29,7 +29,7 @@
     },
     "Contactor": {
       "Id": "7f54e4ad759f4f729f78d02254bd3860",
-      "DisplayName": "联系人",
+      "DisplayName": "Company  Contractor",
       "Type": "Entity",
       "DataType": "CompanyContact",
       "IsCollection": true,
@@ -41,7 +41,7 @@
     },
     "CompanySize": {
       "Id": "9fc8585ac81e4cd5996510add32a4ac1",
-      "DisplayName": "公司规模",
+      "DisplayName": "Company  Size",
       "Type": "Enum",
       "DataType": "CompanySize",
       "DefaultValueType": "Value",
@@ -49,7 +49,7 @@
     },
     "Province": {
       "Id": "6c9b94998f8247d6a5d678cbff5a3f5c",
-      "DisplayName": "注册省份",
+      "DisplayName": "Area",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -58,7 +58,7 @@
     },
     "City": {
       "Id": "8dd750d2a6564b1983118a558a1d4701",
-      "DisplayName": "注册城市",
+      "DisplayName": "City",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -78,7 +78,7 @@
             "Id": "1b3ec35674884e9eade805dd222b45c5",
             "Type": "String",
             "DataType": "String",
-            "DisplayName": "所在城市",
+            "DisplayName": "Cities",
             "IsCollection": true,
             "Snippets": []
           },
@@ -86,7 +86,7 @@
             "Id": "0a2d33c6bc1445aaaad02a3d8c51be01",
             "Type": "Enum",
             "DataType": "CompanySize",
-            "DisplayName": "公司规模",
+            "DisplayName": "Company Size",
             "IsCollection": true,
             "Snippets": []
           }
@@ -342,7 +342,7 @@
         "Id": "f918eb75d20c4431a2d761ec51086cec",
         "Name": "GetPageByAddressSizeName",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by addresssizenamefilter",
         "Filter": "FilterByAddressAndCompanySize",
         "QuerySorts": [],
         "Assigns": [],
@@ -350,6 +350,7 @@
         "Api": {
           "Id": "50fdb5e7292f46ef8b656e2475cd57cb",
           "Name": "GetPageByAddressSizeName",
+          "AuthorizationStategy": "$ParentCategory",
           "RouteTemplate": "GetPageByAddressSizeName",
           "Description": "通过过滤器获取分页数据。",
           "Parameters": [

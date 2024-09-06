@@ -55,7 +55,7 @@
     "groups": [
       {
         "name": "Workexps",
-        "expression": "$(Expression)If(DateDif(Employee.EducateDate, Now(),\"Y\") < 3,\"3年以下\",If(DateDif(Employee.EducateDate, Now(),\"Y\") >=3 && DateDif(Employee.EducateDate, Now(),\"Y\")<5,\"3-5年\",If(DateDif(Employee.EducateDate, Now(),\"Y\")>=5 && DateDif(Employee.EducateDate, Now(),\"Y\")<10,\"5-10年\",\"10年以上\")))"
+        "expression": "$(Expression)If(DateDif(Employee.EducateDate, Now(),\"Y\") < 3,\"Less than 3 years\",If(DateDif(Employee.EducateDate, Now(),\"Y\") >=3 && DateDif(Employee.EducateDate, Now(),\"Y\")<5,\"3-5 years\",If(DateDif(Employee.EducateDate, Now(),\"Y\")>=5 && DateDif(Employee.EducateDate, Now(),\"Y\")<10,\"5-10 years\",\"More than 10 years\")))"
       }
     ]
   },
@@ -64,9 +64,9 @@
       "id": "group_field_id_Workexps",
       "widget": "field",
       "props": {
-        "name": "Workexp",
+        "name": "Workexps",
         "value": "$(Expression)EmployeeWorkExperienceStatics.Group.Key.Workexps",
-        "displayName": "Workexp",
+        "displayName": "Workexps",
         "dataType": "String"
       }
     },
@@ -125,7 +125,7 @@
       "props": {
         "name": "GetListByCompanyFilter",
         "isEnableApi": true,
-        "description": "通过过滤器获取列表数据。",
+        "description": "Get list data with companyfilter",
         "isResultCollection": true,
         "parameters": [
           {

@@ -66,7 +66,7 @@
       "props": {
         "name": "EmployeeDegree",
         "value": "$(Field)EmployeeDegreeStatic.Group.Key.EmployeeDegree",
-        "displayName": "学历",
+        "displayName": "Employee degree",
         "isNullable": true,
         "dataType": "DegreeType"
       }
@@ -77,7 +77,7 @@
       "props": {
         "name": "EmployCount",
         "value": "$(Expression)Count(EmployeeDegreeStatic.Group.Employee.Id) ",
-        "displayName": "人数",
+        "displayName": "Employee count",
         "dataType": "Int32"
       }
     }
@@ -94,7 +94,7 @@
             "name": "Company",
             "dataType": "Guid",
             "isNullable": true,
-            "displayName": "公司"
+            "displayName": "Company"
           }
         ]
       },
@@ -126,7 +126,7 @@
       "props": {
         "name": "GetListByCompanyFilter",
         "isEnableApi": true,
-        "description": "通过过滤器获取列表数据。",
+        "description": "Get list data with companyfilter",
         "isResultCollection": true,
         "parameters": [
           {

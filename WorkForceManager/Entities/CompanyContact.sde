@@ -9,7 +9,7 @@
   "Fields": {
     "Company": {
       "Id": "84a24db1f1a9460b9ba866318d8e4f3c",
-      "DisplayName": "公司",
+      "DisplayName": "Company",
       "Type": "Entity",
       "DataType": "Company",
       "Relationship": "ManyToOne",
@@ -28,7 +28,7 @@
     },
     "Contact": {
       "Id": "f13d5677a23f453794fcfe81363ffff0",
-      "DisplayName": "联系人",
+      "DisplayName": "Contactor",
       "Type": "Entity",
       "DataType": "Employee",
       "IsRequired": true,
@@ -48,7 +48,7 @@
     },
     "ContactPostion": {
       "Id": "fe5059220ae34aafb381131ac25be832",
-      "DisplayName": "职务",
+      "DisplayName": "Position",
       "Type": "Enum",
       "DataType": "PositionType",
       "DefaultValueType": "Value",
@@ -68,7 +68,7 @@
             "Id": "eaba56d6c4b14ec98a6cb2ac42bcb055",
             "Type": "Guid",
             "DataType": "Guid",
-            "DisplayName": "公司",
+            "DisplayName": "Company",
             "DefaultValueType": "Value",
             "Snippets": []
           }
@@ -98,7 +98,7 @@
         "Id": "5342882054be46c99085a4ee213c0196",
         "Name": "Get",
         "Type": "Get",
-        "Description": "获取单条数据",
+        "Description": "Add single data",
         "Category": "Override",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -126,7 +126,7 @@
           "Id": "0857e6c359fc4ba38338a412cc30fcf5",
           "Name": "Get",
           "AuthorizationStategy": "$ParentCategory",
-          "Description": "获取单条数据",
+          "Description": "Add single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -141,7 +141,7 @@
         "Id": "fe2714299a494339bf5a5ab7443d01bd",
         "Name": "Add",
         "Type": "Add",
-        "Description": "添加单条数据",
+        "Description": "Add single data",
         "IsReturnMulti": false,
         "Category": "Base",
         "QuerySorts": [],
@@ -152,7 +152,7 @@
           "Name": "Add",
           "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
-          "Description": "添加单条数据",
+          "Description": "Add single data",
           "Parameters": [
             {
               "Name": "CompanyContact",
@@ -168,7 +168,7 @@
         "Id": "c731de49e46849829b9a5ef3329d8b81",
         "Name": "AddRange",
         "Type": "AddRange",
-        "Description": "添加多条数据",
+        "Description": "Add multiple data",
         "IsReturnMulti": true,
         "Category": "Base",
         "QuerySorts": [],
@@ -177,9 +177,10 @@
         "Api": {
           "Id": "ad3df69a62994aa6bb5703c1e065e5f4",
           "Name": "AddRange",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
           "RouteTemplate": "AddRange",
-          "Description": "添加多条数据",
+          "Description": "Add multiple data",
           "Parameters": [
             {
               "Name": "CompanyContact",
@@ -195,29 +196,17 @@
         "Id": "6bc40c349e214e6bb3a566d4bf746e96",
         "Name": "Update",
         "Type": "Update",
-        "Description": "更新单条数据",
+        "Description": "Update single data",
         "Category": "Override",
         "QuerySorts": [],
-        "Assigns": [
-          {
-            "DocumentSource": "CompanyContact",
-            "Items": [
-              {
-                "Name": "UpdateTime",
-                "Value": "UtcNow() ",
-                "ValueType": "Expression",
-                "Children": []
-              }
-            ]
-          }
-        ],
+        "Assigns": [],
         "ResultSorts": [],
         "Api": {
           "Id": "3d47936075044ae7bacc58c6cd071576",
           "Name": "Update",
           "AuthorizationStategy": "$ParentCategory",
           "Method": "PUT",
-          "Description": "更新单条数据",
+          "Description": "Update single data",
           "Parameters": [
             {
               "Name": "CompanyContact",
@@ -233,7 +222,7 @@
         "Id": "0f79414ddeb44ccc8f5d51e932475b79",
         "Name": "Delete",
         "Type": "Delete",
-        "Description": "删除单条数据",
+        "Description": "Delete single data",
         "Category": "Base",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -242,8 +231,9 @@
         "Api": {
           "Id": "4f3fdb9d2105401fb6cb106e5757a4d2",
           "Name": "Delete",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "DELETE",
-          "Description": "删除单条数据",
+          "Description": "Delete single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -258,7 +248,7 @@
         "Id": "7b768dd08e20466e8f1ec4505d383aa1",
         "Name": "GetPageByCompanyFilter",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by companyfilter",
         "Filter": "CompanyFilter",
         "QuerySorts": [],
         "Assigns": [
@@ -285,7 +275,7 @@
           "Id": "46403961fa0c4e38b0bfa272e685a32a",
           "Name": "GetPageByCompanyFilter",
           "AuthorizationStategy": "$ParentCategory",
-          "Description": "通过过滤器获取分页数据。",
+          "Description": "Get paged data by companyfilter",
           "Parameters": [
             {
               "Name": "CompanyFilter"

@@ -9,16 +9,17 @@
     "Id": {
       "Id": "cf0ac60161444e478e9a2217e8c3a2d2",
       "DisplayName": "Id",
-      "Description": "数据唯一标识符。",
+      "Description": "Data unique identifier.",
       "Type": "Guid",
       "DataType": "Guid",
       "IsKey": true,
+      "DefaultValueType": "Value",
       "IsAutoGenerateValue": true,
       "Snippets": []
     },
     "School": {
       "Id": "f7b22f6d461140729a5f1895fcf74d97",
-      "DisplayName": "学校",
+      "DisplayName": "School",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -28,7 +29,7 @@
     },
     "StartDate": {
       "Id": "4b8d14b3285a420e8ac81a08306dbd6f",
-      "DisplayName": "起始日期",
+      "DisplayName": "Start Date",
       "Type": "DateOnly",
       "DataType": "DateOnly",
       "DefaultValueType": "Value",
@@ -37,7 +38,7 @@
     },
     "EndDate": {
       "Id": "a53122e8f81244fab3efa61bb5d57b3d",
-      "DisplayName": "结束日期",
+      "DisplayName": "End Date",
       "Type": "DateOnly",
       "DataType": "DateOnly",
       "DefaultValueType": "Value",
@@ -46,7 +47,7 @@
     },
     "Major": {
       "Id": "b32ec637159f45159c1f36ed3f7af7d4",
-      "DisplayName": "专业",
+      "DisplayName": "Major",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -56,16 +57,16 @@
     },
     "Degree": {
       "Id": "a2fbd104172b4c7eb1785c94dc059251",
-      "DisplayName": "学历",
+      "DisplayName": "Degree",
       "Type": "Enum",
       "DataType": "DegreeType",
       "DefaultValueType": "Value",
       "IsNullable": true,
       "Snippets": []
     },
-    "BelongEmployee": {
+    "Employee": {
       "Id": "180451c9493a410aba10f4abd226f19a",
-      "DisplayName": "员工",
+      "DisplayName": "Emplotee",
       "Type": "Entity",
       "DataType": "Employee",
       "IsNullable": true,
@@ -77,7 +78,7 @@
           "Id": "08e12a2a2c03414c82bd91cf6880d496",
           "DataType": "Guid",
           "IsNullable": true,
-          "ForeignKey": "BelongEmployeeId",
+          "ForeignKey": "EmployeeId",
           "PrincipalKey": "Employee.Id"
         }
       ],
@@ -108,7 +109,7 @@
             "Items": [
               {
                 "Type": "Field",
-                "Field": "Education.BelongEmployeeId",
+                "Field": "Education.EmployeeId",
                 "Operation": "EQ",
                 "Parameter": "Education.EmployeeFilter.EmployeeId",
                 "Items": []
@@ -127,7 +128,7 @@
         "Id": "7ebf6b89e90042d695896ce10579155c",
         "Name": "Get",
         "Type": "Get",
-        "Description": "获取单条数据",
+        "Description": "Get single data",
         "Category": "Base",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -136,7 +137,8 @@
         "Api": {
           "Id": "b397733355b84ab3accaaccbe2771f7c",
           "Name": "Get",
-          "Description": "获取单条数据",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -151,7 +153,7 @@
         "Id": "7971b4bc8a5f4062ac31d162d6220d1c",
         "Name": "Add",
         "Type": "Add",
-        "Description": "添加单条数据",
+        "Description": "Add single data",
         "IsReturnMulti": false,
         "Category": "Base",
         "QuerySorts": [],
@@ -160,8 +162,9 @@
         "Api": {
           "Id": "6f15cd6cdab742a2a82be002569578f5",
           "Name": "Add",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
-          "Description": "添加单条数据",
+          "Description": "Add single data",
           "Parameters": [
             {
               "Name": "Education",
@@ -177,7 +180,7 @@
         "Id": "9344fa5cff244c2cb9d039f449d0044a",
         "Name": "AddRange",
         "Type": "AddRange",
-        "Description": "添加多条数据",
+        "Description": "Add Multiple data",
         "IsReturnMulti": true,
         "Category": "Base",
         "QuerySorts": [],
@@ -186,9 +189,10 @@
         "Api": {
           "Id": "8e0c00733638499baf67218c6c0ca43a",
           "Name": "AddRange",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
           "RouteTemplate": "AddRange",
-          "Description": "添加多条数据",
+          "Description": "Add Multiple data",
           "Parameters": [
             {
               "Name": "Education",
@@ -204,7 +208,7 @@
         "Id": "24c7b1fb9696455e80becaa606fe07f4",
         "Name": "Update",
         "Type": "Update",
-        "Description": "更新单条数据",
+        "Description": "Update single data",
         "Category": "Base",
         "QuerySorts": [],
         "Assigns": [],
@@ -212,8 +216,9 @@
         "Api": {
           "Id": "0ee0d1c616ef43dd9ed8847893e1f8a6",
           "Name": "Update",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "PUT",
-          "Description": "更新单条数据",
+          "Description": "Update single data",
           "Parameters": [
             {
               "Name": "Education",
@@ -229,7 +234,7 @@
         "Id": "489c06d01a374f7880da4f31378c3382",
         "Name": "Delete",
         "Type": "Delete",
-        "Description": "删除单条数据",
+        "Description": "Delete single data",
         "Category": "Base",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -238,8 +243,9 @@
         "Api": {
           "Id": "1bd0b958d68a4fa8862b4c47eed19c77",
           "Name": "Delete",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "DELETE",
-          "Description": "删除单条数据",
+          "Description": "Delete single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -254,7 +260,7 @@
         "Id": "c46512fb86484c0f8bfc149dc8d38a46",
         "Name": "GetPageByEmployeeFilter",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by employeefilter",
         "Filter": "EmployeeFilter",
         "QuerySorts": [],
         "Assigns": [],
@@ -262,7 +268,8 @@
         "Api": {
           "Id": "dbca3366e0d541159e2c539e8a51d16e",
           "Name": "GetPageByEmployeeFilter",
-          "Description": "通过过滤器获取分页数据。",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get paged data by employeefilter",
           "Parameters": [
             {
               "Name": "EmployeeFilter"

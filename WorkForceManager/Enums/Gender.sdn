@@ -1,4 +1,4 @@
-﻿{
+{
   "Id": "cd318d3a74114a50abfe68f8ac36be48",
   "Type": "Enum",
   "Version": 1,
@@ -9,13 +9,19 @@
     "Male": {
       "Id": "89102158a6ea4918913405cd13643da3",
       "Value": "1",
-      "DisplayName": "男",
+      "DisplayName": "Male",
       "Snippets": []
     },
     "Female": {
       "Id": "0b5fada678bc477dbf30cd7b12dcf7bb",
       "Value": "2",
-      "DisplayName": "女",
+      "DisplayName": "Female",
+      "Snippets": []
+    },
+    "Other": {
+      "Id": "bd270f6ce03445fd9a6ec4a6897f31b9",
+      "Value": "3",
+      "DisplayName": "Other",
       "Snippets": []
     }
   },

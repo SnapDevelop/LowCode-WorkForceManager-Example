@@ -9,7 +9,7 @@
   "Fields": {
     "DepartmentName": {
       "Id": "b05198d4348c4a04a0e1c48781f03954",
-      "DisplayName": "部门名称",
+      "DisplayName": "Department Name",
       "Type": "String",
       "DataType": "String",
       "IsRequired": true,
@@ -20,7 +20,7 @@
     },
     "Company": {
       "Id": "af3c005a1fa8491ea6be0381c4a98d9b",
-      "DisplayName": "所属公司",
+      "DisplayName": "Company",
       "Type": "Entity",
       "DataType": "Company",
       "Relationship": "ManyToOne",
@@ -37,36 +37,36 @@
       "DeleteBehavior": "Cascade",
       "Snippets": []
     },
-    "SuperiorDepartment": {
+    "SupDepartment": {
       "Id": "51385487a6d84c7b971b9365a5ef4971",
-      "DisplayName": "上级部门",
+      "DisplayName": "Superior Department",
       "Type": "Entity",
       "DataType": "Department",
       "IsNullable": true,
       "Relationship": "ManyToOne",
-      "AssociatedField": "Department.ChildDepartments",
+      "AssociatedField": "Department.SubDepartments",
       "AutoGenerateForeignKeyField": true,
       "ForeignKeyFields": [
         {
           "Id": "08e12a2a2c03414c82bd91cf6880d496",
           "DataType": "Guid",
           "IsNullable": true,
-          "ForeignKey": "SuperiorDepartmentId",
+          "ForeignKey": "SupDepartmentId",
           "PrincipalKey": "Department.Id"
         }
       ],
       "DeleteBehavior": "SetNull",
       "Snippets": []
     },
-    "ChildDepartments": {
+    "SubDepartments": {
       "Id": "4ac38143a19c41ba99f2c2bf285923fb",
-      "DisplayName": "下级部门",
+      "DisplayName": "Subordinate Department",
       "Type": "Entity",
       "DataType": "Department",
       "IsCollection": true,
       "IsNullable": true,
       "Relationship": "OneToMany",
-      "AssociatedField": "Department.SuperiorDepartment",
+      "AssociatedField": "Department.SupDepartment",
       "AutoGenerateForeignKeyField": true,
       "Snippets": []
     }
@@ -83,7 +83,7 @@
             "Id": "050aba3100ef4231bcc65a45ae110dde",
             "Type": "Guid",
             "DataType": "Guid",
-            "DisplayName": "公司",
+            "DisplayName": "Company",
             "DefaultValueType": "Value",
             "Snippets": []
           }
@@ -112,7 +112,7 @@
             "Id": "7ecb7caeefd9483296a580c540271d8e",
             "Type": "Guid",
             "DataType": "Guid",
-            "DisplayName": "公司",
+            "DisplayName": "Company",
             "IsRequired": true,
             "DefaultValueType": "Value",
             "Snippets": []
@@ -132,7 +132,7 @@
               {
                 "Relation": "AND",
                 "Type": "Expression",
-                "Expression": "IsNull(Department.SuperiorDepartmentId) ",
+                "Expression": "IsNull(Department.SupDepartmentId)",
                 "Items": []
               }
             ]
@@ -148,7 +148,7 @@
             "Id": "39722a9fa585473d8d8c549cac0bffb4",
             "Type": "Guid",
             "DataType": "Guid",
-            "DisplayName": "上级部门",
+            "DisplayName": "SupDepartmentId",
             "DefaultValueType": "Value",
             "Snippets": []
           }
@@ -159,7 +159,7 @@
             "Items": [
               {
                 "Type": "Field",
-                "Field": "Department.SuperiorDepartmentId",
+                "Field": "Department.SupDepartmentId",
                 "Operation": "EQ",
                 "Parameter": "Department.FilterByParentDepartmentId.ParentDepartmentId",
                 "Items": []
@@ -367,7 +367,7 @@
         "Id": "2295ce19af744428a4b2953f97f9ebe3",
         "Name": "GetPageByCompanyFilter",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by companyfilter",
         "Filter": "CompanyFilter",
         "QuerySorts": [],
         "Assigns": [],
@@ -375,8 +375,9 @@
         "Api": {
           "Id": "32f5249e7a9943058f171dae2b2618fc",
           "Name": "GetPageByCompanyFilter",
+          "AuthorizationStategy": "$ParentCategory",
           "RouteTemplate": "GetPageByCompanyFilter",
-          "Description": "通过过滤器获取分页数据。",
+          "Description": "Get paged data by companyfilter",
           "Parameters": [
             {
               "Name": "CompanyFilter"
@@ -390,7 +391,7 @@
         "Id": "7035236471de4670b1395122e3c47e2f",
         "Name": "GetListByRootFilter",
         "Type": "GetList",
-        "Description": "通过过滤器获取列表数据。",
+        "Description": "Get paged data by rootfilter",
         "Filter": "RootFilter",
         "QuerySorts": [],
         "Assigns": [
@@ -398,9 +399,9 @@
             "DocumentSource": "Department",
             "Items": [
               {
-                "Name": "ChildDepartments",
+                "Name": "SubDepartments",
                 "IsCascade": true,
-                "Value": "Department.ChildDepartments",
+                "Value": "Department.SubDepartments",
                 "Children": []
               }
             ]
@@ -412,7 +413,7 @@
           "Name": "GetListByRootFilter",
           "AuthorizationStategy": "$ParentCategory",
           "RouteTemplate": "GetListByRootFilter",
-          "Description": "通过过滤器获取列表数据。",
+          "Description": "Get paged data by rootfilter",
           "Parameters": [
             {
               "Name": "RootFilter"
@@ -426,7 +427,7 @@
         "Id": "ddf6879bb9bc4245abcf6d5770d10d86",
         "Name": "GetPageByFilterByParentDepartmentId",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by parentdepartmentfilter",
         "Filter": "FilterByParentDepartmentId",
         "QuerySorts": [],
         "Assigns": [],
@@ -434,8 +435,9 @@
         "Api": {
           "Id": "721629917a964b36b0de256f4c532145",
           "Name": "GetPageByFilterByParentDepartmentId",
+          "AuthorizationStategy": "$ParentCategory",
           "RouteTemplate": "GetPageByFilterByParentDepartmentId",
-          "Description": "通过过滤器获取分页数据。",
+          "Description": "Get paged data by parentdepartmentfilter",
           "Parameters": [
             {
               "Name": "FilterByParentDepartmentId"
@@ -449,7 +451,7 @@
         "Id": "7489a3e93d1342efaf279dd3b51c34ff",
         "Name": "GetListByCompanyFilter",
         "Type": "GetList",
-        "Description": "通过过滤器获取列表数据。",
+        "Description": "Get paged data by companyfilter",
         "Filter": "CompanyFilter",
         "QuerySorts": [],
         "Assigns": [],
@@ -457,8 +459,9 @@
         "Api": {
           "Id": "304b938b6bdc49ce809e38372127686a",
           "Name": "GetListByCompanyFilter",
+          "AuthorizationStategy": "$ParentCategory",
           "RouteTemplate": "GetListByCompanyFilter",
-          "Description": "通过过滤器获取列表数据。",
+          "Description": "Get paged data by companyfilter",
           "Parameters": [
             {
               "Name": "CompanyFilter"

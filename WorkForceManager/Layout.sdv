@@ -6,7 +6,7 @@
   "version": 1,
   "props": {
     "ref": "page_layout",
-    "title": "企业员工统计系统",
+    "title": "Employee Statistics",
     "footer": [
       {
         "id": "row_8dc8564dbad7eb2",
@@ -27,7 +27,7 @@
                 "widget": "text",
                 "props": {
                   "ref": "text_8dc8564dbad7eb5",
-                  "value": "Copyright © 2024 艾普阳（深圳）有限公司"
+                  "value": "Copyright © 2024 Appeon"
                 }
               }
             ]
@@ -39,24 +39,24 @@
       "type": "sub",
       "items": [
         {
-          "key": "4cf1d5d8ea9118",
-          "label": "统计",
+          "key": "5fe84f87498c50",
+          "label": "Statistics",
           "page": "$(Document)Home",
-          "icon": "",
+          "icon": "PieChartFilled",
           "hide": false
         },
         {
-          "key": "9e752224fe2c580",
-          "label": "公司",
+          "key": "d94b9b1c3a2dd00",
+          "label": "Companies",
           "page": "$(Document)CompanyList",
-          "icon": "",
+          "icon": "BankFilled",
           "hide": false
         },
         {
-          "key": "b69aad1927b6680",
-          "label": "员工",
+          "key": "f6ad6b33a91e68",
+          "label": "Employees",
           "page": "$(Document)Department_Employee_TreeList",
-          "icon": "",
+          "icon": "ContactsFilled",
           "hide": false
         }
       ]

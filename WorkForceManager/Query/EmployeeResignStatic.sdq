@@ -11,8 +11,8 @@
     "sources": [
       {
         "alias": "Employee",
-        "pointX": 285,
-        "pointY": 172,
+        "pointX": 304.8,
+        "pointY": 58.40000000000006,
         "isExpanded": true
       },
       {
@@ -70,7 +70,7 @@
       "props": {
         "name": "ResignYear",
         "value": "$(Expression)EmployeeResignStatic.Group.Key.ResignYear",
-        "displayName": "年",
+        "displayName": "Year",
         "isNullable": true,
         "dataType": "Int32"
       }
@@ -81,7 +81,7 @@
       "props": {
         "name": "ResignMoth",
         "value": "$(Expression)EmployeeResignStatic.Group.Key.ResginMonth",
-        "displayName": "月",
+        "displayName": "Month",
         "isNullable": true,
         "dataType": "Int32"
       }
@@ -92,7 +92,7 @@
       "props": {
         "name": "EmployeeCount",
         "value": "$(Expression)Count(EmployeeResignStatic.Group.Employee.Id) ",
-        "displayName": "离职人数",
+        "displayName": "Resigned count",
         "isNullable": true,
         "dataType": "Int32"
       }
@@ -103,7 +103,7 @@
       "props": {
         "name": "DateStatic",
         "value": "$(Expression)EmployeeResignStatic.ResignYear + \"-\" + EmployeeResignStatic.ResignMoth ",
-        "displayName": "统计年月",
+        "displayName": "Year - Month",
         "isCompute": true,
         "isNullable": true,
         "dataType": "String"
@@ -162,7 +162,7 @@
       "props": {
         "name": "GetListByCompanyFilter",
         "isEnableApi": true,
-        "description": "通过过滤器获取列表数据。",
+        "description": "Get list data with companyfilter",
         "isResultCollection": true,
         "parameters": [
           {
@@ -183,7 +183,8 @@
         ],
         "api": {
           "name": "GetListByCompanyFilter",
-          "method": "GET"
+          "method": "GET",
+          "authorizationStategy": "$ParentCategory"
         }
       }
     }

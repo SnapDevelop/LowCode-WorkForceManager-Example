@@ -152,11 +152,11 @@
   "DbContextConnection": {
     "DatabaseType": "Sqlite",
     "ConnectionName": "data.db",
-    "ConnectionString": "eyJCb2R5IjoiM1kvc2Y5MjRhZUhkdWFCOS9NNWRGVXluTXl3bVx1MDAyQmVINzZkZzFUTlp2VzBzPSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE3MjE4NzQ5MTUsIlNpZ25hdHVyZSI6IkExQUFGNTYwMUE4QUI2N0Y2MENEREMyNjJBQjg4ODY0In19"
+    "ConnectionString": "eyJCb2R5IjoiNVRpd0U2Tmg3c2E3aFZcdTAwMkJcdTAwMkJSMTlqcWpcdTAwMkJjYVRHL2NnL1x1MDAyQk1EZnBaTVhmdnZBPSIsIkhlYWRlciI6eyJUaW1lc3RhbXAiOjE3MjU0MjgwODgsIlNpZ25hdHVyZSI6IkI2NTk3RjhCODhENzYwMkI1RjQ4NjY1N0JERjUzRjMzIn19"
   },
   "IdentityConnection": {
     "DatabaseType": "Sqlite",
     "ConnectionName": "identity.db",
-    "ConnectionString": "eyJCb2R5IjoiR0wzbk5OdEloSVdTaWtRQ0xnenZqekVBT1hqZHBjZERJZVliSUtwV3dhZz0iLCJIZWFkZXIiOnsiVGltZXN0YW1wIjoxNzIxODc0OTE1LCJTaWduYXR1cmUiOiI0NTU3OThEODZFMzhEM0QyNDlGREYxRjc1MzY3Njg0QyJ9fQ=="
+    "ConnectionString": "eyJCb2R5Ijoibk5uNDBtUlpUT1x1MDAyQkNJRlhLelx1MDAyQmwzZk1UcFFBekJibGRuS09yVnJad2hLVmM9IiwiSGVhZGVyIjp7IlRpbWVzdGFtcCI6MTcyNTQyODA4OCwiU2lnbmF0dXJlIjoiNUYwRDQ1QTA3NEFCNzhBNEMyMzIxNUM1NTZERkVFOUUifX0="
   }
 }

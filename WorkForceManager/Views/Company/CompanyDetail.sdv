@@ -35,7 +35,7 @@
                 "widget": "title",
                 "props": {
                   "ref": "title_8dc9ab35b7ec2701123",
-                  "value": "详情",
+                  "value": "Detail",
                   "level": 5
                 }
               },
@@ -99,7 +99,7 @@
             ]
           },
           {
-            "label": "公司名称",
+            "label": "Name",
             "span": 3,
             "renders": [
               {
@@ -113,7 +113,7 @@
             ]
           },
           {
-            "label": "公司规模",
+            "label": "Size",
             "span": 4,
             "renders": [
               {
@@ -127,7 +127,7 @@
             ]
           },
           {
-            "label": "创建时间",
+            "label": "Create time",
             "span": 1,
             "renders": [
               {
@@ -144,7 +144,7 @@
             "hide": true
           },
           {
-            "label": "更新时间",
+            "label": "Update time",
             "span": 1,
             "renders": [
               {
@@ -176,7 +176,7 @@
               "props": {
                 "ref": "tabPane_8dc9ab35b7ed1501131",
                 "key": "$(String)tabPaneId",
-                "tab": "联系人"
+                "tab": "Company contact"
               },
               "children": [
                 {
@@ -200,7 +200,7 @@
                         }
                       },
                       {
-                        "title": "联系人",
+                        "title": "Contact",
                         "dataIndex": "$(Field)Company.Contactor.Contact.FullName",
                         "render": {
                           "id": "link_8dc9ab35b7ed3f81135",
@@ -212,7 +212,7 @@
                         }
                       },
                       {
-                        "title": "职务",
+                        "title": "Position",
                         "dataIndex": "$(Field)Company.Contactor.ContactPostion",
                         "render": {
                           "id": "tag_8dc9ab35b7ed4011136",
@@ -224,31 +224,31 @@
                         }
                       },
                       {
-                        "title": "创建时间",
-                        "dataIndex": "$(Field)CompanyContact.CreateTime",
+                        "title": "Create Time",
+                        "dataIndex": "$(Field)Company.CreateTime",
                         "render": {
                           "id": "text_8dc9ab35b7ed4171137",
                           "widget": "text",
                           "props": {
                             "ref": "text_8dc9ab35b7ed4171137",
-                            "value": "$(Field)CompanyContact.CreateTime"
+                            "value": "$(Field)Company.CreateTime"
                           }
                         }
                       },
                       {
-                        "title": "更新时间",
-                        "dataIndex": "$(Field)CompanyContact.UpdateTime",
+                        "title": "Update Time",
+                        "dataIndex": "$(Field)Company.UpdateTime",
                         "render": {
                           "id": "text_8dc9ab35b7ed4211138",
                           "widget": "text",
                           "props": {
                             "ref": "text_8dc9ab35b7ed4211138",
-                            "value": "$(Field)CompanyContact.UpdateTime"
+                            "value": "$(Field)Company.UpdateTime"
                           }
                         }
                       },
                       {
-                        "title": "标签",
+                        "title": "Operation",
                         "dataIndex": "$(Field)",
                         "sort": false,
                         "width": false,
@@ -290,7 +290,7 @@
                                   "props": {
                                     "ref": "button_97fbaba10870300",
                                     "htmlType": "button",
-                                    "label": "删除",
+                                    "label": "Delete",
                                     "type": "link",
                                     "size": "small",
                                     "danger": true,
@@ -319,7 +319,7 @@
         "htmlType": "button",
         "type": "link",
         "icon": "antdv://PlusCircleFilled",
-        "label": "新增联系人"
+        "label": "Add contact"
       },
       "styles": {},
       "children": [],
@@ -341,7 +341,7 @@
             "widget": "button",
             "props": {
               "ref": "button_7aef60f453b9500",
-              "label": "确认",
+              "label": "Submit",
               "type": "primary"
             },
             "events": {
@@ -356,7 +356,7 @@
             "widget": "button",
             "props": {
               "ref": "button_5a83d41a321d480",
-              "label": "取消"
+              "label": "Cancel"
             },
             "events": {
               "onClick": {
@@ -396,25 +396,25 @@
     {
       "id": "a12fc5819ca0080",
       "type": "control",
-      "name": "显示控制-公司规模",
+      "name": "Show control-Company size",
       "props": {
         "valueType": "$(Document)CompanySize",
         "values": {
           "Tiny": {
             "color": "#00CED1FF",
-            "displayInfo": "微型企业"
+            "displayInfo": "Tiny company"
           },
           "Small": {
             "color": "#FFD700FF",
-            "displayInfo": "小型企业"
+            "displayInfo": "Small company"
           },
           "Big": {
             "color": "#1E90FFFF",
-            "displayInfo": "中型企业"
+            "displayInfo": "Big company"
           },
           "Large": {
             "color": "#FF4500FF",
-            "displayInfo": "大型企业"
+            "displayInfo": "Large company"
           }
         }
       },
@@ -426,21 +426,21 @@
     {
       "id": "59245d45fb74940",
       "type": "control",
-      "name": "显示控制 - 联系人职务",
+      "name": "Show control - Contact position",
       "props": {
         "valueType": "$(Document)PositionType",
         "values": {
           "HR": {
             "color": "#FFD700FF",
-            "displayInfo": "人事经理"
+            "displayInfo": "HR Manager"
           },
           "MR": {
             "color": "#1E90FFFF",
-            "displayInfo": "经理"
+            "displayInfo": "Manager"
           },
           "Header": {
             "color": "#C71585FF",
-            "displayInfo": "总经理"
+            "displayInfo": "General Manager"
           }
         }
       },

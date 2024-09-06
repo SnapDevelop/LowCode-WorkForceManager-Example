@@ -27,29 +27,14 @@
   },
   "rules": [
     {
-      "id": "84dc60f16c2b380",
-      "type": "validate",
-      "name": "电话号码",
-      "props": {
-        "pattern": "^((\\+?86)|(\\(\\+86\\)))?((((13[^4]{1})|(14[5-9]{1})|147|(15[^4]{1})|166|(17\\d{1})|(18\\d{1})|(19[12589]{1}))\\d{8})|((134[^9]{1}|1410|1440)\\d{7}))$",
-        "message": "电话号码格式不正确"
-      },
-      "rule": "pattern",
-      "targets": [
-        "formItem_4f5a6850552fd00",
-        "formItem_6533943674d3500"
-      ]
-    },
-    {
       "id": "81182aee7599480",
       "type": "validate",
-      "name": "信息不能为空",
+      "name": "Value required",
       "props": {
-        "message": "必填项"
+        "message": "Value required"
       },
       "rule": "required",
       "targets": [
-        "formItem_4f5a6850552fd00",
         "formItem_2438db2c51353e0",
         "formItem_217eef45421a320"
       ]
@@ -57,10 +42,10 @@
     {
       "id": "f958ce549971880",
       "type": "validate",
-      "name": "邮箱校验",
+      "name": "Email regular expression",
       "props": {
         "pattern": "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
-        "message": "邮箱格式不正确"
+        "message": "Email format error"
       },
       "rule": "pattern",
       "targets": [
@@ -70,46 +55,30 @@
     {
       "id": "4687f1d09f3c4c0",
       "type": "validate",
-      "name": "最大长度",
+      "name": "Value range 0-20",
       "props": {
         "min": 0,
         "max": 20,
-        "message": "长度范围0-20"
+        "message": "Value range 0-20"
       },
       "rule": "area",
       "targets": [
         "formItem_2438db2c51353e0",
-        "formItem_217eef45421a320",
-        "formItem_4d575bec2909fc0"
+        "formItem_217eef45421a320"
       ]
     },
     {
       "id": "681474b475887c0",
       "type": "validate",
-      "name": "最大长度",
+      "name": "Value range 0-100",
       "props": {
         "min": 0,
         "max": 100,
-        "message": "长度范围0-100"
+        "message": "Value range 0-100"
       },
       "rule": "area",
       "targets": [
-        "formItem_7e225e6648b0f00",
-        "formItem_262ed7c685c4540"
-      ]
-    },
-    {
-      "id": "84a428f0ccfc500",
-      "type": "validate",
-      "name": "最大长度",
-      "props": {
-        "min": 0,
-        "max": 300,
-        "message": "长度范围0-300"
-      },
-      "rule": "area",
-      "targets": [
-        "formItem_319f68417edd8a0"
+        "formItem_7e225e6648b0f00"
       ]
     }
   ],
@@ -121,7 +90,7 @@
         "ref": "card_employeeadd",
         "title": {
           "type": "string",
-          "value": "新增员工"
+          "value": "Add employee"
         },
         "extra": []
       },
@@ -150,7 +119,7 @@
                         "widget": "title",
                         "props": {
                           "ref": "title94b964f29cae400",
-                          "value": "基本信息",
+                          "value": "Basic information",
                           "level": 5
                         }
                       }
@@ -215,7 +184,7 @@
                             "ref": "upload_f8971d6c60d0b00",
                             "isCollection": true,
                             "listType": "picture-card",
-                            "label": "头像",
+                            "label": "Avatar",
                             "value": "$(Field)Employee.Avatar",
                             "uploadType": "base64"
                           }
@@ -229,7 +198,7 @@
                   "widget": "col",
                   "props": {
                     "ref": "col_f62524e51ef7200",
-                    "width": "${span}4"
+                    "width": "${span}6"
                   },
                   "styles": {},
                   "children": [
@@ -240,7 +209,7 @@
                         "ref": "formItem_8a819ec8f85bd80",
                         "application": [],
                         "rules": [],
-                        "label": "姓",
+                        "label": "First name",
                         "name": "$(Field)Employee.FirstName"
                       },
                       "styles": {},
@@ -256,68 +225,13 @@
                       ]
                     },
                     {
-                      "id": "formItem_4f5a6850552fd00",
-                      "widget": "formItem",
-                      "props": {
-                        "ref": "formItem_80aa99cb5949280",
-                        "application": [],
-                        "rules": [],
-                        "label": "电话号码",
-                        "name": "$(Field)Employee.PhoneNumber"
-                      },
-                      "styles": {},
-                      "children": [
-                        {
-                          "id": "input_9335bc8e3b6f900",
-                          "widget": "input",
-                          "props": {
-                            "ref": "input_8bae368edc4a600",
-                            "value": "$(Field)Employee.PhoneNumber"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "id": "col_38e3a7d6bac28c0",
-                  "widget": "col",
-                  "props": {
-                    "ref": "col_f58c7ad4e472c80",
-                    "width": "${span}4"
-                  },
-                  "styles": {},
-                  "children": [
-                    {
-                      "id": "formItem_217eef45421a320",
-                      "widget": "formItem",
-                      "props": {
-                        "ref": "formItem_4816bfe37abc78",
-                        "application": [],
-                        "rules": [],
-                        "label": "名",
-                        "name": "$(Field)Employee.LastName"
-                      },
-                      "styles": {},
-                      "children": [
-                        {
-                          "id": "input_492deb9b2f0c080",
-                          "widget": "input",
-                          "props": {
-                            "ref": "input_492deb9b2f0c080",
-                            "value": "$(Field)Employee.LastName"
-                          }
-                        }
-                      ]
-                    },
-                    {
                       "id": "formItem_b212292d460d400",
                       "widget": "formItem",
                       "props": {
                         "ref": "formItem_7a9843bb7e25a00",
                         "application": [],
                         "rules": [],
-                        "label": "邮箱",
+                        "label": "Email",
                         "name": "$(Field)Employee.Email"
                       },
                       "styles": {},
@@ -335,35 +249,32 @@
                   ]
                 },
                 {
-                  "id": "col_21448583ddcc5c0",
+                  "id": "col_38e3a7d6bac28c0",
                   "widget": "col",
                   "props": {
-                    "ref": "col_21448583ddcc5c0",
-                    "width": "${span}4"
+                    "ref": "col_f58c7ad4e472c80",
+                    "width": "${span}6"
                   },
+                  "styles": {},
                   "children": [
                     {
-                      "id": "formItem_8655746661ac100",
+                      "id": "formItem_217eef45421a320",
                       "widget": "formItem",
                       "props": {
-                        "ref": "formItem_47b2bd5663bd080",
+                        "ref": "formItem_4816bfe37abc78",
                         "application": [],
                         "rules": [],
-                        "label": "性别",
-                        "name": "$(Field)Employee.Gender"
+                        "label": "Last name",
+                        "name": "$(Field)Employee.LastName"
                       },
                       "styles": {},
                       "children": [
                         {
-                          "id": "radioGroup_a44dbd70175ff80",
-                          "widget": "radioGroup",
+                          "id": "input_492deb9b2f0c080",
+                          "widget": "input",
                           "props": {
-                            "ref": "radioGroup_a44dbd70175ff80",
-                            "request": {
-                              "name": "$(Json-Enum){\r\n  \"enum\": \"Gender\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"男\",\r\n      \"value\": \"Gender.Male\"\r\n    },\r\n    {\r\n      \"label\": \"女\",\r\n      \"value\": \"Gender.Female\"\r\n    }\r\n  ]\r\n}",
-                              "params": {}
-                            },
-                            "value": "$(Field)Employee.Gender"
+                            "ref": "input_492deb9b2f0c080",
+                            "value": "$(Field)Employee.LastName"
                           }
                         }
                       ]
@@ -375,7 +286,7 @@
                         "ref": "formItem_d3d53ee996be400",
                         "application": [],
                         "rules": [],
-                        "label": "出生日期",
+                        "label": "Birthday",
                         "name": "$(Field)Employee.BirthDay"
                       },
                       "styles": {},
@@ -401,7 +312,7 @@
                   "widget": "col",
                   "props": {
                     "ref": "col_bc43d5392b9f600",
-                    "width": "${span}4"
+                    "width": "${span}6"
                   },
                   "styles": {},
                   "children": [
@@ -412,8 +323,11 @@
                         "ref": "formItem_fcd643c019c9700",
                         "application": [],
                         "rules": [],
-                        "label": "身份证",
-                        "name": "$(Field)Employee.IdCard"
+                        "label": "ID number",
+                        "name": "$(Field)Employee.IdCard",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -423,6 +337,35 @@
                           "props": {
                             "ref": "input_e7abca858ce1800",
                             "value": "$(Field)Employee.IdCard"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": "formItem_8655746661ac100",
+                      "widget": "formItem",
+                      "props": {
+                        "ref": "formItem_47b2bd5663bd080",
+                        "application": [],
+                        "rules": [],
+                        "label": "Gender",
+                        "name": "$(Field)Employee.Gender",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
+                      },
+                      "styles": {},
+                      "children": [
+                        {
+                          "id": "radioGroup_a44dbd70175ff80",
+                          "widget": "radioGroup",
+                          "props": {
+                            "ref": "radioGroup_a44dbd70175ff80",
+                            "request": {
+                              "name": "$(Json-Enum){\r\n  \"enum\": \"Gender\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Male\",\r\n      \"value\": \"Gender.Male\"\r\n    },\r\n    {\r\n      \"label\": \"Female\",\r\n      \"value\": \"Gender.Female\"\r\n    },\r\n    {\r\n      \"label\": \"Other\",\r\n      \"value\": \"Gender.Other\"\r\n    }\r\n  ]\r\n}",
+                              "params": {}
+                            },
+                            "value": "$(Field)Employee.Gender"
                           }
                         }
                       ]
@@ -446,7 +389,7 @@
                         "widget": "title",
                         "props": {
                           "ref": "title9b4c970afdc0e00",
-                          "value": "学历信息",
+                          "value": "Education information",
                           "level": 5
                         }
                       }
@@ -482,7 +425,7 @@
                   "widget": "col",
                   "props": {
                     "ref": "col_eb5b048b6936180",
-                    "width": "${span}4"
+                    "width": "${span}5"
                   },
                   "children": [
                     {
@@ -492,8 +435,11 @@
                         "ref": "formItem_5ef8d4699a23980",
                         "application": [],
                         "rules": [],
-                        "label": "毕业学校",
-                        "name": "$(Field)Employee.EducateSchool"
+                        "label": "Educate School",
+                        "name": "$(Field)Employee.EducateSchool",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -525,8 +471,11 @@
                         "ref": "formItem_2d66cddeefb4ba0",
                         "application": [],
                         "rules": [],
-                        "label": "学历",
-                        "name": "$(Field)Employee.Degree"
+                        "label": "Degree",
+                        "name": "$(Field)Employee.Degree",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -535,9 +484,9 @@
                           "widget": "select",
                           "props": {
                             "ref": "select_fa920102bd4e900",
-                            "default": "$(Field)DegreeType.UG",
+                            "default": "$(Field)DegreeType.MD",
                             "request": {
-                              "name": "$(Json-Enum){\r\n  \"enum\": \"DegreeType\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"高中\",\r\n      \"value\": \"DegreeType.HS\"\r\n    },\r\n    {\r\n      \"label\": \"大专\",\r\n      \"value\": \"DegreeType.JC\"\r\n    },\r\n    {\r\n      \"label\": \"本科\",\r\n      \"value\": \"DegreeType.UG\"\r\n    },\r\n    {\r\n      \"label\": \"硕士\",\r\n      \"value\": \"DegreeType.MT\"\r\n    },\r\n    {\r\n      \"label\": \"博士\",\r\n      \"value\": \"DegreeType.DR\"\r\n    },\r\n    {\r\n      \"label\": \"其它\",\r\n      \"value\": \"DegreeType.OT\"\r\n    }\r\n  ]\r\n}",
+                              "name": "$(Json-Enum){\r\n  \"enum\": \"DegreeType\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Associate\",\r\n      \"value\": \"DegreeType.AD\"\r\n    },\r\n    {\r\n      \"label\": \"Bachelor\",\r\n      \"value\": \"DegreeType.BD\"\r\n    },\r\n    {\r\n      \"label\": \"Master\",\r\n      \"value\": \"DegreeType.MD\"\r\n    },\r\n    {\r\n      \"label\": \"Doctorate\",\r\n      \"value\": \"DegreeType.DD\"\r\n    },\r\n    {\r\n      \"label\": \"Professional\",\r\n      \"value\": \"DegreeType.PD\"\r\n    },\r\n    {\r\n      \"label\": \"Other\",\r\n      \"value\": \"DegreeType.OT\"\r\n    }\r\n  ]\r\n}",
                               "params": {}
                             },
                             "value": "$(Field)Employee.Degree"
@@ -552,7 +501,7 @@
                   "widget": "col",
                   "props": {
                     "ref": "col_3c927b361d9d760",
-                    "width": "${span}4"
+                    "width": "${span}6"
                   },
                   "styles": {},
                   "children": [
@@ -563,8 +512,11 @@
                         "ref": "formItem_efd18ff589b1900",
                         "application": [],
                         "rules": [],
-                        "label": "毕业时间",
-                        "name": "$(Field)Employee.EducateDate"
+                        "label": "Graduation date ",
+                        "name": "$(Field)Employee.EducateDate",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -577,7 +529,7 @@
                           "props": {
                             "ref": "datePicker_f0436819acf2880",
                             "value": "$(Field)Employee.EducateDate",
-                            "placeholder": "请选中毕业日期",
+                            "placeholder": "Please select graduation date ",
                             "valueFormat": "YYYY-MM-DD"
                           }
                         }
@@ -602,7 +554,7 @@
                         "widget": "title",
                         "props": {
                           "ref": "title9ecab7bcc859e00",
-                          "value": "部门信息",
+                          "value": "Department information",
                           "level": 5
                         }
                       }
@@ -648,7 +600,11 @@
                         "ref": "formItem_2988c8aab6745e0",
                         "application": [],
                         "rules": [],
-                        "label": "所属公司"
+                        "label": "Company",
+                        "name": "$(Field)",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -688,8 +644,11 @@
                         "ref": "formItem_dd1ec0b555df680",
                         "application": [],
                         "rules": [],
-                        "label": "部门",
-                        "name": "$(Field)Employee.DepartmentId"
+                        "label": "Department",
+                        "name": "$(Field)Employee.DepartmentId",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -701,8 +660,10 @@
                             "default": "$(Props)dd305d4c5b05100",
                             "value": "$(Field)Employee.DepartmentId",
                             "request": {
-                              "name": "$(Api)Department.GetList",
-                              "params": {}
+                              "name": "$(Api)Department.GetPageByCompanyFilter",
+                              "params": {
+                                "Company": "$(Members)[watch]select_e14d3e266909480.value"
+                              }
                             },
                             "fieldName": "$(Field)Department.DepartmentName",
                             "fieldValue": "$(Field)Department.Id"
@@ -728,8 +689,11 @@
                         "ref": "formItem_8458b84e0f7ba80",
                         "application": [],
                         "rules": [],
-                        "label": "上司",
-                        "name": "$(Field)Employee.ManagerId"
+                        "label": "Manager",
+                        "name": "$(Field)Employee.ManagerId",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -768,8 +732,11 @@
                         "ref": "formItem_5bd5434dcfa8b40",
                         "application": [],
                         "rules": [],
-                        "label": "员工状态",
-                        "name": "$(Field)Employee.Status"
+                        "label": "Status",
+                        "name": "$(Field)Employee.Status",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -778,10 +745,10 @@
                           "widget": "select",
                           "props": {
                             "ref": "select_795acabf71544c0",
-                            "default": "$(Field)EmployeeStatus.TR",
+                            "default": "$(Field)EmployeeStatus.PB",
                             "value": "$(Field)Employee.Status",
                             "request": {
-                              "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"实习\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"试用\",\r\n      \"value\": \"EmployeeStatus.TR\"\r\n    },\r\n    {\r\n      \"label\": \"正式\",\r\n      \"value\": \"EmployeeStatus.FL\"\r\n    },\r\n    {\r\n      \"label\": \"离职\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
+                              "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Internship\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"Probation\",\r\n      \"value\": \"EmployeeStatus.PB\"\r\n    },\r\n    {\r\n      \"label\": \"FullTime\",\r\n      \"value\": \"EmployeeStatus.FT\"\r\n    },\r\n    {\r\n      \"label\": \"Resignation\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
                               "params": {}
                             }
                           }
@@ -806,8 +773,11 @@
                         "ref": "formItem_a82ff4868b18500",
                         "application": [],
                         "rules": [],
-                        "label": "职位",
-                        "name": "$(Field)Employee.Postion"
+                        "label": "Position",
+                        "name": "$(Field)Employee.Postion",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -840,7 +810,7 @@
                         "widget": "title",
                         "props": {
                           "ref": "title59179b444edeec0",
-                          "value": "时间信息",
+                          "value": "Other",
                           "level": 5
                         }
                       }
@@ -886,8 +856,11 @@
                         "ref": "formItem_c79b018fe606500",
                         "application": [],
                         "rules": [],
-                        "label": "入职日期",
-                        "name": "$(Field)Employee.HireDate"
+                        "label": "Hire date",
+                        "name": "$(Field)Employee.HireDate",
+                        "labelCol": {
+                          "width": "${span}8"
+                        }
                       },
                       "styles": {},
                       "children": [
@@ -897,7 +870,8 @@
                           "props": {
                             "ref": "datePicker_de5a885b5f78700",
                             "format": "YYYY-MM-DD HH:mm:ss",
-                            "value": "$(Field)Employee.HireDate"
+                            "value": "$(Field)Employee.HireDate",
+                            "placeholder": "Please select"
                           },
                           "styles": {
                             "width": "100%"
@@ -969,7 +943,7 @@
                   "props": {
                     "ref": "button_d4243923aa91280",
                     "htmlType": "submit",
-                    "label": "提交",
+                    "label": "Submit",
                     "type": "primary",
                     "size": "large",
                     "applyComponent": [
@@ -982,8 +956,6 @@
                   },
                   "styles": {
                     "width": "undefined%",
-                    "flexShrink": 1,
-                    "flexGrow": 1,
                     "flexBasis": "0px"
                   },
                   "children": [],

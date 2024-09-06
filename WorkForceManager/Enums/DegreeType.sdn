@@ -6,40 +6,40 @@
   "Description": "DegreeType",
   "DesignVersion": "3.0.0",
   "Fields": {
-    "HS": {
+    "AD": {
       "Id": "831037680ff347949e479aad6edded8f",
       "Value": "",
-      "DisplayName": "高中",
+      "DisplayName": "Associate",
       "Snippets": []
     },
-    "JC": {
+    "BD": {
       "Id": "f7139aa795bc4340bc5b5d07fdc202b7",
       "Value": "",
-      "DisplayName": "大专",
+      "DisplayName": "Bachelor",
       "Snippets": []
     },
-    "UG": {
+    "MD": {
       "Id": "6c847e81aa314bee913768d335d0a195",
       "Value": "",
-      "DisplayName": "本科",
+      "DisplayName": "Master",
       "Snippets": []
     },
-    "MT": {
+    "DD": {
       "Id": "91d195a4e2654e4197d2be20d05b4d91",
       "Value": "",
-      "DisplayName": "硕士",
+      "DisplayName": "Doctorate",
       "Snippets": []
     },
-    "DR": {
+    "PD": {
       "Id": "6bc9bebfd1e64a17afc06c413375f7a0",
       "Value": "",
-      "DisplayName": "博士",
+      "DisplayName": "Professional",
       "Snippets": []
     },
     "OT": {
       "Id": "4521a9cc6ac6426da44cb990bbde93f5",
       "Value": "",
-      "DisplayName": "其它",
+      "DisplayName": "Other",
       "Snippets": []
     }
   },

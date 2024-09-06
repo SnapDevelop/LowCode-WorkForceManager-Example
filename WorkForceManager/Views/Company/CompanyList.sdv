@@ -83,11 +83,11 @@
                             "ref": "statistic_af086fb66e65a00",
                             "title": {
                               "type": "string",
-                              "value": "公司总数"
+                              "value": "Total"
                             },
                             "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.TotalCount",
                             "suffix": "",
-                            "tipText": "各类公司总和"
+                            "tipText": "Total number of companies"
                           },
                           "styles": {
                             "width": "100px",
@@ -111,10 +111,10 @@
                             "ref": "statistic_e6b0ae5067cf580",
                             "title": {
                               "type": "string",
-                              "value": "微型公司"
+                              "value": "Tiny"
                             },
                             "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.TinyCount",
-                            "tipText": "1-10人"
+                            "tipText": "Companies with 1-10 employees"
                           },
                           "styles": {
                             "width": "100px",
@@ -139,10 +139,10 @@
                             "ref": "statistic_64f8e876b914c80",
                             "title": {
                               "type": "string",
-                              "value": "小型公司"
+                              "value": "Small"
                             },
                             "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.SmallCount",
-                            "tipText": "10-100人"
+                            "tipText": "Companies with 10-100 employees"
                           },
                           "styles": {
                             "marginRight": "10px",
@@ -167,10 +167,10 @@
                             "ref": "statistic_81fd87560dee380",
                             "title": {
                               "type": "string",
-                              "value": "中型公司"
+                              "value": "Big"
                             },
                             "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.BigCount",
-                            "tipText": "100-1000人"
+                            "tipText": "Companies with 100-1,000 employees"
                           },
                           "styles": {
                             "marginRight": "10px",
@@ -195,10 +195,10 @@
                             "ref": "statistic_9255433680b3e80",
                             "title": {
                               "type": "string",
-                              "value": "大型公司"
+                              "value": "Large"
                             },
                             "value": "$(onLoad)CompanySizeStatic.GetByCityFilter.LargeCount",
-                            "tipText": "1000人以上"
+                            "tipText": "Companies with more than 1,000 employees"
                           },
                           "styles": {
                             "width": "100px"
@@ -238,7 +238,7 @@
                 "props": {
                   "ref": "title_19d142e255fb480",
                   "level": 4,
-                  "value": "公司列表"
+                  "value": "Company list"
                 },
                 "styles": {},
                 "children": []
@@ -272,7 +272,7 @@
           },
           {
             "hide": false,
-            "title": "公司名称",
+            "title": "Name",
             "dataIndex": "$(Field)Company.CompanyName",
             "render": {
               "id": "text_da8e9bda036d380",
@@ -290,7 +290,7 @@
           },
           {
             "hide": true,
-            "title": "联系人",
+            "title": "Contact",
             "dataIndex": "$(Field)Company.Contactor",
             "render": {
               "id": "text_8681614f5bbfa00",
@@ -305,7 +305,7 @@
           },
           {
             "hide": false,
-            "title": "公司规模",
+            "title": "Size",
             "dataIndex": "$(Field)Company.CompanySize",
             "render": {
               "id": "tag_64726bb8b0c85c0",
@@ -320,7 +320,7 @@
           },
           {
             "hide": false,
-            "title": "省份",
+            "title": "Area",
             "dataIndex": "$(Field)Company.Province",
             "render": {
               "id": "text_8a7e28f30373900",
@@ -335,7 +335,7 @@
           },
           {
             "hide": false,
-            "title": "城市",
+            "title": "City",
             "dataIndex": "$(Field)Company.City",
             "render": {
               "id": "text_8d8dd566f6ad700",
@@ -353,7 +353,7 @@
           {
             "dataIndex": "operation",
             "fixed": "right",
-            "title": "操作列",
+            "title": "Operation",
             "width": 180,
             "render": {
               "id": "space_de8b329c2105c80",
@@ -369,7 +369,7 @@
                   "widget": "button",
                   "props": {
                     "ref": "button_detail",
-                    "label": "详情",
+                    "label": "Detail",
                     "type": "link",
                     "size": "small",
                     "icon": "antdv://IdcardFilled"
@@ -386,7 +386,7 @@
                   "widget": "button",
                   "props": {
                     "ref": "button_edit",
-                    "label": "编辑",
+                    "label": "Edit",
                     "type": "link",
                     "size": "small",
                     "icon": "antdv://EditFilled"
@@ -425,7 +425,7 @@
                       "props": {
                         "ref": "button_cca8f8753360700",
                         "htmlType": "button",
-                        "label": "删除",
+                        "label": "Delete",
                         "type": "link",
                         "size": "small",
                         "danger": true,
@@ -454,7 +454,7 @@
                 "$(Field)CompanySize.Large"
               ],
               "request": {
-                "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"微型企业\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"小型企业\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"中型企业\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"大型企业\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
+                "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Tiny\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"Small\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"Big\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"Large\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
                 "params": {}
               }
             }
@@ -465,7 +465,7 @@
             "props": {
               "ref": "select_b144705e8620e80",
               "mode": "multiple",
-              "placeholder": "请选择城市",
+              "placeholder": "Please select cities",
               "request": {
                 "name": "$(Api)CompanyCities.GetListByNoFilter",
                 "params": {}
@@ -489,7 +489,7 @@
             "props": {
               "ref": "button_add",
               "htmlType": "button",
-              "label": "添加公司",
+              "label": "Add company",
               "type": "link",
               "application": [],
               "icon": "antdv://PlusCircleFilled"
@@ -511,7 +511,7 @@
             "widget": "button",
             "props": {
               "ref": "button_84e327f67b50180",
-              "label": "确认",
+              "label": "Submit",
               "type": "primary"
             },
             "events": {
@@ -526,7 +526,7 @@
             "widget": "button",
             "props": {
               "ref": "button_d4d99bde2365500",
-              "label": "取消"
+              "label": "Cancel"
             },
             "events": {
               "onClick": {
@@ -603,7 +603,7 @@
             "widget": "button",
             "props": {
               "ref": "button_abf750895dd1f80",
-              "label": "确认",
+              "label": "Submit",
               "type": "primary"
             },
             "events": {
@@ -618,7 +618,7 @@
             "widget": "button",
             "props": {
               "ref": "button_1d849a897769a50",
-              "label": "取消"
+              "label": "Cancel"
             },
             "events": {
               "onClick": {
@@ -661,32 +661,31 @@
     {
       "id": "86419f23b888800",
       "type": "control",
-      "name": "显示控制-公司规模",
+      "name": "Show control - Company size",
       "props": {
         "valueType": "$(Document)CompanySize",
         "values": {
           "Tiny": {
             "color": "#C71585FF",
-            "displayInfo": "微型企业"
+            "displayInfo": "Tiny company"
           },
           "Small": {
             "color": "#FFD700FF",
-            "displayInfo": "小型企业"
+            "displayInfo": "Small company"
           },
           "Big": {
             "color": "#1E90FFFF",
-            "displayInfo": "中型企业"
+            "displayInfo": "Big company"
           },
           "Large": {
             "color": "#FF4500FF",
-            "displayInfo": "大型企业"
+            "displayInfo": "Large company"
           }
         }
       },
       "rule": "colorConfig",
       "targets": [
-        "tag_64726bb8b0c85c0",
-        "formItem_72025babf9a1bc0"
+        "tag_64726bb8b0c85c0"
       ]
     }
   ],

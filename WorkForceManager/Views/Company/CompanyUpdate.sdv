@@ -36,7 +36,7 @@
                 "widget": "title",
                 "props": {
                   "ref": "title_8dc9ab44f65f8491180",
-                  "value": "编辑",
+                  "value": "Edit",
                   "level": 4
                 }
               },
@@ -108,8 +108,8 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_aab3cca9ac88d80",
-                "label": "公司Logo",
-                "name": "$(Field)Company.CompanyName",
+                "label": "Logo",
+                "name": "$(Field)Company.Logo",
                 "hide": false
               },
               "styles": {},
@@ -131,7 +131,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_aabdeee24b9dc00",
-                "label": "公司名称",
+                "label": "Name",
                 "name": "$(Field)Company.CompanyName",
                 "hide": false
               },
@@ -177,7 +177,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_2c42ddc903cf7c0",
-                "label": "公司规模",
+                "label": "Size",
                 "name": "$(Field)Company.CompanySize",
                 "hide": false
               },
@@ -190,7 +190,7 @@
                     "ref": "radioGroup_df197a2345bf480",
                     "value": "$(Field)Company.CompanySize",
                     "request": {
-                      "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"微型企业\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"小型企业\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"中型企业\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"大型企业\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
+                      "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Tiny\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"Small\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"Big\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"Large\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
                       "params": {}
                     }
                   }
@@ -202,7 +202,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_b99fe2e154a6f80",
-                "label": "注册省份",
+                "label": "Area",
                 "name": "$(Field)Company.Province",
                 "hide": false
               },
@@ -223,7 +223,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_9c67c644a6c1600",
-                "label": "注册城市",
+                "label": "City",
                 "name": "$(Field)Company.City",
                 "hide": false
               },
@@ -304,7 +304,7 @@
                   },
                   "props": {
                     "ref": "button_8dc9ab44f6600c61205",
-                    "label": "提交",
+                    "label": "Submit",
                     "htmlType": "submit",
                     "type": "primary",
                     "applyComponent": [
@@ -322,7 +322,7 @@
   "rules": [
     {
       "id": "required_8dc9ab44f66005e1200",
-      "name": "表单校验1",
+      "name": "Name value required",
       "rule": "required",
       "type": "validate",
       "props": {
@@ -331,7 +331,8 @@
           "formItem_8dc9ab44f65fc311185": {
             "message": "请输入"
           }
-        }
+        },
+        "message": "Name value required"
       },
       "targets": [
         "formItem_5a8017de49dbb80"
@@ -340,10 +341,11 @@
     {
       "id": "6fd9aa91847ed40",
       "type": "validate",
-      "name": "长度范围",
+      "name": "Value range 1-50",
       "props": {
-        "min": 2,
-        "max": 50
+        "min": 1,
+        "max": 50,
+        "message": "Value range 1-50"
       },
       "rule": "area",
       "targets": [

@@ -21,7 +21,7 @@
     },
     "CreateTime": {
       "Id": "7c960d3c27f741468da2a646d0254dcd",
-      "DisplayName": "创建时间",
+      "DisplayName": "Create Time",
       "Type": "DateTime",
       "DataType": "DateTime",
       "DefaultValue": "Now() ",
@@ -30,7 +30,7 @@
     },
     "UpdateTime": {
       "Id": "8f033a5e5d41414ab98590b5c451a0fa",
-      "DisplayName": "更新时间",
+      "DisplayName": "Update Time",
       "Type": "DateTime",
       "DataType": "DateTime",
       "DefaultValue": "Now() ",

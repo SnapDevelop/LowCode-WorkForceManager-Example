@@ -27,7 +27,7 @@
                 "widget": "title",
                 "props": {
                   "ref": "title_8dc9aace7169c8a1060",
-                  "value": "新增",
+                  "value": "Add",
                   "level": 4
                 }
               },
@@ -61,7 +61,8 @@
             "layout": "horizontal",
             "labelAlign": "right",
             "labelCol": {
-              "width": "${span}3"
+              "width": "${span}3",
+              "offset": 0
             }
           },
           "children": [
@@ -92,10 +93,12 @@
                 "ref": "formItem_f9849abe9385980",
                 "application": [],
                 "rules": [],
-                "label": "公司Logo",
+                "label": "Logo",
                 "labelCol": {
-                  "width": "${span}3"
-                }
+                  "width": "${span}3",
+                  "offset": 0
+                },
+                "name": "$(Field)Company.Logo"
               },
               "styles": {},
               "children": [
@@ -116,7 +119,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dc9aace7170ebe1065",
-                "label": "公司名称",
+                "label": "Name",
                 "name": "$(Field)Company.CompanyName"
               },
               "children": [
@@ -135,7 +138,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dc9aace71727711067",
-                "label": "公司规模",
+                "label": "Size",
                 "name": "$(Field)Company.CompanySize"
               },
               "children": [
@@ -147,7 +150,7 @@
                     "value": "$(Field)Company.CompanySize",
                     "default": "$(Field)CompanySize.Big",
                     "request": {
-                      "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"微型企业\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"小型企业\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"中型企业\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"大型企业\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
+                      "name": "$(Json-Enum){\r\n  \"enum\": \"CompanySize\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Tiny\",\r\n      \"value\": \"CompanySize.Tiny\"\r\n    },\r\n    {\r\n      \"label\": \"Small\",\r\n      \"value\": \"CompanySize.Small\"\r\n    },\r\n    {\r\n      \"label\": \"Big\",\r\n      \"value\": \"CompanySize.Big\"\r\n    },\r\n    {\r\n      \"label\": \"Large\",\r\n      \"value\": \"CompanySize.Large\"\r\n    }\r\n  ]\r\n}",
                       "params": {}
                     }
                   }
@@ -159,7 +162,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_487bc85dd7ee480",
-                "label": "注册省份",
+                "label": "Area",
                 "name": "$(Field)Company.Province"
               },
               "styles": {},
@@ -179,8 +182,8 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_9c791d420439080",
-                "label": "注册城市",
-                "name": "$(Field)Company.CompanySize"
+                "label": "City",
+                "name": "$(Field)Company.City"
               },
               "styles": {},
               "children": [
@@ -257,7 +260,7 @@
                   },
                   "props": {
                     "ref": "button_8dc9aace717426a1085",
-                    "label": "提交",
+                    "label": "Submit",
                     "htmlType": "submit",
                     "type": "primary",
                     "applyComponent": [
@@ -275,16 +278,17 @@
   "rules": [
     {
       "id": "required_8dc9aace71739a51080",
-      "name": "表单校验1",
+      "name": "Company name required",
       "rule": "required",
       "type": "validate",
       "props": {
         "whitespace": true,
         "custom": {
           "formItem_8dc9aace7170ebe1065": {
-            "message": "请输入"
+            "message": ""
           }
-        }
+        },
+        "message": "Company name required."
       },
       "targets": [
         "formItem_8dc9aace7170ebe1065"
@@ -292,11 +296,12 @@
     },
     {
       "id": "area_8dc9aace7173b2f1081",
-      "name": "表单校验2",
+      "name": "Maximum value 100",
       "rule": "area",
       "type": "validate",
       "props": {
-        "max": 100
+        "max": 100,
+        "message": "Maximum value 100"
       },
       "targets": [
         "formItem_8dc9aace7170ebe1065"
@@ -304,13 +309,13 @@
     },
     {
       "id": "area_8dc9aace7173b401082",
-      "name": "长度范围",
+      "name": "Area value scope",
       "rule": "area",
       "type": "validate",
       "props": {
         "max": 50,
         "min": 1,
-        "message": "字符范围1-50"
+        "message": "Value range 1-50"
       },
       "targets": [
         "formItem_1f85225c5d83f70"

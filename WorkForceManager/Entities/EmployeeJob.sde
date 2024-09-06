@@ -9,16 +9,17 @@
     "Id": {
       "Id": "3362bf30f1b24ee0b4f9a7ca942c59ba",
       "DisplayName": "Id",
-      "Description": "数据唯一标识符。",
+      "Description": "Data unique identifier.",
       "Type": "Guid",
       "DataType": "Guid",
       "IsKey": true,
+      "DefaultValueType": "Value",
       "IsAutoGenerateValue": true,
       "Snippets": []
     },
     "Company": {
       "Id": "6b08ec1ea5b545d5bda9f15ccd93f2c0",
-      "DisplayName": "企业",
+      "DisplayName": "Company",
       "Type": "String",
       "DataType": "String",
       "IsRequired": true,
@@ -28,7 +29,7 @@
     },
     "Title": {
       "Id": "a55167cd39f74a02aa5e4af1457da473",
-      "DisplayName": "职位",
+      "DisplayName": "Title",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -37,7 +38,7 @@
     },
     "StartDate": {
       "Id": "7e4534d156b74bba95581f755b947b6a",
-      "DisplayName": "开始日期",
+      "DisplayName": "Start Date",
       "Type": "DateOnly",
       "DataType": "DateOnly",
       "DefaultValueType": "Value",
@@ -45,7 +46,7 @@
     },
     "EndDate": {
       "Id": "d05b0ae019e748288e088f935bc9e67a",
-      "DisplayName": "结束日期",
+      "DisplayName": "End Date",
       "Type": "DateOnly",
       "DataType": "DateOnly",
       "DefaultValueType": "Value",
@@ -54,7 +55,7 @@
     },
     "ResignReason": {
       "Id": "78b9ffea22ef42b8a18e9332112f6b41",
-      "DisplayName": "离职原因",
+      "DisplayName": "Resign Reason",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -63,7 +64,7 @@
     },
     "Contact": {
       "Id": "1e08b8aa08fa445d9218bf321a247391",
-      "DisplayName": "联系人",
+      "DisplayName": "Contact",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -73,18 +74,18 @@
     },
     "ContactPhone": {
       "Id": "1b93fa7c3fb04685934a31d04ab8dbdf",
-      "DisplayName": "联系电话",
+      "DisplayName": "Contactor Phone",
       "Type": "PhoneNumber",
       "DataType": "String",
-      "RegularExpressionError": "电话号码格式不正确。",
+      "RegularExpressionError": "Phone number format error.",
       "RegularExpression": "^(\\+\\s?)?((?<!\\+.*)\\(\\+?\\d+([\\s\\-\\.]?\\d+)?\\)|\\d+)([\\s\\-\\.]?(\\(\\d+([\\s\\-\\.]?\\d+)?\\)|\\d+))*(\\s?(x|ext\\.?)\\s?\\d+)?$",
       "DefaultValueType": "Value",
       "IsNullable": true,
       "Snippets": []
     },
-    "BelongEmployee": {
+    "Employee": {
       "Id": "3afe4561ca814b4ebc13edfc337fa509",
-      "DisplayName": "员工",
+      "DisplayName": "Employee",
       "Type": "Entity",
       "DataType": "Employee",
       "IsNullable": true,
@@ -96,7 +97,7 @@
           "Id": "08e12a2a2c03414c82bd91cf6880d496",
           "DataType": "Guid",
           "IsNullable": true,
-          "ForeignKey": "BelongEmployeeId",
+          "ForeignKey": "EmployeeId",
           "PrincipalKey": "Employee.Id"
         }
       ],
@@ -127,7 +128,7 @@
             "Items": [
               {
                 "Type": "Field",
-                "Field": "EmployeeJob.BelongEmployeeId",
+                "Field": "EmployeeJob.EmployeeId",
                 "Operation": "EQ",
                 "Parameter": "EmployeeJob.EmployeeFilter.EmployeeId",
                 "Items": []
@@ -146,7 +147,7 @@
         "Id": "5c3c12041ac242698569495ac290afcc",
         "Name": "Get",
         "Type": "Get",
-        "Description": "获取单条数据",
+        "Description": "Get single data",
         "Category": "Base",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -155,7 +156,8 @@
         "Api": {
           "Id": "199e98ac540f40ff9c8ca1a99a4b3aa8",
           "Name": "Get",
-          "Description": "获取单条数据",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -170,7 +172,7 @@
         "Id": "6e974b038efc4b23960b37233157e53e",
         "Name": "Add",
         "Type": "Add",
-        "Description": "添加单条数据",
+        "Description": "Add single data",
         "IsReturnMulti": false,
         "Category": "Base",
         "QuerySorts": [],
@@ -179,8 +181,9 @@
         "Api": {
           "Id": "1bf1d59553c44b348c4ada9c35c660fb",
           "Name": "Add",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
-          "Description": "添加单条数据",
+          "Description": "Add single data",
           "Parameters": [
             {
               "Name": "EmployeeJob",
@@ -196,7 +199,7 @@
         "Id": "fb6dc272b9b34b54a00ee4f54ed79c9b",
         "Name": "AddRange",
         "Type": "AddRange",
-        "Description": "添加多条数据",
+        "Description": "Add multiple data",
         "IsReturnMulti": true,
         "Category": "Base",
         "QuerySorts": [],
@@ -205,9 +208,10 @@
         "Api": {
           "Id": "7641556d7d4c4877bcbf139a4cb167ad",
           "Name": "AddRange",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
           "RouteTemplate": "AddRange",
-          "Description": "添加多条数据",
+          "Description": "Add multiple data",
           "Parameters": [
             {
               "Name": "EmployeeJob",
@@ -223,7 +227,7 @@
         "Id": "b1f1b68c97f74cabb98e9882b90346f9",
         "Name": "Update",
         "Type": "Update",
-        "Description": "更新单条数据",
+        "Description": "Update single data",
         "Category": "Base",
         "QuerySorts": [],
         "Assigns": [],
@@ -231,8 +235,9 @@
         "Api": {
           "Id": "b3730bfd1082419fbe92e4eae3d9e35c",
           "Name": "Update",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "PUT",
-          "Description": "更新单条数据",
+          "Description": "Update single data",
           "Parameters": [
             {
               "Name": "EmployeeJob",
@@ -248,7 +253,7 @@
         "Id": "39511d3129394d9083fd42beacd6fcb5",
         "Name": "Delete",
         "Type": "Delete",
-        "Description": "删除单条数据",
+        "Description": "Delete single data",
         "Category": "Base",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -257,8 +262,9 @@
         "Api": {
           "Id": "49b599cdc18d46bca141084856b563c7",
           "Name": "Delete",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "DELETE",
-          "Description": "删除单条数据",
+          "Description": "Delete single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -273,7 +279,7 @@
         "Id": "f370e60ce65a4e418b69a764b87c75f3",
         "Name": "GetPageByEmployeeFilter",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by employeefilter",
         "Filter": "EmployeeFilter",
         "QuerySorts": [],
         "Assigns": [],
@@ -281,7 +287,8 @@
         "Api": {
           "Id": "42d7b377a5974fe48d61fa18e3b169a4",
           "Name": "GetPageByEmployeeFilter",
-          "Description": "通过过滤器获取分页数据。",
+          "AuthorizationStategy": "$ParentCategory",
+          "Description": "Get paged data by employeefilter",
           "Parameters": [
             {
               "Name": "EmployeeFilter"

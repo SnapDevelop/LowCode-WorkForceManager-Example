@@ -1,4 +1,4 @@
-﻿{
+{
   "Id": "8111e0ebb59141efbad8cc2f5df51f70",
   "Type": "Enum",
   "Version": 1,
@@ -9,28 +9,28 @@
     "Tiny": {
       "Id": "95e5eb415c1f486fb0dae2b8bb625906",
       "Value": "1",
-      "DisplayName": "微型企业",
+      "DisplayName": "Tiny",
       "Description": "0-10",
       "Snippets": []
     },
     "Small": {
       "Id": "4d692b4a1f114260b37ba8c5149977ab",
       "Value": "2",
-      "DisplayName": "小型企业",
+      "DisplayName": "Small",
       "Description": "10-100",
       "Snippets": []
     },
     "Big": {
       "Id": "033e9fd577a04704b5775bcaf1f25edf",
       "Value": "3",
-      "DisplayName": "中型企业",
+      "DisplayName": "Big",
       "Description": "100-1000",
       "Snippets": []
     },
     "Large": {
       "Id": "2ee3936503c843bcb0a92854cacd0bc6",
       "Value": "4",
-      "DisplayName": "大型企业",
+      "DisplayName": "Large",
       "Description": "> 1000",
       "Snippets": []
     }

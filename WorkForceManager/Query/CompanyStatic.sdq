@@ -30,7 +30,7 @@
       "props": {
         "name": "CompanyCompanySize",
         "value": "$(Field)CompanyStatic.Group.Key.CompanyCompanySize",
-        "displayName": "公司规模",
+        "displayName": "Company size",
         "dataType": "CompanySize"
       }
     },
@@ -40,7 +40,7 @@
       "props": {
         "name": "CompanyCount",
         "value": "$(Expression)Count(CompanyStatic.Group.Company.Id) ",
-        "displayName": "公司数量",
+        "displayName": "Company count",
         "dataType": "Int32"
       }
     }
@@ -82,7 +82,7 @@
       "props": {
         "name": "GetListByCityFilter",
         "isEnableApi": true,
-        "description": "通过过滤器获取列表数据。",
+        "description": "Get list data with cityfilter",
         "isResultCollection": true,
         "parameters": [
           {

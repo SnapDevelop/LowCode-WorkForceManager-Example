@@ -9,7 +9,7 @@
   "Fields": {
     "FirstName": {
       "Id": "3b5dcd731b2d4cffb86ecb19655d5e19",
-      "DisplayName": "姓",
+      "DisplayName": "First Name",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -18,7 +18,7 @@
     },
     "LastName": {
       "Id": "8b1cdd7af41e4e678856a16d772a7290",
-      "DisplayName": "名",
+      "DisplayName": "Last Name",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -27,7 +27,7 @@
     },
     "FullName": {
       "Id": "7f59bd42e449479f95dbbfe6d8616461",
-      "DisplayName": "全名",
+      "DisplayName": "Full Name",
       "Type": "Compute",
       "DataType": "String",
       "IsNullable": true,
@@ -37,29 +37,18 @@
     },
     "Gender": {
       "Id": "afae9c440dc342c3904efbe6a52315fd",
-      "DisplayName": "性别",
+      "DisplayName": "Gender",
       "Type": "Enum",
       "DataType": "Gender",
       "DefaultValueType": "Value",
       "Snippets": []
     },
-    "PhoneNumber": {
-      "Id": "e7233daad0e24612a5d2e688eb5d09e3",
-      "DisplayName": "电话号码",
-      "Type": "String",
-      "DataType": "String",
-      "RegularExpressionError": "The Phone format is incorrect",
-      "RegularExpression": "^((\\+?86)|(\\(\\+86\\)))?((((13[^4]{1})|(14[5-9]{1})|147|(15[^4]{1})|166|(17\\d{1})|(18\\d{1})|(19[12589]{1}))\\d{8})|((134[^9]{1}|1410|1440)\\d{7}))$",
-      "DefaultValueType": "Value",
-      "MaxLength": 50,
-      "Snippets": []
-    },
     "Email": {
       "Id": "6341b19425f14db8b1d5935eeab41153",
-      "DisplayName": "邮箱",
+      "DisplayName": "Email",
       "Type": "Email",
       "DataType": "String",
-      "RegularExpressionError": "邮箱格式不正确。",
+      "RegularExpressionError": "Email format error.",
       "RegularExpression": "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",
       "DefaultValueType": "Value",
       "IsNullable": true,
@@ -67,7 +56,7 @@
     },
     "Avatar": {
       "Id": "613b3b7a0b9d4575a8b2d3ee2f66cf1d",
-      "DisplayName": "头像",
+      "DisplayName": "Avatar",
       "Type": "Byte",
       "DataType": "Byte",
       "IsCollection": true,
@@ -77,7 +66,7 @@
     },
     "HireDate": {
       "Id": "707fe4ccff584e86aa9d2d5cb27dadc7",
-      "DisplayName": "入职日期",
+      "DisplayName": "HireDate",
       "Type": "DateTime",
       "DataType": "DateTime",
       "DefaultValue": "Now() ",
@@ -86,7 +75,7 @@
     },
     "ResignDate": {
       "Id": "b1221a81b6074d8e95923a7a853e4ec7",
-      "DisplayName": "离职日期",
+      "DisplayName": "Resign Date",
       "Type": "DateTime",
       "DataType": "DateTime",
       "DefaultValueType": "Value",
@@ -95,7 +84,7 @@
     },
     "Degree": {
       "Id": "24dcd7bb0cda4d8e98768a5570c1f43f",
-      "DisplayName": "学历",
+      "DisplayName": "Degree",
       "Type": "Enum",
       "DataType": "DegreeType",
       "DefaultValueType": "Value",
@@ -104,7 +93,7 @@
     },
     "EducateSchool": {
       "Id": "3621b9a028de468b8ca3db63624fac2b",
-      "DisplayName": "毕业学校",
+      "DisplayName": "Educate School",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -114,7 +103,7 @@
     },
     "EducateDate": {
       "Id": "4bf00b9eb2084d359e19186da7b16ecb",
-      "DisplayName": "毕业时间",
+      "DisplayName": "Educate Date",
       "Type": "DateTime",
       "DataType": "DateTime",
       "DefaultValueType": "Value",
@@ -123,7 +112,7 @@
     },
     "Department": {
       "Id": "90588fdfd8d148f1b38606a1a27aca1a",
-      "DisplayName": "部门",
+      "DisplayName": "Department",
       "Type": "Entity",
       "DataType": "Department",
       "Relationship": "ManyToOne",
@@ -141,7 +130,7 @@
     },
     "Manager": {
       "Id": "a3ead54c29774fd2adefdca6ab1a5a97",
-      "DisplayName": "上司",
+      "DisplayName": "Manager",
       "Type": "Entity",
       "DataType": "Employee",
       "IsNullable": true,
@@ -162,40 +151,40 @@
     },
     "Educations": {
       "Id": "c1e94d5d7af74931964debc0ea7d6bd6",
-      "DisplayName": "教育经历",
+      "DisplayName": "Educations",
       "Type": "Entity",
       "DataType": "Education",
       "IsCollection": true,
       "IsNullable": true,
       "Relationship": "OneToMany",
-      "AssociatedField": "Education.BelongEmployee",
+      "AssociatedField": "Education.Employee",
       "AutoGenerateForeignKeyField": true,
       "Snippets": []
     },
     "Jobs": {
       "Id": "3bbb67bcb12c4996949c411ff54f3573",
-      "DisplayName": "工作经历",
+      "DisplayName": "Jobs",
       "Type": "Entity",
       "DataType": "EmployeeJob",
       "IsCollection": true,
       "IsNullable": true,
       "Relationship": "OneToMany",
-      "AssociatedField": "EmployeeJob.BelongEmployee",
+      "AssociatedField": "EmployeeJob.Employee",
       "AutoGenerateForeignKeyField": true,
       "Snippets": []
     },
     "Status": {
       "Id": "0e23a1174a33492f9fa1caff9a728a86",
-      "DisplayName": "员工状态",
+      "DisplayName": "Status",
       "Type": "Enum",
       "DataType": "EmployeeStatus",
-      "DefaultValue": "EmployeeStatus.TR",
+      "DefaultValue": "EmployeeStatus.PB",
       "DefaultValueType": "Value",
       "Snippets": []
     },
     "ResignReason": {
       "Id": "0e888aa5babc49e9aca7e086551816d2",
-      "DisplayName": "离职原因",
+      "DisplayName": "Resign Reason",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -205,7 +194,7 @@
     },
     "BirthDay": {
       "Id": "e2e0699fafc34977afb2ef665486d322",
-      "DisplayName": "出生日期",
+      "DisplayName": "BirthDay",
       "Type": "DateOnly",
       "DataType": "DateOnly",
       "DefaultValueType": "Value",
@@ -214,7 +203,7 @@
     },
     "IdCard": {
       "Id": "01f64ebfcea64edeaf7b4e6f3fa635d8",
-      "DisplayName": "身份证",
+      "DisplayName": "IdCard",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -223,7 +212,7 @@
     },
     "Postion": {
       "Id": "0f6e97cf490a4f0696199de61744d8ce",
-      "DisplayName": "职位",
+      "DisplayName": "Postion",
       "Type": "String",
       "DataType": "String",
       "DefaultValueType": "Value",
@@ -243,7 +232,7 @@
             "Id": "48f41a47aa51456281d57ac5e60e9b96",
             "Type": "Guid",
             "DataType": "Guid",
-            "DisplayName": "部门",
+            "DisplayName": "Department",
             "IsRequired": true,
             "DefaultValueType": "Value",
             "Snippets": []
@@ -252,7 +241,7 @@
             "Id": "223f95a0-4bb4-45e9-88ca-23a40fda37c8",
             "Type": "Enum",
             "DataType": "EmployeeStatus",
-            "DisplayName": "状态",
+            "DisplayName": "Status",
             "DefaultValueType": "Value",
             "Snippets": []
           }
@@ -291,7 +280,7 @@
         "Id": "7bef5237b3d34eb592e299a85b5bdf86",
         "Name": "Get",
         "Type": "Get",
-        "Description": "获取单条数据",
+        "Description": "Get single data",
         "Category": "Override",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -338,7 +327,7 @@
           "Id": "b42c2bcdc687466494ad161371254968",
           "Name": "Get",
           "AuthorizationStategy": "$ParentCategory",
-          "Description": "获取单条数据",
+          "Description": "Get single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -353,7 +342,7 @@
         "Id": "2aabc0c77d0e4893a84aa39135753066",
         "Name": "Add",
         "Type": "Add",
-        "Description": "添加单条数据",
+        "Description": "Add single data",
         "IsReturnMulti": false,
         "Category": "Override",
         "QuerySorts": [],
@@ -388,7 +377,7 @@
           "Name": "Add",
           "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
-          "Description": "添加单条数据",
+          "Description": "Add single data",
           "Parameters": [
             {
               "Name": "Employee",
@@ -404,7 +393,7 @@
         "Id": "a2c098a51e764a449d6b8872b38cce6d",
         "Name": "AddRange",
         "Type": "AddRange",
-        "Description": "添加多条数据",
+        "Description": "Add multiple data",
         "IsReturnMulti": true,
         "Category": "Base",
         "QuerySorts": [],
@@ -413,9 +402,10 @@
         "Api": {
           "Id": "14b4d0f056b84621b3f15d7587d74b54",
           "Name": "AddRange",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "POST",
           "RouteTemplate": "AddRange",
-          "Description": "添加多条数据",
+          "Description": "Add multiple data",
           "Parameters": [
             {
               "Name": "Employee",
@@ -431,7 +421,7 @@
         "Id": "831ba40e14714808b964bbaf0052395c",
         "Name": "Update",
         "Type": "Update",
-        "Description": "更新单条数据",
+        "Description": "Update single data",
         "Category": "Override",
         "QuerySorts": [],
         "Assigns": [
@@ -449,12 +439,6 @@
                 "IsCascade": true,
                 "Value": "Employee.Jobs",
                 "Children": []
-              },
-              {
-                "Name": "UpdateTime",
-                "Value": "UtcNow() ",
-                "ValueType": "Expression",
-                "Children": []
               }
             ]
           }
@@ -465,7 +449,7 @@
           "Name": "Update",
           "AuthorizationStategy": "$ParentCategory",
           "Method": "PUT",
-          "Description": "更新单条数据",
+          "Description": "Update single data",
           "Parameters": [
             {
               "Name": "Employee",
@@ -481,7 +465,7 @@
         "Id": "af911a1b539f4064a8aa42e510eff003",
         "Name": "Delete",
         "Type": "Delete",
-        "Description": "删除单条数据",
+        "Description": "Delete single data",
         "Category": "Base",
         "Filter": "PrimaryKeyFilter",
         "QuerySorts": [],
@@ -490,8 +474,9 @@
         "Api": {
           "Id": "27eaad938fbe43d5b3b3ff70904453ac",
           "Name": "Delete",
+          "AuthorizationStategy": "$ParentCategory",
           "Method": "DELETE",
-          "Description": "删除单条数据",
+          "Description": "Delete single data",
           "Parameters": [
             {
               "Name": "PrimaryKeyFilter",
@@ -506,28 +491,16 @@
         "Id": "3f46cbf3d70a4a8087a2fca2c0d71d5c",
         "Name": "GetPageByDepartmentFilter",
         "Type": "GetPage",
-        "Description": "通过过滤器获取分页数据。",
+        "Description": "Get paged data by departmentfilter",
         "Filter": "DepartmentFilter",
         "QuerySorts": [],
-        "Assigns": [
-          {
-            "DocumentSource": "Employee",
-            "Items": [
-              {
-                "Name": "PhoneNumber",
-                "Value": "Replace(Employee.PhoneNumber,3,8, Rept('*',8)) ",
-                "ValueType": "Expression",
-                "Children": []
-              }
-            ]
-          }
-        ],
+        "Assigns": [],
         "ResultSorts": [],
         "Api": {
           "Id": "b9347ca8a71547d78520db74f1dbadd8",
           "Name": "GetPageByDepartmentFilter",
           "AuthorizationStategy": "$ParentCategory",
-          "Description": "通过过滤器获取分页数据。",
+          "Description": "Get paged data by departmentfilter",
           "Parameters": [
             {
               "Name": "DepartmentFilter"
@@ -541,7 +514,7 @@
         "Id": "68a520fdd4d542aba261f029b21d8171",
         "Name": "GetListByDepartmentFilter",
         "Type": "GetList",
-        "Description": "通过过滤器获取列表数据。",
+        "Description": "Get list data by departmentfilter",
         "Filter": "DepartmentFilter",
         "QuerySorts": [],
         "Assigns": [],
@@ -549,8 +522,9 @@
         "Api": {
           "Id": "a38f4597050d4252b9d07640f87789f0",
           "Name": "GetListByDepartmentFilter",
+          "AuthorizationStategy": "$ParentCategory",
           "RouteTemplate": "GetListByDepartmentFilter",
-          "Description": "通过过滤器获取列表数据。",
+          "Description": "Get list data by departmentfilter",
           "Parameters": [
             {
               "Name": "DepartmentFilter"
@@ -564,7 +538,7 @@
         "Id": "a910f488e9d5461ebb40c632924321f9",
         "Name": "UpdateResign",
         "Type": "Update",
-        "Description": "更新单条数据",
+        "Description": "Update single data status to resignation",
         "QuerySorts": [],
         "Assigns": [
           {
@@ -598,7 +572,7 @@
           "AuthorizationStategy": "$ParentCategory",
           "Method": "PUT",
           "RouteTemplate": "UpdateResign",
-          "Description": "更新单条数据",
+          "Description": "Update single data status to resignation",
           "Parameters": [
             {
               "Name": "Employee",

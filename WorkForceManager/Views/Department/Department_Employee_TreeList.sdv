@@ -14,17 +14,21 @@
     {
       "id": "cb19ad9bbbfc580",
       "type": "control",
-      "name": "显示控制 - 性别",
+      "name": "Show control - Gender",
       "props": {
         "valueType": "$(Document)Gender",
         "values": {
           "Male": {
             "color": "#66AAEBFF",
-            "displayInfo": "男"
+            "displayInfo": "Male"
           },
           "Female": {
             "color": "#EB5566FF",
-            "displayInfo": "女"
+            "displayInfo": "Female"
+          },
+          "Other": {
+            "color": "#FAD400FF",
+            "displayInfo": "Other"
           }
         }
       },
@@ -36,33 +40,33 @@
     {
       "id": "746c8c4c92310c",
       "type": "control",
-      "name": "显示控制 - 学历",
+      "name": "Show control - Degree",
       "props": {
         "valueType": "$(Document)DegreeType",
         "values": {
-          "HS": {
+          "AD": {
             "color": "#FF4500FF",
-            "displayInfo": "高中"
+            "displayInfo": "Associate"
           },
-          "JC": {
+          "BD": {
             "color": "#FF8C00FF",
-            "displayInfo": "大专"
+            "displayInfo": "Bachelor"
           },
-          "UG": {
+          "MD": {
             "color": "#FFD700FF",
-            "displayInfo": "本科"
+            "displayInfo": "Master"
           },
-          "MT": {
+          "DD": {
             "color": "#00CED1FF",
-            "displayInfo": "硕士"
+            "displayInfo": "Doctorate"
           },
-          "DR": {
+          "PD": {
             "color": "#1E90FFFF",
-            "displayInfo": "博士"
+            "displayInfo": "Professional"
           },
           "OT": {
             "color": "#C71585FF",
-            "displayInfo": "其它"
+            "displayInfo": "Other"
           }
         }
       },
@@ -74,25 +78,25 @@
     {
       "id": "810ebf15ef7a700",
       "type": "control",
-      "name": "显示控制 - 状态",
+      "name": "Show control - status",
       "props": {
         "valueType": "$(Document)EmployeeStatus",
         "values": {
           "IS": {
             "color": "#00CED1FF",
-            "displayInfo": "实习"
+            "displayInfo": "Internship"
           },
-          "TR": {
+          "PB": {
             "color": "#97F3A6FF",
-            "displayInfo": "试用"
+            "displayInfo": "Probation"
           },
-          "FL": {
+          "FT": {
             "color": "#1E90FFFF",
-            "displayInfo": "正式"
+            "displayInfo": "FullTime"
           },
           "RN": {
             "color": "#DA252BFF",
-            "displayInfo": "离职"
+            "displayInfo": "Resignation"
           }
         }
       },
@@ -161,7 +165,7 @@
                               "mode": "",
                               "showSearch": true,
                               "hide": false,
-                              "placeholder": "请选择公司"
+                              "placeholder": "Change Company"
                             },
                             "styles": {
                               "width": "100%"
@@ -188,7 +192,7 @@
                         },
                         "fieldName": "$(Field)Department.DepartmentName",
                         "fieldValue": "$(Field)Department.Id",
-                        "fieldChildren": "$(Field)Department.ChildDepartments",
+                        "fieldChildren": "$(Field)Department.SubDepartments",
                         "defaultExpandAll": true,
                         "showLine": false
                       },
@@ -264,7 +268,7 @@
                               "props": {
                                 "ref": "radioGroup_4820618c45d5a40",
                                 "request": {
-                                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"实习\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"试用\",\r\n      \"value\": \"EmployeeStatus.TR\"\r\n    },\r\n    {\r\n      \"label\": \"正式\",\r\n      \"value\": \"EmployeeStatus.FL\"\r\n    },\r\n    {\r\n      \"label\": \"离职\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
+                                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Internship\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"Probation\",\r\n      \"value\": \"EmployeeStatus.PB\"\r\n    },\r\n    {\r\n      \"label\": \"FullTime\",\r\n      \"value\": \"EmployeeStatus.FT\"\r\n    },\r\n    {\r\n      \"label\": \"Resignation\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
                                   "params": {}
                                 },
                                 "value": "$(Field)Employee.Status",
@@ -294,7 +298,7 @@
                                 "ref": "checkboxGroup_80eab0f4e7a2f80",
                                 "value": "$(Field)Employee.Status",
                                 "request": {
-                                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"实习\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"试用\",\r\n      \"value\": \"EmployeeStatus.TR\"\r\n    },\r\n    {\r\n      \"label\": \"正式\",\r\n      \"value\": \"EmployeeStatus.FL\"\r\n    },\r\n    {\r\n      \"label\": \"离职\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
+                                  "name": "$(Json-Enum){\r\n  \"enum\": \"EmployeeStatus\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Internship\",\r\n      \"value\": \"EmployeeStatus.IS\"\r\n    },\r\n    {\r\n      \"label\": \"Probation\",\r\n      \"value\": \"EmployeeStatus.PB\"\r\n    },\r\n    {\r\n      \"label\": \"FullTime\",\r\n      \"value\": \"EmployeeStatus.FT\"\r\n    },\r\n    {\r\n      \"label\": \"Resignation\",\r\n      \"value\": \"EmployeeStatus.RN\"\r\n    }\r\n  ]\r\n}",
                                   "params": {}
                                 }
                               }
@@ -323,7 +327,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "姓",
+                        "title": "First Name",
                         "dataIndex": "$(Field)Employee.FirstName",
                         "render": {
                           "id": "text_d0c759b61cca400",
@@ -338,7 +342,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "名",
+                        "title": "Last name",
                         "dataIndex": "$(Field)Employee.LastName",
                         "render": {
                           "id": "text_4c8a0ed019eb640",
@@ -353,7 +357,7 @@
                       },
                       {
                         "hide": false,
-                        "title": "全名",
+                        "title": "Full name",
                         "dataIndex": "$(Field)Employee.FullName",
                         "render": {
                           "id": "text_d5d45343a718380",
@@ -368,7 +372,7 @@
                       },
                       {
                         "hide": false,
-                        "title": "性别",
+                        "title": "Gender",
                         "dataIndex": "$(Field)Employee.Gender",
                         "render": {
                           "id": "tag_a59a727c99f3000",
@@ -383,22 +387,7 @@
                       },
                       {
                         "hide": false,
-                        "title": "电话号码",
-                        "dataIndex": "$(Field)Employee.PhoneNumber",
-                        "render": {
-                          "id": "text_25df899c6808e60",
-                          "widget": "text",
-                          "props": {
-                            "value": "$(Field)Employee.PhoneNumber",
-                            "ref": "text_288c414c4a4a3c0"
-                          },
-                          "styles": {},
-                          "children": []
-                        }
-                      },
-                      {
-                        "hide": false,
-                        "title": "邮箱",
+                        "title": "Email",
                         "dataIndex": "$(Field)Employee.Email",
                         "render": {
                           "id": "link_4d5a38401867a40",
@@ -418,7 +407,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "入职日期",
+                        "title": "Hire date",
                         "dataIndex": "$(Field)Employee.HireDate",
                         "render": {
                           "id": "text_2576dbc2020c8c0",
@@ -433,7 +422,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "离职日期",
+                        "title": "Resign Date",
                         "dataIndex": "$(Field)Employee.ResignDate",
                         "render": {
                           "id": "text_341a94af783d8c0",
@@ -448,7 +437,7 @@
                       },
                       {
                         "hide": false,
-                        "title": "学历",
+                        "title": "Degree",
                         "dataIndex": "$(Field)Employee.Degree",
                         "render": {
                           "id": "badge_a3231737f4dc080",
@@ -465,7 +454,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "毕业学校",
+                        "title": "Educate school",
                         "dataIndex": "$(Field)Employee.EducateSchool",
                         "render": {
                           "id": "text_71a474b1d2ee980",
@@ -480,7 +469,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "毕业时间",
+                        "title": "Educate date",
                         "dataIndex": "$(Field)Employee.EducateDate",
                         "render": {
                           "id": "text_c0669373c2ba180",
@@ -495,7 +484,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "部门",
+                        "title": "Department",
                         "dataIndex": "$(Field)Employee.Department",
                         "render": {
                           "id": "text_9d5b26b01ebc88",
@@ -510,7 +499,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "上司",
+                        "title": "Manager",
                         "dataIndex": "$(Field)Employee.Manager",
                         "render": {
                           "id": "text_77c4616a04e7780",
@@ -525,7 +514,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "教育经历",
+                        "title": "Educations",
                         "dataIndex": "$(Field)Employee.Educations",
                         "render": {
                           "id": "text_d76063480aeb180",
@@ -540,7 +529,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "工作经历",
+                        "title": "Jobs",
                         "dataIndex": "$(Field)Employee.Jobs",
                         "render": {
                           "id": "text_b8553397c6a1280",
@@ -555,7 +544,7 @@
                       },
                       {
                         "hide": false,
-                        "title": "员工状态",
+                        "title": "Employee status",
                         "dataIndex": "$(Field)Employee.Status",
                         "render": {
                           "id": "tag_fd2a18db0bcb880",
@@ -570,7 +559,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "离职原因",
+                        "title": "Resign reason",
                         "dataIndex": "$(Field)Employee.ResignReason",
                         "render": {
                           "id": "text_e576fef80daf780",
@@ -585,7 +574,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "部门",
+                        "title": "DepartmentId",
                         "dataIndex": "$(Field)Employee.DepartmentId",
                         "render": {
                           "id": "text_4f1ac2ca4ba1fc0",
@@ -600,7 +589,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "上司",
+                        "title": "ManagerId",
                         "dataIndex": "$(Field)Employee.ManagerId",
                         "render": {
                           "id": "text_b8704decb1dbc80",
@@ -615,7 +604,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "创建时间",
+                        "title": "Create time",
                         "dataIndex": "$(Field)Employee.CreateTime",
                         "render": {
                           "id": "text_244bb2bd9af7b60",
@@ -630,7 +619,7 @@
                       },
                       {
                         "hide": true,
-                        "title": "更新时间",
+                        "title": "Update time",
                         "dataIndex": "$(Field)Employee.UpdateTime",
                         "render": {
                           "id": "text_c9465490665e180",
@@ -646,7 +635,7 @@
                       {
                         "dataIndex": "operation",
                         "fixed": "right",
-                        "title": "操作列",
+                        "title": "Operation",
                         "width": 180,
                         "render": {
                           "id": "space_926ad0845596d80",
@@ -661,9 +650,10 @@
                               "widget": "button",
                               "props": {
                                 "ref": "button_ca1a4d94109b300",
-                                "label": "详情",
+                                "label": "Detail",
                                 "type": "link",
-                                "size": "small"
+                                "size": "small",
+                                "icon": "antdv://IdcardFilled"
                               },
                               "events": {
                                 "onClick": {
@@ -711,10 +701,11 @@
                                   "props": {
                                     "ref": "button_174aaeb17437230",
                                     "htmlType": "button",
-                                    "label": "删除",
+                                    "label": "Delete",
                                     "type": "link",
                                     "size": "small",
-                                    "danger": true
+                                    "danger": true,
+                                    "icon": "antdv://WarningFilled"
                                   }
                                 }
                               ]
@@ -732,7 +723,7 @@
                           "ref": "button_7398d3fb9c6af40",
                           "htmlType": "button",
                           "type": "link",
-                          "label": "编辑部门",
+                          "label": "Edit department",
                           "icon": "antdv://FormOutlined"
                         },
                         "styles": {},
@@ -751,7 +742,7 @@
                           "ref": "button_b2fff7c72395980",
                           "htmlType": "button",
                           "icon": "antdv://PlusSquareOutlined",
-                          "label": "添加部门",
+                          "label": "Add department",
                           "type": "link",
                           "size": "small"
                         },
@@ -771,7 +762,7 @@
                           "ref": "button_addemployee",
                           "htmlType": "button",
                           "icon": "antdv://PlusCircleFilled",
-                          "label": "添加部门员工",
+                          "label": "Add employee",
                           "type": "link"
                         },
                         "styles": {},
@@ -827,7 +818,7 @@
             "widget": "button",
             "props": {
               "ref": "button_1be98bd010b2e90",
-              "label": "确认",
+              "label": "Submit",
               "type": "primary"
             },
             "events": {
@@ -842,7 +833,7 @@
             "widget": "button",
             "props": {
               "ref": "button_a6806a38607d50",
-              "label": "取消"
+              "label": "Cancel"
             },
             "events": {
               "onClick": {
@@ -888,7 +879,7 @@
             "widget": "button",
             "props": {
               "ref": "button_912a6baf1b89280",
-              "label": "确认",
+              "label": "Submit",
               "type": "primary"
             },
             "events": {
@@ -903,7 +894,7 @@
             "widget": "button",
             "props": {
               "ref": "button_f9db7417f5b7800",
-              "label": "取消"
+              "label": "Cancel"
             },
             "events": {
               "onClick": {

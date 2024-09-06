@@ -36,7 +36,7 @@
                 "widget": "title",
                 "props": {
                   "ref": "title_8dca1bdf02dc326472",
-                  "value": "教育经历",
+                  "value": "Add",
                   "level": 4
                 }
               },
@@ -99,7 +99,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dca1bdf02e3e86477",
-                "label": "学校",
+                "label": "School",
                 "name": "$(Field)Education.School"
               },
               "children": [
@@ -121,7 +121,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dca1bdf02e46ee479",
-                "label": "起始日期",
+                "label": "Start date",
                 "name": "$(Field)Education.StartDate"
               },
               "children": [
@@ -148,7 +148,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dca1bdf02e4acd481",
-                "label": "结束日期",
+                "label": "End date",
                 "name": "$(Field)Education.EndDate"
               },
               "children": [
@@ -175,7 +175,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dca1bdf02e4afa483",
-                "label": "专业",
+                "label": "Major",
                 "name": "$(Field)Education.Major"
               },
               "children": [
@@ -197,7 +197,7 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_8dca1bdf02e571a485",
-                "label": "学历",
+                "label": "Degree",
                 "name": "$(Field)Education.Degree"
               },
               "children": [
@@ -211,7 +211,7 @@
                     "ref": "select_8dca1bdf02e5727486",
                     "value": "$(Field)Education.Degree",
                     "request": {
-                      "name": "$(Json-Enum){\r\n  \"enum\": \"DegreeType\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"高中\",\r\n      \"value\": \"DegreeType.HS\"\r\n    },\r\n    {\r\n      \"label\": \"大专\",\r\n      \"value\": \"DegreeType.JC\"\r\n    },\r\n    {\r\n      \"label\": \"本科\",\r\n      \"value\": \"DegreeType.UG\"\r\n    },\r\n    {\r\n      \"label\": \"硕士\",\r\n      \"value\": \"DegreeType.MT\"\r\n    },\r\n    {\r\n      \"label\": \"博士\",\r\n      \"value\": \"DegreeType.DR\"\r\n    },\r\n    {\r\n      \"label\": \"其它\",\r\n      \"value\": \"DegreeType.OT\"\r\n    }\r\n  ]\r\n}",
+                      "name": "$(Json-Enum){\r\n  \"enum\": \"DegreeType\",\r\n  \"value\": [\r\n    {\r\n      \"label\": \"Associate\",\r\n      \"value\": \"DegreeType.AD\"\r\n    },\r\n    {\r\n      \"label\": \"Bachelor\",\r\n      \"value\": \"DegreeType.BD\"\r\n    },\r\n    {\r\n      \"label\": \"Master\",\r\n      \"value\": \"DegreeType.MD\"\r\n    },\r\n    {\r\n      \"label\": \"Doctorate\",\r\n      \"value\": \"DegreeType.DD\"\r\n    },\r\n    {\r\n      \"label\": \"Professional\",\r\n      \"value\": \"DegreeType.PD\"\r\n    },\r\n    {\r\n      \"label\": \"Other\",\r\n      \"value\": \"DegreeType.OT\"\r\n    }\r\n  ]\r\n}",
                       "params": {}
                     }
                   },
@@ -226,8 +226,8 @@
               "widget": "formItem",
               "props": {
                 "ref": "formItem_4ef9ca93de89d80",
-                "label": "员工",
-                "name": "$(Field)Education.BelongEmployeeId",
+                "label": "Emplotee",
+                "name": "$(Field)Education.EmployeeId",
                 "hide": true
               },
               "styles": {},
@@ -237,7 +237,7 @@
                   "widget": "input",
                   "props": {
                     "ref": "input_e494ac3a9fb0280",
-                    "value": "$(Field)Education.BelongEmployeeId",
+                    "value": "$(Field)Education.EmployeeId",
                     "default": "$(Props)b13a163ddf1c700"
                   },
                   "styles": {},
@@ -264,7 +264,7 @@
                   },
                   "props": {
                     "ref": "button_8dca1bdf02e6ffe490",
-                    "label": "提交",
+                    "label": "Submit",
                     "htmlType": "submit",
                     "type": "primary",
                     "applyComponent": [
@@ -282,11 +282,13 @@
   "rules": [
     {
       "id": "area_8dca1bdf02e65d7487",
-      "name": "表单校验1",
+      "name": "Value range 1-100",
       "rule": "area",
       "type": "validate",
       "props": {
-        "max": 100
+        "max": 100,
+        "min": 1,
+        "message": "Value range 1-100"
       },
       "targets": [
         "formItem_8dca1bdf02e3e86477"
@@ -294,11 +296,13 @@
     },
     {
       "id": "area_8dca1bdf02e6840488",
-      "name": "表单校验2",
+      "name": "Value range 1-200",
       "rule": "area",
       "type": "validate",
       "props": {
-        "max": 200
+        "max": 200,
+        "min": 1,
+        "message": "Value range 1-200"
       },
       "targets": [
         "formItem_8dca1bdf02e4afa483"
@@ -307,8 +311,10 @@
     {
       "id": "8aff58c286b5b80",
       "type": "validate",
-      "name": "不能为空",
-      "props": {},
+      "name": "Value required",
+      "props": {
+        "message": "Value required"
+      },
       "rule": "required",
       "targets": [
         "formItem_8dca1bdf02e3e86477"
