@@ -21,4 +21,4 @@ Please obtain the example application from this repository and open it in SnapDe
 - Click Generate Projects to generate the full-stack application.
 - Click Run in the IDE to view the Web APIs, and the front-end pages created for the application. 
 
-For more information, check the tutorial at  https://docs.devmagic.com/devmagicstudio_preview/Create_a_Designer_Developed_Project/How-to-Guides.html (English), and https://docs.aipuyang.com/sd2025/Create_a_Designer_Developed_Project/Code-First-Tutorials.html (Chinese).
+For more information, check the tutorial at  https://docs.devmagic.com/sd2025/Create_a_Designer_Developed_Project/Code-First-Tutorials.html.
