@@ -14,7 +14,7 @@ In the example application, the following content (entities, queries, etc.) has 
   - Employee: EmployeeAdd; EmployeeDetail; EmployResign; EmployeeUpdate;
   - EmployeeJob: JobAdd
 
-Please obtain the example application from this repository and open it in SnapDevelop 2025 (downloadable at https://www.aipuyang.com). This will allow you to gain the following hands-on experience with SnapDevelop: 
+Please obtain the example application from this repository and open it in SnapDevelop 2025 (downloadable at https://www.devmagic.com). This will allow you to gain the following hands-on experience with SnapDevelop: 
 
 - Review the straightforward visual design in the project and make changes if desired. 
 - Open the Generate Profiles > Profile to view the settings used for generate the projects.
